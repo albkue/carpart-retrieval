@@ -1,0 +1,40 @@
+# Minimum Viable Baseline. Freeze this once it produces numbers.
+name: baseline_mvb
+seed: 42
+
+data:
+  catalog_images: data/processed/catalog
+  query_images:   data/processed/query
+  split_manifest: data/processed/splits_v1.json
+  eval_split:     valid          # test is SEALED until April
+
+embed:
+  model: ViT-B-32
+  pretrained: openai
+  image_size: 224
+  normalize: true                # L2. Asserted by tests/test_embed.py
+  batch_size: 32
+  fp16: true
+
+index:
+  backend: qdrant
+  collection: catalog_mvb
+  metric: cosine                 # embeddings are L2-normalised; asserted by tests
+  exact: true                    # brute force. Metrics measure the embedding, not
+                                 # HNSW recall. A8 sweeps this against the ANN path.
+  hnsw:                          # ignored while exact: true, used by A8 and the service
+    m: 32
+    ef_construct: 100
+    ef_search: 64
+
+query:
+  region: full_image             # A1 sweeps: full_image | crop_00 | crop_10 | crop_15 | crop_20
+  use_ocr: false
+  use_metadata: false
+  use_fusion: false
+
+eval:
+  k: [1, 5, 10]
+  bootstrap_resamples: 1000
+  ci: 0.95
+  pool_images_to_part: max

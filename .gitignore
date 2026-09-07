@@ -1,0 +1,28 @@
+data/**
+!data/**/.gitkeep
+indexes/**
+!indexes/.gitkeep
+results/**/artifacts/
+batches/**
+!batches/.gitkeep
+*.pt
+*.faiss
+__pycache__/
+.venv/
+.env
+audit_report.json
+
+# The service is its own repository (services-management/image-search).
+# Two repos, two roles — see docs/THESIS_TRACKER.md section 1.
+image-search/
+
+# DVC pointer files must be committed even though data/** is ignored (W5)
+!data/**/*.dvc
+!data/**/.gitignore
+
+# Editor/agent scratch
+.claude/scheduled_tasks.lock
+.write_test
+
+# Thesis docs stay local
+docs/
