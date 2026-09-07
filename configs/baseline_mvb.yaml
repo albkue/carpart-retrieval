@@ -9,12 +9,17 @@ data:
   eval_split:     valid          # test is SEALED until April
 
 embed:
-  model: ViT-B-32
-  pretrained: openai
-  image_size: 224
-  normalize: true                # L2. Asserted by tests/test_embed.py
+  # ADR 001: same model, library and code path as the deployed service.
+  # The harness imports pipeline.embedding.CLIPEmbedding from $SERVICE_REPO
+  # rather than re-implementing it, so evaluated == deployed by construction.
+  backend: service
+  model: openai/clip-vit-large-patch14
+  library: transformers
+  dim: 768
+  image_size: 224                # CLIPProcessor resizes and centre-crops to this
+  normalize: true                # L2, inside CLIPEmbedding. Asserted by tests/test_embed.py
   batch_size: 32
-  fp16: true
+  fp16: false                    # CLIPEmbedding runs fp32; see ADR 001 consequences
 
 index:
   backend: qdrant
