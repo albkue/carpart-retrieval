@@ -29,4 +29,4 @@ mkdir -p data/raw/roboflow
 #     --repo-type dataset --local-dir data/raw/roboflow/drbimmer
 
 echo "Uncomment the source you want, add your key, and re-run."
-echo "Then: python scripts/audit_dataset.py data/raw/roboflow"
+echo "Then: python scripts/data/audit_dataset.py data/raw/roboflow"

@@ -1,0 +1,20 @@
+# Normalise line endings. Without this, every commit from this Windows box
+# logs "LF will be replaced by CRLF" and shell scripts can land with CRLF,
+# which breaks them under bash.
+* text=auto eol=lf
+
+# Windows-native, must keep CRLF
+*.ps1  text eol=crlf
+
+# Must stay LF or the shebang breaks
+*.sh   text eol=lf
+
+# Never touched by line-ending conversion
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.webp binary
+*.pt   binary
+*.faiss binary
+*.npy  binary
+*.parquet binary

@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Verify the ml env has everything this project needs, and that the GPU
 builds actually landed (not silently downgraded to CPU by pip). Run after
-scripts/setup_env.ps1, and any time you're not sure the env is sane.
+scripts/setup/setup_env.ps1, and any time you're not sure the env is sane.
 
-    python scripts/check_env.py
+    python scripts/setup/check_env.py
 """
 import importlib
 import sys
@@ -35,7 +35,7 @@ try:
         print("  !! torch has NO CUDA support -- you likely installed requirements.txt "
               "before running setup_env.ps1's torch step, and pip gave you the CPU "
               "wheel. Reinstall: pip uninstall torch torchvision torchaudio -y, then "
-              "re-run scripts/setup_env.ps1 in order.")
+              "re-run scripts/setup/setup_env.ps1 in order.")
 except ImportError:
     pass
 

@@ -4,7 +4,18 @@ Hybrid Multimodal Car-Part Retrieval under Real-World Capture Conditions.
 Thesis documents — contribution, milestones, gap audit, research protocol and
 dataset spec — live in `docs/` and are deliberately kept off this remote.
 
-## Where things go
+## Layout
+
+    configs/                   one YAML per experiment. Seeds live here, not in code.
+    scripts/                   thesis entrypoints — what the Makefile targets call
+    scripts/setup/             env bootstrap: setup_env.ps1, check_env.py
+    scripts/data/              acquisition, audit and raw -> interim processing
+    tests/                     assertions the protocol depends on (e.g. L2 normalisation)
+    sql/                       catalogue schema
+    docs/                      thesis documents. Local only, see the note above.
+    literature/                paper PDFs. Local only — cite them, don't redistribute.
+
+Generated or versioned outside git:
 
     data/raw/roboflow/         the 30K detection set, untouched
     data/raw/catalog_images/   catalog CSVs from juniors + downloaded product images
@@ -14,7 +25,10 @@ dataset spec — live in `docs/` and are deliberately kept off this remote.
     indexes/                   Qdrant snapshots, named with the embedding-model tag
     results/<config-hash>/     one directory per run. Never overwritten.
     batches/                   labelling batches for juniors (batches/_keys is PRIVATE)
-    configs/                   one YAML per experiment. Seeds live here, not in code.
+
+The production service is a **separate repository**
+([services-management/image-search](https://github.com/services-management/image-search)),
+cloned as a sibling of this one. Two repos, two roles: research here, service there.
 
 ## Rules that protect the thesis
 
@@ -36,8 +50,8 @@ You're on a Windows box with GPU, using conda env `ml` (Anaconda at `C:\anaconda
 
 ```
 conda activate ml
-.\scripts\setup_env.ps1              # installs torch + paddlepaddle-gpu (CUDA-matched) first, then requirements.txt
-python scripts\check_env.py          # confirms CUDA actually landed, not silently CPU
+.\scripts\setup\setup_env.ps1        # installs torch + paddlepaddle-gpu (CUDA-matched) first, then requirements.txt
+python scripts\setup\check_env.py    # confirms CUDA actually landed, not silently CPU
 ```
 
 **Order matters.** `torch` and `paddlepaddle-gpu` need CUDA-specific package indexes.
@@ -47,7 +61,7 @@ no error — you only find out when training is 10x slower than it should be. Al
 `setup_env.ps1`, not a bare `pip install -r requirements.txt`.
 
 Check your CUDA version with `nvidia-smi` (top-right of the output) before running the
-script, and pass it if it's not 12.6: `.\scripts\setup_env.ps1 -CudaTag cu128`. Note
+script, and pass it if it's not 12.6: `.\scripts\setup\setup_env.ps1 -CudaTag cu128`. Note
 PyTorch and PaddlePaddle don't support identical CUDA tag sets (torch: cu118/cu126/cu128,
 paddle: cu118/cu126/cu129) — `cu126` is the one both support, use it unless your driver
 requires newer.

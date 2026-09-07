@@ -16,7 +16,7 @@ source listing before you set verified=true in the DB -- that's still a
 you-task per DATASET_SPEC.md.
 
 Usage:
-    python scripts/catalog_from_tier1b.py data/raw/catalog_images/tier1b \
+    python scripts/data/catalog_from_tier1b.py data/raw/catalog_images/tier1b \
         --out data/raw/catalog_images/catalog_tier1b.csv \
         --source-site roboflow_tier1b --collected-by <your-name>
 """

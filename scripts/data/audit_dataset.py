@@ -13,8 +13,8 @@ base images three times over. This script is what proves (or disproves) that
 with numbers instead of a guess.
 
 Usage:
-    python scripts/audit_dataset.py data/raw/roboflow --out data/interim/audit
-    python scripts/audit_dataset.py data/raw/roboflow --sample 800   # quick pass
+    python scripts/data/audit_dataset.py data/raw/roboflow --out data/interim/audit
+    python scripts/data/audit_dataset.py data/raw/roboflow --sample 800   # quick pass
 """
 import argparse
 import csv

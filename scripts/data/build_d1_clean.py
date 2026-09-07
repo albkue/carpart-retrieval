@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Turn the messy data/raw/roboflow/ into one deduped D1 manifest.
 
-Built from what scripts/audit_dataset.py found on 3 Sep:
+Built from what scripts/data/audit_dataset.py found on 3 Sep:
   - "car parts", "car parts 50", "car-parts-1" are the same underlying
     ~8.7k-image Kaggle set three times over (car-parts-1 is a heavily
     augmented Roboflow re-export). Keep ONLY "car parts 50" (50 classes,
@@ -20,8 +20,8 @@ recropped) images are NOT collapsed here -- that's a second pass worth
 doing later at the smaller post-dedup scale, not before.
 
 Usage:
-    python scripts/build_d1_clean.py
-    python scripts/build_d1_clean.py --root data/raw/roboflow --out data/interim
+    python scripts/data/build_d1_clean.py
+    python scripts/data/build_d1_clean.py --root data/raw/roboflow --out data/interim
 """
 import argparse
 import csv

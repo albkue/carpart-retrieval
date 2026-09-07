@@ -35,4 +35,4 @@ mkdir -p data/raw/catalog_images/tier1b
 # Log anything you find in data/raw/roboflow/SOURCES.md before downloading.
 
 echo "Uncomment the download you want, add your API key, and re-run."
-echo "Then: python scripts/catalog_from_tier1b.py data/raw/catalog_images/tier1b"
+echo "Then: python scripts/data/catalog_from_tier1b.py data/raw/catalog_images/tier1b"

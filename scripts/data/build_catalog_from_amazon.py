@@ -15,7 +15,7 @@ unstated on the project site.
 
 Usage:
     pip install datasets requests --break-system-packages
-    python scripts/build_catalog_from_amazon.py \
+    python scripts/data/build_catalog_from_amazon.py \
         --n 2000 --out data/raw/catalog_images/catalog_amazon_sample.csv \
         --images-out data/raw/catalog_images/amazon --download-images
 """

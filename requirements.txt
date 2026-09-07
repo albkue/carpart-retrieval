@@ -1,6 +1,6 @@
 # Car-Part Retrieval -- pip-installable deps (safe with `pip install -r requirements.txt`).
 #
-# NOT in here, install FIRST and separately -- see scripts/setup_env.ps1:
+# NOT in here, install FIRST and separately -- see scripts/setup/setup_env.ps1:
 #   torch / torchvision / torchaudio   (needs a CUDA-specific --index-url)
 #   paddlepaddle-gpu                   (needs a CUDA-specific -i index)
 # If you `pip install -r requirements.txt` before those two, packages below
