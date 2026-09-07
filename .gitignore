@@ -18,16 +18,33 @@ literature/**
 
 # --- Model weights and index binaries ---
 *.pt
+*.pth
+*.onnx
+*.engine
+*.trt
 *.faiss
+*.index
+product_ids.json
+product_metadata.json
+index_info.json
 
 # --- Environments and caches ---
 __pycache__/
 .venv/
+venv/
 .env
+.pytest_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+*.log
 
 # --- Editor / agent scratch ---
 .claude/scheduled_tasks.lock
 .write_test
+.vscode/
+.idea/
 
 # --- Thesis docs ---
 # Excluded only because the remote is public. Delete this line once the

@@ -1,0 +1,76 @@
+name: Docker Build and Push
+
+on:
+  push:
+    tags:
+      - 'dev-v*'
+      - 'stg-v*'
+      - 'prod-v*'
+
+env:
+  REGISTRY: docker.io
+  IMAGE_NAME: reaksa7236/image-search
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to Docker Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Extract Version and Environment
+        id: extract
+        run: |
+          TAG=${GITHUB_REF#refs/tags/}
+          echo "Full Tag: $TAG"
+
+          if [[ "$TAG" == dev-v* ]]; then
+            VERSION=${TAG#dev-v}
+            echo "VERSION=$VERSION" >> "$GITHUB_OUTPUT"
+            echo "ENV=dev" >> "$GITHUB_OUTPUT"
+          elif [[ "$TAG" == stg-v* ]]; then
+            VERSION=${TAG#stg-v}
+            echo "VERSION=$VERSION" >> "$GITHUB_OUTPUT"
+            echo "ENV=stg" >> "$GITHUB_OUTPUT"
+          elif [[ "$TAG" == prod-v* ]]; then
+            VERSION=${TAG#prod-v}
+            echo "VERSION=$VERSION" >> "$GITHUB_OUTPUT"
+            echo "ENV=prod" >> "$GITHUB_OUTPUT"
+          else
+            echo "Invalid tag format: $TAG"
+            exit 1
+          fi
+
+      - name: Build and Push Docker Image
+        run: |
+          ENV=${{ steps.extract.outputs.ENV }}
+          VERSION=${{ steps.extract.outputs.VERSION }}
+          IMAGE=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+
+          if [[ "$ENV" == "dev" ]]; then
+            docker build -t "$IMAGE:dev-$VERSION" .
+            docker push "$IMAGE:dev-$VERSION"
+            docker build -t "$IMAGE:master" .
+            docker push "$IMAGE:master"
+          elif [[ "$ENV" == "stg" ]]; then
+            docker build -t "$IMAGE:stg-$VERSION" .
+            docker push "$IMAGE:stg-$VERSION"
+            docker build -t "$IMAGE:testing" .
+            docker push "$IMAGE:testing"
+          elif [[ "$ENV" == "prod" ]]; then
+            docker build -t "$IMAGE:prod-$VERSION" .
+            docker push "$IMAGE:prod-$VERSION"
+            docker build -t "$IMAGE:production" .
+            docker push "$IMAGE:production"
+          fi

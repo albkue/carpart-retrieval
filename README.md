@@ -6,14 +6,26 @@ dataset spec — live in `docs/` and are deliberately kept off this remote.
 
 ## Layout
 
+One repo, two roles: thesis research and the production service, side by side.
+
     configs/                   one YAML per experiment. Seeds live here, not in code.
-    scripts/                   thesis entrypoints — what the Makefile targets call
+    scripts/                   thesis + service entrypoints (mixed, see below)
     scripts/setup/             env bootstrap: setup_env.ps1, check_env.py
     scripts/data/              acquisition, audit and raw -> interim processing
-    tests/                     assertions the protocol depends on (e.g. L2 normalisation)
+    tests/                     thesis assertions + service unit tests (mixed)
     sql/                       catalogue schema
     docs/                      thesis documents. Local only, see the note above.
     literature/                paper PDFs. Local only — cite them, don't redistribute.
+
+Production service (FastAPI, see `SERVICE.md` for its own docs):
+
+    app/, pipeline/, search/   service source (API, detection/embedding pipeline, retrieval)
+    models/                    model weight storage (gitignored, downloaded/mounted at runtime)
+    Dockerfile, docker-compose.yaml, .dockerignore, .env.example
+    requirements-service.txt   service runtime deps (thesis deps stay in requirements.txt)
+    requirements-dev.txt       service lint/test deps
+    pytest.ini                 governs the shared tests/ tree
+    DEPLOYMENT.md, SERVICE.md  service-specific docs
 
 Generated or versioned outside git:
 
@@ -25,10 +37,6 @@ Generated or versioned outside git:
     indexes/                   Qdrant snapshots, named with the embedding-model tag
     results/<config-hash>/     one directory per run. Never overwritten.
     batches/                   labelling batches for juniors (batches/_keys is PRIVATE)
-
-The production service is a **separate repository**
-([services-management/image-search](https://github.com/services-management/image-search)),
-cloned as a sibling of this one. Two repos, two roles: research here, service there.
 
 ## Rules that protect the thesis
 

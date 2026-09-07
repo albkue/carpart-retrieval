@@ -1,0 +1,48 @@
+# ML Search Service Docker Compose
+# Run from repo root: docker-compose up -d
+
+services:
+  ml-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8001:8001"
+    env_file:
+      - .env
+    environment:
+      - MAIN_API_URL=http://host.docker.internal:8085
+      - YOLO_MODEL=hf://albkue/car-parts-yolov8/best.pt
+      # Local dev: lighter models + OCR/text-search disabled → ~700 MB RAM
+      # Production: re-enable OCR + text search, switch back to large models
+      - CLIP_MODEL=openai/clip-vit-base-patch32
+      - EMBEDDING_DIMENSION=512
+      - TEXT_MODEL=BAAI/bge-base-en-v1.5
+      - TEXT_EMBEDDING_DIMENSION=768
+      - FAISS_INDEX_PATH=/app/data/faiss_index
+      - USE_GPU=false
+      - ENABLE_OCR=false
+      - ENABLE_TEXT_SEARCH=false
+      # PaddleOCR / PaddlePaddle stability flags (prevent segfault on Linux)
+      - FLAGS_use_mkldnn=0
+      - PADDLE_NO_MKL=1
+      - KMP_DUPLICATE_LIB_OK=TRUE
+      - CUDA_VISIBLE_DEVICES=
+    mem_limit: 3g
+    mem_reservation: 1g
+    volumes:
+      - ./data:/app/data
+      - hf_cache:/root/.cache/huggingface
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    # Uncomment for GPU support
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: 1
+    #           capabilities: [gpu]
+
+volumes:
+  hf_cache:

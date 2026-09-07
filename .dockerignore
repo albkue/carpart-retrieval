@@ -1,0 +1,60 @@
+# Datasets and training outputs (large, not needed at runtime)
+ml_datasets/
+runs/
+
+# Model weights (downloaded at runtime or mounted as volume)
+models/
+*.pt
+*.pth
+*.onnx
+
+# FAISS index (mounted as volume)
+data/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Environment files
+.env
+*.env.local
+
+# IDE
+.vscode/
+.idea/
+
+# Git
+.git/
+.gitignore
+
+# Docs
+*.md
+DEPLOYMENT.md
+CODEBASE_REVIEW.md
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Tests (not needed in production image)
+tests/
+
+# --- Thesis research tree: not part of the service image ---
+docs/
+literature/
+sql/
+configs/
+batches/
+indexes/
+results/
+scripts/data/
+scripts/setup/
+.claude/

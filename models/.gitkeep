@@ -1,0 +1,2 @@
+# This directory stores downloaded model weights
+# Models are downloaded automatically on first run or during Docker build
