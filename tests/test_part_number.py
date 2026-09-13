@@ -36,3 +36,13 @@ def test_ocr_confusion_matching_only():
 
 def test_not_equivalent():
     assert not part_numbers_equivalent("13000K62B00", "13000K62B01")
+
+
+def test_extract_then_normalize_strips_separators():
+    # Imported lazily: app.api.endpoints pulls in pipeline.ocr_extractor -> paddleocr,
+    # which must be mocked first by the autouse mock_ml_models fixture (conftest.py).
+    from app.api.endpoints import extract_part_number
+
+    raw = extract_part_number("Part No: W712/80")
+    assert raw == "W712/80"
+    assert normalize_part_number(raw) == "W71280"

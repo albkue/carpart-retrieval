@@ -14,6 +14,7 @@ from pipeline.adaptive_preprocessor import AdaptivePreprocessor
 from pipeline.brand_matcher import get_brand_matcher
 from pipeline.embedding import CLIPEmbedding
 from pipeline.ocr_extractor import OCRExtractor
+from pipeline.part_number import normalize_part_number
 from pipeline.preprocessor import validate_image, validate_image_full
 from pipeline.yolo_detector import YOLOPartDetector
 from search.catalog_client import CatalogClient
@@ -336,9 +337,12 @@ async def search_by_image(
             if brand_name:
                 logger.info(f"Matched brand: {brand_name} (confidence: {brand_confidence:.2f}) from OCR: {ocr_text}")
         
-        # Extract part number (alphanumeric code like BP1234, W712/80)
+        # Extract part number (alphanumeric code like BP1234, W712/80), then
+        # normalise through the shared function (pipeline/part_number.py) so
+        # this matches the same canonical form the catalogue stores.
         part_number = extract_part_number(ocr_text)
         if part_number:
+            part_number = normalize_part_number(part_number)
             logger.info(f"Extracted part number: {part_number} from OCR: {ocr_text}")
     
     confidence = 0.0
