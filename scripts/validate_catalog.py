@@ -22,8 +22,8 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from pipeline.part_number import normalize_part_number
 from pipeline.brand_matcher import BrandMatcher
+from pipeline.part_number import normalize_part_number
 
 FIELDS = [
     "part_number_raw", "part_number", "brand", "category", "name",
@@ -106,7 +106,7 @@ def validate_row(row: dict, categories: set, brands: BrandMatcher) -> tuple:
     return clean, []
 
 
-def validate_catalog(root: Path, taxonomy_path: Path, brands_file: str = None):
+def validate_catalog(root: Path, taxonomy_path: Path, brands_file: str | None = None):
     categories = load_taxonomy(taxonomy_path)
     brands = BrandMatcher(brands_file)
 
