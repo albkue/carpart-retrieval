@@ -1,0 +1,13 @@
+[tool.ruff.lint]
+# BLE001 (blind `except Exception`) is the deliberate pattern throughout the
+# service: catch broad, log, degrade gracefully (see THESIS_TRACKER.md §3.5).
+# The tracker's own prescribed fix is failure counters/metrics, not narrowing
+# exception types -- guessing a narrower type per call site across ML/network/
+# image-processing code risks missing a real exception subtype and turning a
+# graceful degradation into a crash, for no real gain.
+ignore = ["BLE001"]
+
+[tool.ruff.lint.flake8-bugbear]
+# FastAPI's own idiom: File(...)/Query(...)/Depends(...) as a mutable-looking
+# default is how FastAPI declares the parameter, not a real mutable-default bug.
+extend-immutable-calls = ["fastapi.File"]

@@ -3,10 +3,9 @@
 This module provides functionality to merge and rank results from
 multiple search sources (catalog DB and FAISS vector search).
 """
-from typing import List, Dict, Optional
-from dataclasses import dataclass
-from collections import defaultdict
 import logging
+from collections import defaultdict
+from dataclasses import dataclass
 
 logger = logging.getLogger(__name__)
 
@@ -18,7 +17,7 @@ class SearchResult:
     score: float
     match_type: str  # 'image', 'text', 'metadata', 'hybrid'
     confidence: float
-    source_scores: Optional[Dict[str, float]] = None
+    source_scores: dict[str, float] | None = None
 
 
 class ResultMerger:
@@ -54,15 +53,15 @@ class ResultMerger:
     
     def merge(
         self,
-        catalog_results: List[Dict],
-        image_results: List[tuple],
+        catalog_results: list[dict],
+        image_results: list[tuple],
         detection_confidence: float,
         max_results: int = 20,
-        alpha: Optional[float] = None,
-        beta: Optional[float] = None,
-        gamma: Optional[float] = None,
-        text_results: Optional[List[tuple]] = None
-    ) -> List[SearchResult]:
+        alpha: float | None = None,
+        beta: float | None = None,
+        gamma: float | None = None,
+        text_results: list[tuple] | None = None
+    ) -> list[SearchResult]:
         """Merge image, text, and catalog search results.
 
         Implements  α·image_score + β·text_score + γ·meta  re-ranking.
@@ -179,13 +178,13 @@ class ResultMerger:
     
     def merge_with_diversity(
         self,
-        catalog_results: List[Dict],
-        image_results: List[tuple],
+        catalog_results: list[dict],
+        image_results: list[tuple],
         detection_confidence: float,
         max_results: int = 20,
         diversity_threshold: float = 0.8,
-        text_results: Optional[List[tuple]] = None
-    ) -> List[SearchResult]:
+        text_results: list[tuple] | None = None
+    ) -> list[SearchResult]:
         """Merge results with diversity to avoid similar products.
         
         Args:
@@ -228,9 +227,9 @@ class ResultMerger:
     
     def rerank_by_match_type(
         self,
-        results: List[SearchResult],
-        type_weights: Optional[Dict[str, float]] = None
-    ) -> List[SearchResult]:
+        results: list[SearchResult],
+        type_weights: dict[str, float] | None = None
+    ) -> list[SearchResult]:
         """Re-rank results based on match type preferences.
         
         Args:
@@ -259,9 +258,9 @@ class ResultMerger:
 
 
 def format_results_for_response(
-    results: List[SearchResult],
-    products_data: Optional[Dict[int, Dict]] = None
-) -> List[Dict]:
+    results: list[SearchResult],
+    products_data: dict[int, dict] | None = None
+) -> list[dict]:
     """Format search results for API response.
     
     Args:

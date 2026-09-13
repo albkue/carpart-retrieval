@@ -19,12 +19,11 @@ Usage:
 import argparse
 import csv
 import json
-import sys
 from collections import defaultdict
 from pathlib import Path
 
-from PIL import Image, UnidentifiedImageError
 import imagehash
+from PIL import Image, UnidentifiedImageError
 
 IMG_EXT = {".jpg", ".jpeg", ".png", ".webp", ".bmp"}
 HAMMING_DUP_THRESHOLD = 6  # <=6 bits different on a 64-bit phash ~= near-duplicate
@@ -73,7 +72,7 @@ def main():
             with Image.open(f) as im:  # re-open, verify() invalidates the handle
                 w, h = im.size
                 phash = str(imagehash.phash(im))
-        except (UnidentifiedImageError, OSError, SyntaxError) as e:
+        except (UnidentifiedImageError, OSError, SyntaxError):
             per_source[src]["corrupt"] += 1
             corrupt_files.append(str(f))
             continue

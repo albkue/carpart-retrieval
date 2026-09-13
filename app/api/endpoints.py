@@ -2,12 +2,10 @@
 import asyncio
 import logging
 import re
-from typing import Optional
-
-from fastapi import APIRouter, BackgroundTasks, File, HTTPException, Query, UploadFile
-from PIL import Image
 
 import numpy as np
+from fastapi import APIRouter, BackgroundTasks, File, HTTPException, Query, UploadFile
+from PIL import Image
 
 from app.config import settings
 from pipeline.adaptive_preprocessor import AdaptivePreprocessor
@@ -16,19 +14,21 @@ from pipeline.embedding import CLIPEmbedding
 from pipeline.ocr_extractor import OCRExtractor
 from pipeline.part_number import normalize_part_number
 from pipeline.preprocessor import validate_image, validate_image_full
+from pipeline.text_embedding import TextEmbedding
 from pipeline.yolo_detector import YOLOPartDetector
 from search.catalog_client import CatalogClient
 from search.faiss_index import FAISSIndex
 from search.merger import ResultMerger
+
 from .schemas import (
     ImageSearchQuery,
     ImageSearchResponse,
     IndexProductResponse,
     RebuildIndexResponse,
+)
+from .schemas import (
     SearchResult as SearchResultSchema,
 )
-from pipeline.text_embedding import TextEmbedding
-
 
 # Text-based part category keywords for OCR fallback
 # When YOLO doesn't detect a part, scan OCR text for these keywords
@@ -59,7 +59,7 @@ TEXT_PART_KEYWORDS = {
 }
 
 
-def extract_part_type_from_text(text: str) -> Optional[str]:
+def extract_part_type_from_text(text: str) -> str | None:
     """Extract part category from OCR text using keyword matching.
     
     Args:
@@ -78,7 +78,7 @@ def extract_part_type_from_text(text: str) -> Optional[str]:
     return None
 
 
-def extract_part_number(text: str) -> Optional[str]:
+def extract_part_number(text: str) -> str | None:
     """Extract part number from OCR text.
     
     Part numbers are typically alphanumeric codes like:
@@ -547,7 +547,7 @@ async def index_product(
             image_data = response.content
         except httpx.RequestError as e:
             logger.error(f"Error downloading image: {e}")
-            raise HTTPException(400, f"Could not download image: {str(e)}")
+            raise HTTPException(400, f"Could not download image: {e!s}")
     
     # Validate image
     image = validate_image(image_data)

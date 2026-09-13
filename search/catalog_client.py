@@ -3,9 +3,9 @@
 This module provides HTTP client for communicating with the main API
 to search the product catalog.
 """
-import httpx
-from typing import List, Dict, Optional
 import logging
+
+import httpx
 
 logger = logging.getLogger(__name__)
 
@@ -22,7 +22,7 @@ class CatalogClient:
         """
         self.base_url = base_url.rstrip("/")
         self.timeout = timeout
-        self._category_cache: Dict[str, int] = {}  # name → category_id
+        self._category_cache: dict[str, int] = {}  # name → category_id
 
         logger.info(f"CatalogClient initialized with base URL: {self.base_url}")
 
@@ -44,7 +44,7 @@ class CatalogClient:
             except Exception as e:
                 logger.warning(f"Could not load categories: {e}")
 
-    def get_category_id(self, category_name: str) -> Optional[int]:
+    def get_category_id(self, category_name: str) -> int | None:
         """Resolve category name to ID (case-insensitive).
 
         Args:
@@ -63,7 +63,7 @@ class CatalogClient:
         category_id: int,
         skip: int = 0,
         limit: int = 20,
-    ) -> List[Dict]:
+    ) -> list[dict]:
         """Search products by category ID.
 
         Args:
@@ -90,12 +90,12 @@ class CatalogClient:
 
     async def search_by_params(
         self,
-        category_id: Optional[int] = None,
-        brand: Optional[str] = None,
-        name: Optional[str] = None,
+        category_id: int | None = None,
+        brand: str | None = None,
+        name: str | None = None,
         skip: int = 0,
         limit: int = 20,
-    ) -> List[Dict]:
+    ) -> list[dict]:
         """Search products by various parameters.
 
         Args:
@@ -132,7 +132,7 @@ class CatalogClient:
     # ------------------------------------------------------------------
     # Product getters
     # ------------------------------------------------------------------
-    async def get_product(self, product_id: int) -> Optional[Dict]:
+    async def get_product(self, product_id: int) -> dict | None:
         """Get a single product by ID."""
         url = f"{self.base_url}/product/{product_id}"
 
@@ -146,7 +146,7 @@ class CatalogClient:
 
         return None
 
-    async def get_products_by_ids(self, product_ids: List[int]) -> Dict[int, Dict]:
+    async def get_products_by_ids(self, product_ids: list[int]) -> dict[int, dict]:
         """Get multiple products by IDs."""
         products = {}
         for product_id in product_ids:
@@ -159,7 +159,7 @@ class CatalogClient:
         self,
         skip: int = 0,
         limit: int = 100,
-    ) -> List[Dict]:
+    ) -> list[dict]:
         """Get all products with image URLs for indexing."""
         url = f"{self.base_url}/product/"
         params = {"skip": skip, "limit": limit}

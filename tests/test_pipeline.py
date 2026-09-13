@@ -1,9 +1,11 @@
 """Unit tests for ML Search Service Pipeline."""
+import os
+import tempfile
+
+import numpy as np
 import pytest
 from PIL import Image
-import numpy as np
-import tempfile
-import os
+
 
 # Test preprocessor
 class TestImagePreprocessor:
@@ -81,8 +83,9 @@ class TestImageValidation:
     
     def test_validate_valid_image(self):
         """Test validation of valid image bytes."""
-        from pipeline.preprocessor import validate_image
         import io
+
+        from pipeline.preprocessor import validate_image
         
         # Create a non-uniform image (noise) to pass the quality gate
         data = np.random.randint(0, 255, (400, 400, 3), dtype=np.uint8)

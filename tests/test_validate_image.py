@@ -1,9 +1,8 @@
 """Unit tests for validate_image_full() and helper functions in preprocessor.py."""
 import io
-from PIL import Image
-
 
 import numpy as np
+from PIL import Image
 
 
 def _make_noisy_array(width=640, height=640) -> np.ndarray:
@@ -125,7 +124,7 @@ class TestValidateImageFull:
         assert result.image is not None
 
     def test_file_too_large_returns_413(self):
-        from pipeline.preprocessor import validate_image_full, MAX_FILE_SIZE
+        from pipeline.preprocessor import MAX_FILE_SIZE, validate_image_full
         oversized = b"\xff\xd8\xff" + b"\x00" * (MAX_FILE_SIZE + 1)
         result = validate_image_full(oversized)
         assert result.valid is False
@@ -150,8 +149,9 @@ class TestValidateImageFull:
         assert "image_too_small" in result.error
 
     def test_large_image_auto_resized_not_rejected(self):
-        from pipeline.preprocessor import validate_image_full, MAX_DIMENSION
         import warnings
+
+        from pipeline.preprocessor import MAX_DIMENSION, validate_image_full
         # 4500x4500 exceeds MAX_DIMENSION=4096 but is within PIL's MAX_IMAGE_PIXELS
         # (5000x5000 = 25M pixels triggers DecompressionBombWarning before our code runs)
         arr = _make_noisy_array(4500, 4500)
@@ -219,8 +219,9 @@ class TestValidateImageFull:
             assert result.image.mode == "RGB"
 
     def test_exif_stripped_from_jpeg(self):
-        from pipeline.preprocessor import validate_image_full
         from PIL import Image as PILImage
+
+        from pipeline.preprocessor import validate_image_full
         # Create JPEG with EXIF data
         img = PILImage.new("RGB", (640, 640), color=(80, 90, 100))
         pixels = img.load()

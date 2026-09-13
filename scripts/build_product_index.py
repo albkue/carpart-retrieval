@@ -10,13 +10,14 @@ Usage:
     python scripts/build_product_index.py
 """
 
-import sys
-from pathlib import Path
 import logging
-import numpy as np
-from PIL import Image
-import requests
+import sys
 from io import BytesIO
+from pathlib import Path
+
+import numpy as np
+import requests
+from PIL import Image
 
 # Add project root to path
 sys.path.insert(0, str(Path(__file__).parent.parent))

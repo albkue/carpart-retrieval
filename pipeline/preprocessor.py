@@ -7,11 +7,11 @@ This module provides image preprocessing functionality including:
 - Resize with padding
 - Full validation pipeline (magic bytes, decompression bomb, EXIF strip, etc.)
 """
-from PIL import Image, ImageOps, ImageFilter, ImageEnhance, ImageStat
-import numpy as np
-from typing import Tuple, Optional
-import logging
 import io
+import logging
+
+import numpy as np
+from PIL import Image, ImageEnhance, ImageFilter, ImageOps, ImageStat
 
 logger = logging.getLogger(__name__)
 
@@ -33,8 +33,8 @@ MAX_DIMENSION = 4096
 
 class ValidationResult:
     """Result of image validation."""
-    def __init__(self, valid: bool, error: Optional[str] = None,
-                 warning: Optional[str] = None, image: Optional[Image.Image] = None,
+    def __init__(self, valid: bool, error: str | None = None,
+                 warning: str | None = None, image: Image.Image | None = None,
                  http_status: int = 400):
         self.valid = valid
         self.error = error
@@ -43,7 +43,7 @@ class ValidationResult:
         self.http_status = http_status
 
 
-def detect_format(image_bytes: bytes) -> Optional[str]:
+def detect_format(image_bytes: bytes) -> str | None:
     """Detect image format from magic bytes.
     
     Args:
@@ -80,7 +80,7 @@ def strip_exif(image: Image.Image) -> Image.Image:
         # Apply rotation from EXIF first, then strip
         image = ImageOps.exif_transpose(image)
     except Exception:
-        pass
+        logger.debug("exif_transpose failed, continuing with unrotated image", exc_info=True)
     
     # Re-save without EXIF by converting to bytes and back
     try:
@@ -92,7 +92,7 @@ def strip_exif(image: Image.Image) -> Image.Image:
         return image
 
 
-def check_image_quality(image: Image.Image) -> Optional[str]:
+def check_image_quality(image: Image.Image) -> str | None:
     """Check image quality - blank, blur, extreme brightness.
     
     Args:
@@ -191,15 +191,13 @@ def validate_image_full(image_bytes: bytes) -> ValidationResult:
             image.seek(0)
             logger.info('Multi-frame image detected, using frame 0')
     except Exception:
-        pass
-    
+        logger.debug("multi-frame seek(0) failed, using image as-is", exc_info=True)
+
     # 7 & 8. Strip EXIF and ICC profile
     image = strip_exif(image)
     
     # 9. Palette / indexed -> RGB
-    if image.mode in ('P', 'PA', 'RGBA', 'LA', 'L', '1', 'CMYK'):
-        image = image.convert('RGB')
-    elif image.mode != 'RGB':
+    if image.mode in ('P', 'PA', 'RGBA', 'LA', 'L', '1', 'CMYK') or image.mode != 'RGB':
         image = image.convert('RGB')
     
     # 10. Min/max dimensions
@@ -244,7 +242,7 @@ class ImagePreprocessor:
     
     def __init__(
         self,
-        target_size: Tuple[int, int] = (640, 640),
+        target_size: tuple[int, int] = (640, 640),
         enhance_contrast_factor: float = 1.2,
         denoise_enabled: bool = True
     ):
@@ -388,7 +386,7 @@ class ImagePreprocessor:
     def extract_roi(
         self,
         image: Image.Image,
-        bbox: Tuple[int, int, int, int]
+        bbox: tuple[int, int, int, int]
     ) -> Image.Image:
         """Extract region of interest from image.
         
@@ -403,7 +401,7 @@ class ImagePreprocessor:
         return image.crop((x1, y1, x2, y2))
 
 
-def validate_image(image_bytes: bytes) -> Optional[Image.Image]:
+def validate_image(image_bytes: bytes) -> Image.Image | None:
     """Backward-compatible wrapper. Use validate_image_full for full validation.
     
     Args:

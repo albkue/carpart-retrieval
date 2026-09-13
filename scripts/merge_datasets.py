@@ -18,7 +18,6 @@ from pathlib import Path
 
 import yaml
 
-
 # Common class name aliases for cross-dataset matching
 CLASS_ALIASES = {
     "back_bumper": "rear_bumper",

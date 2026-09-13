@@ -1,14 +1,15 @@
+import logging
 import sys
 from pathlib import Path
+
 import numpy as np
-import logging
 
 # Add project root to path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
+from app.config import settings
 from pipeline.text_embedding import TextEmbedding
 from search.faiss_index import FAISSIndex
-from app.config import settings
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)

@@ -2,11 +2,11 @@
 
 This module provides BGE-M3 based text embedding generation for semantic search.
 """
-from sentence_transformers import SentenceTransformer
-import numpy as np
-from typing import List
 import logging
+
+import numpy as np
 import torch
+from sentence_transformers import SentenceTransformer
 
 logger = logging.getLogger(__name__)
 
@@ -77,7 +77,7 @@ class TextEmbedding:
             logger.error(f"Error generating text embedding: {e}")
             raise
     
-    def encode_batch(self, texts: List[str]) -> np.ndarray:
+    def encode_batch(self, texts: list[str]) -> np.ndarray:
         """Generate embeddings for a batch of strings.
         
         Args:

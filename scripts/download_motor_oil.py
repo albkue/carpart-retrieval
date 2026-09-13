@@ -14,8 +14,9 @@ Usage:
 """
 
 import zipfile
-import requests
 from pathlib import Path
+
+import requests
 
 
 def download_from_url(url: str, output_path: str):

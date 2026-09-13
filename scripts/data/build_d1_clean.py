@@ -29,8 +29,8 @@ import json
 import random
 from pathlib import Path
 
-from PIL import Image, UnidentifiedImageError
 import imagehash
+from PIL import Image, UnidentifiedImageError
 
 IMG_EXT = {".jpg", ".jpeg", ".png", ".webp", ".bmp"}
 

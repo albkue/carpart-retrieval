@@ -3,10 +3,10 @@
 This module provides adaptive image preprocessing that adjusts parameters
 based on image characteristics (brightness, contrast, noise level).
 """
-from PIL import Image, ImageOps, ImageFilter, ImageEnhance, ImageStat
-import numpy as np
-from typing import Tuple
 import logging
+
+import numpy as np
+from PIL import Image, ImageEnhance, ImageFilter, ImageOps, ImageStat
 
 logger = logging.getLogger(__name__)
 
@@ -14,7 +14,7 @@ logger = logging.getLogger(__name__)
 class AdaptivePreprocessor:
     """Adaptive image preprocessor that adjusts settings based on image analysis."""
     
-    def __init__(self, target_size: Tuple[int, int] = (640, 640)):
+    def __init__(self, target_size: tuple[int, int] = (640, 640)):
         """Initialize the adaptive preprocessor.
         
         Args:
@@ -225,7 +225,7 @@ class AdaptivePreprocessor:
 
 
 # Backward compatibility - simple preprocessor function
-def preprocess_image(image: Image.Image, target_size: Tuple[int, int] = (640, 640)) -> np.ndarray:
+def preprocess_image(image: Image.Image, target_size: tuple[int, int] = (640, 640)) -> np.ndarray:
     """Simple preprocessing function for backward compatibility.
     
     Args:
