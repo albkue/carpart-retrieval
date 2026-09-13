@@ -21,6 +21,8 @@ paddleocr==2.9.*            # needs paddlepaddle / paddlepaddle-gpu installed fi
 # --- api / db ----------------------------------------------------------------
 fastapi==0.115.*
 uvicorn[standard]==0.32.*
+python-multipart           # required by FastAPI's File(...)/Form(...) params (app/api/endpoints.py)
+httpx                       # used by search/catalog_client.py
 pydantic-settings==2.6.*
 sqlalchemy==2.0.*
 psycopg2-binary==2.9.*
