@@ -62,7 +62,7 @@ ROBOFLOW_DATASETS = [
 def run_command(cmd, cwd=None):
     """Run a shell command."""
     print(f"Running: {cmd}")
-    result = subprocess.run(cmd, shell=True, cwd=cwd)
+    result = subprocess.run(cmd, shell=True, cwd=cwd, check=False)
     return result.returncode == 0
 
 

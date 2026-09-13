@@ -21,6 +21,8 @@ paddleocr==2.9.*            # needs paddlepaddle / paddlepaddle-gpu installed fi
 # --- api / db ----------------------------------------------------------------
 fastapi==0.115.*
 uvicorn[standard]==0.32.*
+python-multipart           # required by FastAPI's File(...)/Form(...) params (app/api/endpoints.py)
+httpx                       # used by search/catalog_client.py
 pydantic-settings==2.6.*
 sqlalchemy==2.0.*
 psycopg2-binary==2.9.*
@@ -43,6 +45,7 @@ mlflow==2.17.*
 dvc[s3]==3.56.*         # object storage remote; swap [s3] if using a different backend
 
 # --- dev / test ---------------------------------------------------------------
-pytest==8.3.*
-ruff==0.7.*
+# pytest and ruff are pinned in requirements-dev.txt only -- pinning them here
+# too made `pip install -r requirements-dev.txt` (which does `-r requirements.txt`
+# then re-pins both) an unsatisfiable conflict for pip's resolver.
 ipykernel

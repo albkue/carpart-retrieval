@@ -6,9 +6,9 @@ This module provides brand name matching from OCR text using:
 - Token-level scanning for embedded brands
 """
 import json
-import os
-from typing import Optional, List, Dict, Tuple
 import logging
+import os
+from typing import ClassVar
 
 logger = logging.getLogger(__name__)
 
@@ -31,7 +31,7 @@ class BrandMatcher:
     """Matcher for auto parts brands from OCR text."""
     
     # Default known brands with variations
-    DEFAULT_BRANDS = {
+    DEFAULT_BRANDS: ClassVar[dict[str, list[str]]] = {
         "Bosch": ["bosch", "bosh", "boch", "bosch auto parts"],
         "Mobil": ["mobil", "mobil1", "mobil 1", "mobil one"],
         "Mann": ["mann", "mann-filter", "mann filter", "mannfilter"],
@@ -69,14 +69,14 @@ class BrandMatcher:
         "Koni": ["koni", "koni shocks"],
     }
     
-    def __init__(self, brands_file: Optional[str] = None):
+    def __init__(self, brands_file: str | None = None):
         """Initialize brand matcher.
         
         Args:
             brands_file: Path to JSON file with brand definitions.
                         If None, uses DEFAULT_BRANDS.
         """
-        self.brands: Dict[str, List[str]] = {}
+        self.brands: dict[str, list[str]] = {}
         
         if brands_file and os.path.exists(brands_file):
             self._load_from_file(brands_file)
@@ -103,7 +103,7 @@ class BrandMatcher:
         except Exception as e:
             logger.error(f"Error saving brands file: {e}")
     
-    def match(self, text: str) -> Optional[str]:
+    def match(self, text: str) -> str | None:
         """Match OCR text to known brand.
         
         Args:
@@ -126,7 +126,7 @@ class BrandMatcher:
         
         return None
     
-    def match_with_confidence(self, text: str) -> Tuple[Optional[str], float]:
+    def match_with_confidence(self, text: str) -> tuple[str | None, float]:
         """Match brand with confidence score using 3-layer approach:
         1. Alias/variation exact match
         2. Token-level scan
@@ -185,7 +185,7 @@ class BrandMatcher:
         
         return None, 0.0
     
-    def add_brand(self, brand_name: str, variations: List[str]):
+    def add_brand(self, brand_name: str, variations: list[str]):
         """Add a new brand with variations.
         
         Args:
@@ -210,17 +210,17 @@ class BrandMatcher:
             return True
         return False
     
-    def get_all_brands(self) -> List[str]:
+    def get_all_brands(self) -> list[str]:
         """Get list of all brand names."""
         return list(self.brands.keys())
     
-    def get_variations(self, brand_name: str) -> List[str]:
+    def get_variations(self, brand_name: str) -> list[str]:
         """Get variations for a specific brand."""
         return self.brands.get(brand_name, [])
 
 
 # Singleton instance for reuse
-_brand_matcher: Optional[BrandMatcher] = None
+_brand_matcher: BrandMatcher | None = None
 
 
 def get_brand_matcher() -> BrandMatcher:

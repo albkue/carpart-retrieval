@@ -20,7 +20,7 @@ for mod in CHECKS:
         m = importlib.import_module(mod)
         v = getattr(m, "__version__", "?")
         print(f"  ok   {mod:<14} {v}")
-    except Exception as e:  # noqa: BLE001
+    except Exception as e:
         failed.append(mod)
         print(f"  FAIL {mod:<14} {e}")
 

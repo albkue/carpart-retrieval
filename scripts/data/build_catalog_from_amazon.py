@@ -120,7 +120,7 @@ def main():
                 resp.raise_for_status()
                 (dest / "1.jpg").write_bytes(resp.content)
                 ok += 1
-            except Exception as e:  # noqa: BLE001 -- expect dead links, keep going
+            except Exception:
                 fail += 1
         print(f"images: {ok} downloaded, {fail} failed (dead links expected -- this is normal)")
 

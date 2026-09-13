@@ -4,14 +4,16 @@ Build a test FAISS index from local dataset images.
 This lets you test the /search-by-image endpoint without the catalog API.
 """
 import os
+
 # Fix OpenMP runtime conflict on Windows
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 
+import logging
 import sys
 from pathlib import Path
+
 import numpy as np
 from PIL import Image
-import logging
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 

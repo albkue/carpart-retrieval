@@ -2,12 +2,12 @@
 
 This module provides FAISS-based vector similarity search for image embeddings.
 """
+import json
+import logging
+import os
+
 import faiss
 import numpy as np
-from typing import List, Tuple, Optional
-import json
-import os
-import logging
 
 logger = logging.getLogger(__name__)
 
@@ -34,7 +34,7 @@ class FAISSIndex:
         self.index_path = index_path
         self.index_type = index_type
         self.metric = metric
-        self.index: Optional[faiss.Index] = None
+        self.index: faiss.Index | None = None
         self.id_to_product: dict = {}
         self.product_metadata: dict = {}
         self.is_trained = False
@@ -180,7 +180,7 @@ class FAISSIndex:
     def add_embeddings(
         self,
         embeddings: np.ndarray,
-        product_ids: List[int]
+        product_ids: list[int]
     ) -> int:
         """Add embeddings to index.
         
@@ -198,10 +198,9 @@ class FAISSIndex:
         embeddings = embeddings.astype('float32')
         
         # Train if needed (for IVF)
-        if isinstance(self.index, faiss.IndexIVFFlat):
-            if not self.index.is_trained:
-                logger.warning("IVF index not trained. Training now...")
-                self.index.train(embeddings)
+        if isinstance(self.index, faiss.IndexIVFFlat) and not self.index.is_trained:
+            logger.warning("IVF index not trained. Training now...")
+            self.index.train(embeddings)
         
         start_id = self.index.ntotal
         self.index.add(embeddings)
@@ -237,7 +236,7 @@ class FAISSIndex:
         self,
         query_embedding: np.ndarray,
         k: int = 10
-    ) -> List[Tuple[int, float]]:
+    ) -> list[tuple[int, float]]:
         """Search for similar embeddings.
         
         Args:
@@ -272,7 +271,7 @@ class FAISSIndex:
         self,
         query_embeddings: np.ndarray,
         k: int = 10
-    ) -> List[List[Tuple[int, float]]]:
+    ) -> list[list[tuple[int, float]]]:
         """Search for similar embeddings in batch.
         
         Args:
@@ -331,7 +330,7 @@ class FAISSIndex:
         self,
         query_embedding: np.ndarray,
         k: int = 10
-    ) -> List[dict]:
+    ) -> list[dict]:
         """Search for similar products with full metadata.
             
         Args:

@@ -3,15 +3,17 @@
 This module provides OCR-based text extraction for brand/logo recognition.
 """
 import os
+
 # Disable OneDNN/MKL-DNN on Windows to avoid PaddleOCR crashes
 # Must be set BEFORE paddle/paddleocr is imported anywhere in the process
 os.environ["FLAGS_use_mkldnn"] = "0"
 
-from paddleocr import PaddleOCR
-from typing import List, Optional
-from dataclasses import dataclass
-import numpy as np
 import logging
+from dataclasses import dataclass
+from typing import ClassVar
+
+import numpy as np
+from paddleocr import PaddleOCR
 
 logger = logging.getLogger(__name__)
 
@@ -21,7 +23,7 @@ class OCRResult:
     """Result of OCR extraction."""
     text: str
     confidence: float
-    box: List[List[int]]
+    box: list[list[int]]
     is_brand: bool = False
 
 
@@ -29,7 +31,7 @@ class OCRExtractor:
     """OCR-based text and brand extractor."""
     
     # Known auto parts brands (expandable)
-    KNOWN_BRANDS = [
+    KNOWN_BRANDS: ClassVar[list[str]] = [
         # Major auto parts brands
         'bosch', 'denso', 'ngk', 'brembo', 'mobil', 'castrol',
         'bridgestone', 'michelin', 'continental', 'valeo',
@@ -80,7 +82,7 @@ class OCRExtractor:
             )
         return self._ocr
     
-    def extract(self, image: np.ndarray) -> Optional[OCRResult]:
+    def extract(self, image: np.ndarray) -> OCRResult | None:
         """Extract text from image.
         
         Args:
@@ -129,7 +131,7 @@ class OCRExtractor:
             logger.error(f"Error during OCR extraction: {e}")
             return None
     
-    def extract_all(self, image: np.ndarray) -> List[OCRResult]:
+    def extract_all(self, image: np.ndarray) -> list[OCRResult]:
         """Extract all text from image.
         
         Args:
@@ -167,7 +169,7 @@ class OCRExtractor:
             logger.error(f"Error during OCR extraction: {e}")
             return []
     
-    def _find_brand(self, results: List[OCRResult]) -> Optional[OCRResult]:
+    def _find_brand(self, results: list[OCRResult]) -> OCRResult | None:
         """Find brand name from OCR results.
         
         Args:
@@ -214,7 +216,7 @@ class OCRExtractor:
             self.KNOWN_BRANDS.append(brand_lower)
             logger.info(f"Added new brand: {brand}")
     
-    def get_known_brands(self) -> List[str]:
+    def get_known_brands(self) -> list[str]:
         """Get list of known brands.
         
         Returns:

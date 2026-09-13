@@ -2,11 +2,12 @@
 
 This module provides YOLOv8-based object detection for auto parts.
 """
-from ultralytics import YOLO
-from typing import List, Optional
-from dataclasses import dataclass
-import numpy as np
 import logging
+from dataclasses import dataclass
+from typing import ClassVar
+
+import numpy as np
+from ultralytics import YOLO
 
 logger = logging.getLogger(__name__)
 
@@ -16,7 +17,7 @@ class DetectionResult:
     """Result of part detection."""
     part_type: str
     confidence: float
-    bbox: List[int]  # [x1, y1, x2, y2]
+    bbox: list[int]  # [x1, y1, x2, y2]
     class_name: str = ""
 
 
@@ -25,7 +26,7 @@ class YOLOPartDetector:
     
     # Auto parts categories mapping
     # Maps YOLO class names to auto part categories
-    AUTO_PARTS_CATEGORIES = {
+    AUTO_PARTS_CATEGORIES: ClassVar[dict[str, list[str]]] = {
         # Body / Exterior (classes 0-12 + 58, 60, 62)
         'bumper': ['front_bumper', 'rear_bumper'],
         'hood': ['hood'],
@@ -93,7 +94,7 @@ class YOLOPartDetector:
             self._model = YOLO(self.model_path)
         return self._model
     
-    def detect(self, image: np.ndarray) -> Optional[DetectionResult]:
+    def detect(self, image: np.ndarray) -> DetectionResult | None:
         """Detect auto part in image.
         
         Args:
@@ -163,7 +164,7 @@ class YOLOPartDetector:
             logger.error(f"Error during detection: {e}")
             return None
     
-    def detect_all(self, image: np.ndarray, top_k: int = 5) -> List[DetectionResult]:
+    def detect_all(self, image: np.ndarray, top_k: int = 5) -> list[DetectionResult]:
         """Detect all auto parts in image.
         
         Args:
@@ -241,7 +242,7 @@ class YOLOPartDetector:
         
         return "unknown"
     
-    def get_supported_categories(self) -> List[str]:
+    def get_supported_categories(self) -> list[str]:
         """Get list of supported auto part categories.
         
         Returns:

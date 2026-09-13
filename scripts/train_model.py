@@ -18,6 +18,7 @@ Usage:
 import argparse
 import os
 
+
 def train_model(args):
     """Train the YOLO model."""
     from ultralytics import YOLO

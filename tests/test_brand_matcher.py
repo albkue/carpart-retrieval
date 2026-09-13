@@ -1,8 +1,9 @@
 """Unit tests for BrandMatcher — 3-layer matching logic."""
-import pytest
 import json
-import tempfile
 import os
+import tempfile
+
+import pytest
 
 
 class TestBrandMatcherInit:
@@ -185,7 +186,7 @@ class TestLayer3FuzzyMatch:
         from pipeline.brand_matcher import BrandMatcher
         matcher = BrandMatcher()
         # "NGl<" — common OCR misread of K as l<
-        brand, conf = matcher.match_with_confidence("NGl<")
+        brand, _conf = matcher.match_with_confidence("NGl<")
         # Fuzzy should still match NGK
         assert brand == "NGK" or brand is None  # None is acceptable if score < threshold
 
@@ -214,7 +215,7 @@ class TestBrandManagement:
         from pipeline.brand_matcher import BrandMatcher
         matcher = BrandMatcher()
         matcher.add_brand("CustomBrand", ["custombrand"])
-        brand, conf = matcher.match_with_confidence("custombrand filter")
+        brand, _conf = matcher.match_with_confidence("custombrand filter")
         assert brand == "CustomBrand"
 
     def test_remove_brand_succeeds(self):
@@ -274,6 +275,6 @@ class TestSingleton:
         assert instance1 is instance2
 
     def test_singleton_is_brand_matcher(self):
-        from pipeline.brand_matcher import get_brand_matcher, BrandMatcher
+        from pipeline.brand_matcher import BrandMatcher, get_brand_matcher
         instance = get_brand_matcher()
         assert isinstance(instance, BrandMatcher)

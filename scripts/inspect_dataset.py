@@ -1,9 +1,10 @@
 #!/usr/bin/env python
 """Inspect combined_car_parts dataset — sample images from each class."""
 
-import shutil
 import random
+import shutil
 from pathlib import Path
+
 import yaml
 
 

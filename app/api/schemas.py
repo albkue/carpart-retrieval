@@ -1,20 +1,20 @@
 """Request and response schemas for ML Search Service."""
-from typing import List, Optional
+
 from pydantic import BaseModel
 
 
 class ImageSearchQuery(BaseModel):
     """Query parameters extracted from image."""
-    part_type: Optional[str] = None
-    brand_name: Optional[str] = None
-    part_number: Optional[str] = None
+    part_type: str | None = None
+    brand_name: str | None = None
+    part_number: str | None = None
     confidence: float = 0.0
 
 
 class SearchResult(BaseModel):
     """Single search result."""
     product_id: int
-    name: Optional[str] = None
+    name: str | None = None
     score: float
     match_type: str  # 'image', 'text', 'metadata', 'hybrid'
 
@@ -22,8 +22,8 @@ class SearchResult(BaseModel):
 class ImageSearchResponse(BaseModel):
     """Response from image search endpoint."""
     query: ImageSearchQuery
-    results: List[SearchResult]
-    message: Optional[str] = None  # Warning or info message for user
+    results: list[SearchResult]
+    message: str | None = None  # Warning or info message for user
 
 
 class IndexProductRequest(BaseModel):
@@ -41,4 +41,4 @@ class IndexProductResponse(BaseModel):
 class RebuildIndexResponse(BaseModel):
     """Response from rebuild index endpoint."""
     status: str
-    message: Optional[str] = None
+    message: str | None = None

@@ -2,12 +2,12 @@
 
 This module provides CLIP-based image embedding generation for similarity search.
 """
-from transformers import CLIPProcessor, CLIPModel
-from PIL import Image
-import numpy as np
-from typing import List, Union
 import logging
+
+import numpy as np
 import torch
+from PIL import Image
+from transformers import CLIPModel, CLIPProcessor
 
 logger = logging.getLogger(__name__)
 
@@ -64,7 +64,7 @@ class CLIPEmbedding:
             self._processor = CLIPProcessor.from_pretrained(self.model_name)
         return self._processor
     
-    def encode_image(self, image: Union[Image.Image, np.ndarray]) -> np.ndarray:
+    def encode_image(self, image: Image.Image | np.ndarray) -> np.ndarray:
         """Generate embedding for a single image.
         
         Args:
@@ -94,7 +94,7 @@ class CLIPEmbedding:
             logger.error(f"Error generating image embedding: {e}")
             raise
     
-    def encode_images(self, images: List[Union[Image.Image, np.ndarray]]) -> np.ndarray:
+    def encode_images(self, images: list[Image.Image | np.ndarray]) -> np.ndarray:
         """Generate embeddings for a batch of images.
         
         Args:
@@ -154,7 +154,7 @@ class CLIPEmbedding:
             logger.error(f"Error generating text embedding: {e}")
             raise
     
-    def encode_texts(self, texts: List[str]) -> np.ndarray:
+    def encode_texts(self, texts: list[str]) -> np.ndarray:
         """Generate embeddings for multiple texts.
         
         Args:

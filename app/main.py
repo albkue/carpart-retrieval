@@ -1,19 +1,21 @@
 import os
+
 # Disable OneDNN/MKL on Windows before any paddle/paddleocr imports
 os.environ["FLAGS_use_mkldnn"] = "0"
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 
 """ML Search Service - Main Application Entry Point."""
-from collections import defaultdict  # noqa: E402
-from fastapi import FastAPI, Request  # noqa: E402
-from fastapi.middleware.cors import CORSMiddleware  # noqa: E402
-from fastapi.responses import JSONResponse  # noqa: E402
-from contextlib import asynccontextmanager  # noqa: E402
-import logging  # noqa: E402
-import time  # noqa: E402
+import logging
+import time
+from collections import defaultdict
+from contextlib import asynccontextmanager
 
-from .config import settings  # noqa: E402
-from .api.endpoints import router  # noqa: E402
+from fastapi import FastAPI, Request
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
+
+from .api.endpoints import router
+from .config import settings
 
 # Configure logging
 logging.basicConfig(
@@ -114,12 +116,11 @@ async def rate_limit_middleware(request: Request, call_next):
 # Skips check if API_KEY is not configured (open mode for local dev)
 @app.middleware("http")
 async def api_key_middleware(request: Request, call_next):
-    if settings.API_KEY:
-        # /health and / are always public
-        if request.url.path not in ("/health", "/", "/docs", "/redoc", "/openapi.json"):
-            key = request.headers.get("X-API-Key")
-            if key != settings.API_KEY:
-                return JSONResponse(status_code=401, content={"detail": "Invalid or missing API key"})
+    # /health and / are always public
+    if settings.API_KEY and request.url.path not in ("/health", "/", "/docs", "/redoc", "/openapi.json"):
+        key = request.headers.get("X-API-Key")
+        if key != settings.API_KEY:
+            return JSONResponse(status_code=401, content={"detail": "Invalid or missing API key"})
     return await call_next(request)
 
 # Include API routes
