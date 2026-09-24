@@ -3,6 +3,8 @@ name: baseline_mvb
 seed: 42
 
 data:
+  # catalog_images / query_images feed the split builder (W4). The harness
+  # reads image paths from split_manifest only.
   catalog_images: data/processed/catalog
   query_images:   data/processed/query
   split_manifest: data/processed/splits_v1.json
