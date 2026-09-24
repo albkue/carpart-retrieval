@@ -48,7 +48,7 @@ YOLO_MODEL=hf://albkue/car-parts-yolov8/best.pt
 CLIP_MODEL=openai/clip-vit-large-patch14
 YOLO_CONFIDENCE_THRESHOLD=0.5
 OCR_CONFIDENCE_THRESHOLD=0.6
-FAISS_INDEX_PATH=/app/data/faiss_index
+QDRANT_URL=http://qdrant:6333
 USE_GPU=false
 CORS_ORIGINS=*
 MAIN_API_URL=https://backend-url-from-senior    ← fill this in
@@ -68,20 +68,25 @@ cd ml_service
 docker-compose up -d
 ```
 
+Brings up the service and the Qdrant vector store together.
+
 **Option B — plain Docker**
 
 ```bash
+docker network create carparts
+docker run -d --name qdrant --network carparts \
+  -v qdrant_data:/qdrant/storage qdrant/qdrant:v1.12.6
 docker build -t car-parts-ml .
-docker run -d \
+docker run -d --network carparts \
   --env-file .env \
+  -e QDRANT_URL=http://qdrant:6333 \
   -p 8001:8001 \
-  -v faiss_data:/app/data \
   car-parts-ml
 ```
 
 ---
 
-## Step 5 — Build the FAISS Search Index
+## Step 5 — Build the Search Index
 
 Run this once after the container is up (rebuilds the product search index from the backend):
 
@@ -115,9 +120,10 @@ All endpoints under `/api/v1/` require the `X-API-Key` header.
 |--------|----------|---------|
 | GET | `/health` | Check service is live |
 | POST | `/api/v1/search-by-image` | Search products by image |
-| POST | `/api/v1/rebuild-index` | Rebuild FAISS index from backend |
+| POST | `/api/v1/rebuild-index` | Rebuild the vector index from backend |
 | POST | `/api/v1/index-product` | Add single product to index |
-| GET | `/api/v1/index/stats` | FAISS index statistics |
+| DELETE | `/api/v1/index-product/{id}` | Remove a product from the index |
+| GET | `/api/v1/index/stats` | Vector index statistics |
 | GET | `/api/v1/brands` | List known brands |
 | GET | `/api/v1/categories` | List supported part categories |
 | GET | `/api/v1/health/catalog` | Check backend connection |
@@ -155,7 +161,7 @@ huggingface-cli upload albkue/car-parts-yolov8 runs/detect/car_parts_v1/weights/
 # Restart the container to pick up new weights
 docker-compose restart
 
-# Rebuild FAISS index if product catalog changed
+# Rebuild the vector index if product catalog changed
 curl -X POST http://server-url:8001/api/v1/rebuild-index \
   -H "X-API-Key: your-generated-key-here"
 ```
@@ -167,4 +173,4 @@ curl -X POST http://server-url:8001/api/v1/rebuild-index \
 - Never commit `.env` — it contains real secrets
 - `API_KEY` is optional for local dev — leave it empty to skip auth
 - Cold start downloads ~2.4 GB of models (YOLO + CLIP + BGE-M3 + PaddleOCR) — allow 5–10 min on first run
-- `data/` volume persists the FAISS index across container restarts
+- The `qdrant_data` volume persists the vector index across container restarts

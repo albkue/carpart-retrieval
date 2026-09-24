@@ -2,7 +2,7 @@
 """
 Hybrid Product Index Builder (Image + Text)
 
-This script builds dual FAISS indices for the Hybrid Search Pipeline:
+This script builds dual Qdrant collections for the Hybrid Search Pipeline:
 1. Image Index (CLIP ViT-L/14, 768-dim)
 2. Text Index (BGE-M3, 1024-dim)
 
@@ -25,33 +25,29 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 from app.config import settings
 from pipeline.embedding import CLIPEmbedding
 from pipeline.text_embedding import TextEmbedding
-from search.faiss_index import FAISSIndex
+from search.qdrant_index import QdrantIndex
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
 class HybridIndexBuilder:
     def __init__(self):
-        # Paths
-        self.image_index_path = Path(settings.FAISS_INDEX_PATH) / "image"
-        self.text_index_path = Path(settings.FAISS_INDEX_PATH) / "text"
-        
         # Initialize Models
         logger.info("Initializing ML Models (this may take a while)...")
         self.clip_embedder = CLIPEmbedding(settings.CLIP_MODEL, settings.USE_GPU)
         self.text_embedder = TextEmbedding(settings.TEXT_MODEL, settings.USE_GPU)
         
         # Initialize Indices
-        self.image_index = FAISSIndex(
+        self.image_index = QdrantIndex(
             dimension=settings.EMBEDDING_DIMENSION,
-            index_path=str(self.image_index_path),
-            index_type="hnsw",
+            collection=settings.QDRANT_IMAGE_COLLECTION,
+            url=settings.QDRANT_URL,
             metric="l2"
         )
-        self.text_index = FAISSIndex(
+        self.text_index = QdrantIndex(
             dimension=settings.TEXT_EMBEDDING_DIMENSION,
-            index_path=str(self.text_index_path),
-            index_type="hnsw",
+            collection=settings.QDRANT_TEXT_COLLECTION,
+            url=settings.QDRANT_URL,
             metric="inner_product"
         )
 
@@ -83,7 +79,7 @@ class HybridIndexBuilder:
         image_embeddings = []
         text_embeddings = []
         product_ids = []
-        metadata = {}
+        payloads = []
 
         for i, p in enumerate(products):
             pid = p['product_id']
@@ -106,27 +102,25 @@ class HybridIndexBuilder:
                     text_embeddings.append(txt_emb)
                     
                     product_ids.append(pid)
-                    metadata[pid] = {
+                    payloads.append({
                         "name": name,
                         "category": p.get("category_name"),
                         "price": p.get("selling_price")
-                    }
+                    })
                 except Exception as e:
                     logger.error(f"Error embedding product {pid}: {e}")
 
         # Save Image Index
         if image_embeddings:
-            logger.info("Saving Image FAISS Index...")
-            self.image_index.add_embeddings(np.array(image_embeddings), product_ids)
-            self.image_index.product_metadata = metadata
-            self.image_index.save_index()
+            logger.info("Writing image collection...")
+            self.image_index.clear()
+            self.image_index.add_embeddings(np.array(image_embeddings), product_ids, payloads)
 
         # Save Text Index
         if text_embeddings:
-            logger.info("Saving Text FAISS Index...")
-            self.text_index.add_embeddings(np.array(text_embeddings), product_ids)
-            self.text_index.product_metadata = metadata
-            self.text_index.save_index()
+            logger.info("Writing text collection...")
+            self.text_index.clear()
+            self.text_index.add_embeddings(np.array(text_embeddings), product_ids, payloads)
 
         logger.info("Hybrid Indexing Complete!")
 

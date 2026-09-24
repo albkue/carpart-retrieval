@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-Build a test FAISS index from local dataset images.
+Build a test vector index from local dataset images.
 This lets you test the /search-by-image endpoint without the catalog API.
 """
 import os
@@ -19,7 +19,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from app.config import settings
 from pipeline.embedding import CLIPEmbedding
-from search.faiss_index import FAISSIndex
+from search.qdrant_index import QdrantIndex
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger(__name__)
@@ -40,17 +40,17 @@ def build_test_index(image_dir: str = "ml_datasets/images/test", max_images: int
     logger.info(f"Indexing {len(image_files)} images from {image_dir}...")
 
     embedder = CLIPEmbedding(settings.CLIP_MODEL, use_gpu=False)
-    index = FAISSIndex(
+    index = QdrantIndex(
         dimension=settings.EMBEDDING_DIMENSION,
-        index_path=str(Path(settings.FAISS_INDEX_PATH) / "image"),
-        index_type="hnsw",
+        collection=settings.QDRANT_IMAGE_COLLECTION,
+        url=settings.QDRANT_URL,
         metric="l2",
     )
-    index.create_index()
+    index.clear()
 
     embeddings = []
     product_ids = []
-    metadata = {}
+    payloads = []
 
     for i, img_path in enumerate(image_files):
         try:
@@ -60,17 +60,15 @@ def build_test_index(image_dir: str = "ml_datasets/images/test", max_images: int
 
             pid = i
             product_ids.append(pid)
-            metadata[pid] = {"name": img_path.name, "category": "test", "price": 0}
+            payloads.append({"name": img_path.name, "category": "test", "price": 0})
 
             logger.info(f"[{i+1}/{len(image_files)}] Indexed: {img_path.name}")
         except Exception as e:
             logger.warning(f"Failed to index {img_path.name}: {e}")
 
     if embeddings:
-        index.add_embeddings(np.array(embeddings), product_ids)
-        index.product_metadata = metadata
-        index.save_index()
-        logger.info(f"Test index saved! {len(embeddings)} images indexed.")
+        index.add_embeddings(np.array(embeddings), product_ids, payloads)
+        logger.info(f"Test index built! {len(embeddings)} images indexed.")
     else:
         logger.warning("No images were indexed.")
 

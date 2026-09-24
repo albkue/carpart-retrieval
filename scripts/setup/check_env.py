@@ -10,7 +10,7 @@ import sys
 
 CHECKS = [
     "torch", "torchvision", "ultralytics", "open_clip", "FlagEmbedding",
-    "faiss", "paddleocr", "paddle", "fastapi", "uvicorn", "sqlalchemy",
+    "qdrant_client", "paddleocr", "paddle", "fastapi", "uvicorn", "sqlalchemy",
     "psycopg2", "alembic", "cv2", "PIL", "imagehash", "yaml", "mlflow", "dvc",
 ]
 

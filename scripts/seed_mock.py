@@ -9,19 +9,13 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from app.config import settings
 from pipeline.text_embedding import TextEmbedding
-from search.faiss_index import FAISSIndex
+from search.qdrant_index import QdrantIndex
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
 def seed_mock_data():
-    # 1. Setup Directories
-    image_dir = Path(settings.FAISS_INDEX_PATH) / "image"
-    text_dir = Path(settings.FAISS_INDEX_PATH) / "text"
-    image_dir.mkdir(parents=True, exist_ok=True)
-    text_dir.mkdir(parents=True, exist_ok=True)
-
-    # 2. Define Sample Products
+    # 1. Define Sample Products
     products = [
         {
             "id": 101,
@@ -46,7 +40,7 @@ def seed_mock_data():
         }
     ]
 
-    # 3. Initialize Text Embedder (Real BGE-M3)
+    # 2. Initialize Text Embedder (Real BGE-M3)
     logger.info("Initializing BGE-M3 for realistic text seeding...")
     text_model = TextEmbedding(settings.TEXT_MODEL, use_gpu=False)
     
@@ -56,28 +50,26 @@ def seed_mock_data():
     logger.info("Generating text embeddings...")
     text_embeddings = text_model.encode_batch(text_inputs)
 
-    # 4. Generate Mock Image Embeddings (Random for now)
+    # 3. Generate Mock Image Embeddings (Random for now)
     logger.info("Generating mock image embeddings (768-dim)...")
     image_embeddings = np.random.randn(len(products), 768).astype('float32')
+    image_embeddings /= np.linalg.norm(image_embeddings, axis=1, keepdims=True)
 
-    # 5. Create and Save Text Index
-    logger.info("Saving Text Index...")
-    txt_idx = FAISSIndex(dimension=1024, index_path=str(text_dir), metric="inner_product")
-    txt_idx.create_index()
-    txt_idx.add_embeddings(text_embeddings, product_ids)
-    
-    # Add metadata
-    metadata = {p['id']: {"name": p['name'], "brand": p['brand'], "category": p['category']} for p in products}
-    txt_idx.product_metadata = metadata
-    txt_idx.save_index()
+    payloads = [{"name": p['name'], "brand": p['brand'], "category": p['category']} for p in products]
 
-    # 6. Create and Save Image Index
-    logger.info("Saving Image Index...")
-    img_idx = FAISSIndex(dimension=768, index_path=str(image_dir), metric="l2")
-    img_idx.create_index()
-    img_idx.add_embeddings(image_embeddings, product_ids)
-    img_idx.product_metadata = metadata
-    img_idx.save_index()
+    # 4. Write Text Collection
+    logger.info("Writing text collection...")
+    txt_idx = QdrantIndex(dimension=1024, collection=settings.QDRANT_TEXT_COLLECTION,
+                          url=settings.QDRANT_URL, metric="inner_product")
+    txt_idx.clear()
+    txt_idx.add_embeddings(text_embeddings, product_ids, payloads)
+
+    # 5. Write Image Collection
+    logger.info("Writing image collection...")
+    img_idx = QdrantIndex(dimension=768, collection=settings.QDRANT_IMAGE_COLLECTION,
+                          url=settings.QDRANT_URL, metric="l2")
+    img_idx.clear()
+    img_idx.add_embeddings(image_embeddings, product_ids, payloads)
 
     logger.info("="*50)
     logger.info("✅ SUCCESS: Mock data seeded!")
