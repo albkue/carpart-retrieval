@@ -97,6 +97,8 @@ def check_config(cfg: dict):
     query = cfg["query"]
     if query["region"] != "full_image":
         raise SystemExit(f"query.region {query['region']} arrives with the W4 crop variants")
+    if not isinstance(query.get("preprocess"), bool):
+        raise SystemExit("query.preprocess must be set to true or false")
     for flag in ("use_ocr", "use_metadata", "use_fusion"):
         if query.get(flag):
             raise SystemExit(f"query.{flag} is not implemented in the harness yet")
@@ -129,15 +131,25 @@ def _embedder(model: str):
     return CLIPEmbedding(model, use_gpu=torch.cuda.is_available())
 
 
-def embed_images(paths: list[str], cfg: dict) -> np.ndarray:
-    """Embed with the service's own CLIPEmbedding (ADR 001): evaluated == deployed."""
+def embed_images(paths: list[str], cfg: dict, preprocess: bool = False) -> np.ndarray:
+    """Embed with the service's own CLIPEmbedding (ADR 001): evaluated == deployed.
+
+    ``preprocess`` runs the service's AdaptivePreprocessor first, as
+    /search/image does for queries. Catalogue images are indexed raw by the
+    service, so the caller passes it for queries only.
+    """
     from PIL import Image
 
     embedder = _embedder(cfg["embed"]["model"])
+    if preprocess:
+        from pipeline.adaptive_preprocessor import AdaptivePreprocessor
+        preprocessor = AdaptivePreprocessor()
     batch = cfg["embed"]["batch_size"]
     out = []
     for start in range(0, len(paths), batch):
         images = [Image.open(REPO / p).convert("RGB") for p in paths[start:start + batch]]
+        if preprocess:
+            images = [Image.fromarray(preprocessor.preprocess(im)) for im in images]
         out.append(embedder.encode_images(images))
         logger.info(f"embedded {min(start + batch, len(paths))}/{len(paths)}")
     return np.concatenate(out)
@@ -223,7 +235,7 @@ def run(cfg: dict, results_root: Path, qdrant_url: str) -> Path:
     logger.info(f"{len(catalog)} catalogue images, {len(queries)} queries ({cfg['data']['eval_split']})")
 
     cat_emb = embed_images([e["image"] for e in catalog], cfg)
-    query_emb = embed_images([q["image"] for q in queries], cfg)
+    query_emb = embed_images([q["image"] for q in queries], cfg, preprocess=cfg["query"]["preprocess"])
     for name, emb in (("catalogue", cat_emb), ("query", query_emb)):
         if emb.shape[1] != cfg["embed"]["dim"]:
             raise SystemExit(f"{name} embeddings are {emb.shape[1]}d, config says {cfg['embed']['dim']}")

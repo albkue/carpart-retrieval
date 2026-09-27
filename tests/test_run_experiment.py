@@ -38,6 +38,7 @@ def _base_config():
     (("data", "eval_split"), "test"),
     (("query", "region"), "crop_10"),
     (("query", "use_ocr"), True),
+    (("query", "preprocess"), None),
 ])
 def test_config_guards(path, value):
     cfg = _base_config()
@@ -64,7 +65,7 @@ def test_full_run_writes_immutable_results(tmp_path, monkeypatch):
     (tmp_path / "split.json").write_text(json.dumps(split))
     monkeypatch.setattr(rx, "REPO", tmp_path)
 
-    def fake_embed(paths, cfg):
+    def fake_embed(paths, cfg, preprocess=False):
         # One direction per part plus small per-image noise: every query's
         # nearest part is its own.
         rng = np.random.default_rng(0)
@@ -96,3 +97,23 @@ def test_unverified_catalogue_entry_is_refused(tmp_path, monkeypatch):
     monkeypatch.setattr(rx, "REPO", tmp_path)
     with pytest.raises(SystemExit, match="verified=false"):
         rx.load_split(rx.load_config(CONFIG, "split.json"))
+
+
+def test_preprocess_applies_the_service_preprocessor(tmp_path, monkeypatch):
+    from PIL import Image
+
+    Image.new("RGB", (300, 200), "white").save(tmp_path / "q.jpg")
+    monkeypatch.setattr(rx, "REPO", tmp_path)
+    seen = []
+
+    class FakeEmbedder:
+        def encode_images(self, images):
+            seen.extend(im.size for im in images)
+            return np.zeros((len(images), 768))
+
+    monkeypatch.setattr(rx, "_embedder", lambda model: FakeEmbedder())
+    cfg = _base_config()
+    rx.embed_images(["q.jpg"], cfg)
+    rx.embed_images(["q.jpg"], cfg, preprocess=True)
+    # Raw image passes through; preprocessed one is the service's 640x640 letterbox.
+    assert seen == [(300, 200), (640, 640)]
