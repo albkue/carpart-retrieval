@@ -1,0 +1,40 @@
+name: baseline_mvb
+seed: 42
+data:
+  catalog_images: data/processed/catalog
+  query_images: data/processed/query
+  split_manifest: data/processed/splits_toy.json
+  eval_split: valid
+  split_sha256: fcef4c1d30cff648f3f1f45af9d362792e22d19449508594ae765d3c5c698ba7
+embed:
+  backend: service
+  model: openai/clip-vit-large-patch14
+  library: transformers
+  dim: 768
+  image_size: 224
+  normalize: true
+  batch_size: 32
+  fp16: false
+index:
+  backend: qdrant
+  collection: catalog_mvb
+  metric: cosine
+  exact: true
+  hnsw:
+    m: 32
+    ef_construct: 100
+    ef_search: 64
+query:
+  region: full_image
+  preprocess: false
+  use_ocr: false
+  use_metadata: false
+  use_fusion: false
+eval:
+  k:
+  - 1
+  - 5
+  - 10
+  bootstrap_resamples: 1000
+  ci: 0.95
+  pool_images_to_part: max

@@ -1,7 +1,4 @@
 """Unit tests for ML Search Service Pipeline."""
-import os
-import tempfile
-
 import numpy as np
 import pytest
 from PIL import Image
@@ -240,88 +237,81 @@ class TestCLIPEmbedding:
         assert abs(norm - 1.0) < 0.01  # Should be approximately normalized
 
 
-class TestFAISSIndex:
-    """Tests for FAISSIndex class."""
-    
-    def test_faiss_initialization(self):
-        """Test FAISS index initialization."""
-        from search.faiss_index import FAISSIndex
-        
-        index = FAISSIndex(dimension=512)
-        
-        assert index.dimension == 512
-        assert index.index is None
-    
-    def test_create_flat_index(self):
-        """Test creating a flat index."""
-        from search.faiss_index import FAISSIndex
-        
-        index = FAISSIndex(dimension=512, index_type="flat")
-        index.create_index()
-        
-        assert index.index is not None
-    
+class TestQdrantIndex:
+    """Tests for QdrantIndex against an in-process store (no container needed)."""
+
+    @staticmethod
+    def _index(**kwargs):
+        from search.qdrant_index import QdrantIndex
+        return QdrantIndex(dimension=8, collection="test", url=":memory:", **kwargs)
+
+    @staticmethod
+    def _unit(n, seed=0):
+        v = np.random.default_rng(seed).standard_normal((n, 8)).astype("float32")
+        return v / np.linalg.norm(v, axis=1, keepdims=True)
+
+    def test_empty_stats(self):
+        assert self._index().get_stats()["status"] == "empty"
+
     def test_add_and_search(self):
-        """Test adding embeddings and searching."""
-        from search.faiss_index import FAISSIndex
-        
-        index = FAISSIndex(dimension=512)
-        index.create_index()
-        
-        # Add some embeddings
-        embeddings = np.random.randn(5, 512).astype('float32')
-        product_ids = [1, 2, 3, 4, 5]
-        
-        index.add_embeddings(embeddings, product_ids)
-        
-        # Search with first embedding
-        query = embeddings[0]
-        results = index.search(query, k=3)
-        
-        assert len(results) > 0
-        assert results[0][0] == 1  # First result should be product_id 1
-    
-    def test_get_stats(self):
-        """Test getting index statistics."""
-        from search.faiss_index import FAISSIndex
-        
-        index = FAISSIndex(dimension=512)
+        index = self._index()
+        vectors = self._unit(5)
+        index.add_embeddings(vectors, [1, 2, 3, 4, 5])
+
+        results = index.search(vectors[0], k=3)
+
+        assert results[0][0] == 1
+        assert isinstance(results[0][0], int)
+        assert results[0][1] == pytest.approx(1.0, abs=1e-4)  # l2 scale: 1/(1+0)
+
+    def test_exact_search_matches_hnsw_on_small_index(self):
+        index = self._index()
+        vectors = self._unit(20)
+        index.add_embeddings(vectors, list(range(20)))
+
+        assert index.search(vectors[3], k=5, exact=True) == index.search(vectors[3], k=5)
+
+    def test_remove_product_is_a_real_delete(self):
+        index = self._index()
+        vectors = self._unit(3)
+        # Product 7 has two images; both must go.
+        index.add_embeddings(vectors, [7, 7, 8])
+
+        assert index.remove_product(7) is True
+        assert index.count() == 1
+        assert all(pid != 7 for pid, _ in index.search(vectors[0], k=3))
+        assert index.remove_product(7) is False
+
+    def test_category_prefilter(self):
+        index = self._index(metric="cosine")
+        vectors = self._unit(4)
+        index.add_embeddings(
+            vectors, [1, 2, 3, 4],
+            [{"category": "oil_filter"}, {"category": "spark_plug"}] * 2,
+        )
+
+        results = index.search(vectors[1], k=4, filters={"category": "oil_filter"})
+
+        assert {pid for pid, _ in results} == {1, 3}
+
+    def test_stats_count_unique_products(self):
+        index = self._index()
+        index.add_embeddings(self._unit(3), [10, 10, 20])
+
         stats = index.get_stats()
-        
-        assert "status" in stats
-        assert stats["status"] == "empty"
-        
-        # Add some data
-        index.create_index()
-        embeddings = np.random.randn(3, 512).astype('float32')
-        index.add_embeddings(embeddings, [1, 2, 3])
-        
-        stats = index.get_stats()
-        
+
         assert stats["status"] == "ready"
         assert stats["total_vectors"] == 3
-    
-    def test_save_and_load_index(self):
-        """Test saving and loading index."""
-        from search.faiss_index import FAISSIndex
-        
-        with tempfile.TemporaryDirectory() as tmpdir:
-            index_path = os.path.join(tmpdir, "test_index")
-            
-            # Create and add embeddings
-            index = FAISSIndex(dimension=512, index_path=index_path)
-            index.create_index()
-            embeddings = np.random.randn(3, 512).astype('float32')
-            index.add_embeddings(embeddings, [10, 20, 30])
-            index.save_index()
-            
-            # Load in new instance
-            new_index = FAISSIndex(dimension=512, index_path=index_path)
-            success = new_index.load_index()
-            
-            assert success is True
-            assert new_index.index is not None
-            assert new_index.index.ntotal == 3
+        assert stats["unique_products"] == 2
+
+    def test_batch_search(self):
+        index = self._index()
+        vectors = self._unit(4)
+        index.add_embeddings(vectors, ["a", "b", "c", "d"])
+
+        results = index.search_batch(vectors[:2], k=1, exact=True)
+
+        assert [r[0][0] for r in results] == ["a", "b"]
 
 
 class TestResultMerger:

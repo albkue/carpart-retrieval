@@ -1,7 +1,7 @@
 """Result Merger Module.
 
 This module provides functionality to merge and rank results from
-multiple search sources (catalog DB and FAISS vector search).
+multiple search sources (catalog DB and Qdrant vector search).
 """
 import logging
 from collections import defaultdict
@@ -68,13 +68,13 @@ class ResultMerger:
 
         Args:
             catalog_results: Results from catalog metadata search
-            image_results: Results from FAISS image (CLIP) index
+            image_results: Results from the image (CLIP) index
             detection_confidence: Confidence from YOLO/OCR detection
             max_results: Maximum number of results to return
             alpha: Dynamic image weight. Overrides internal logic if set.
             beta: Dynamic text weight. Overrides internal logic if set.
             gamma: Dynamic catalog/meta weight. Overrides internal logic if set.
-            text_results: Results from FAISS text (BGE-M3) index
+            text_results: Results from the text (BGE-M3) index
 
         Returns:
             Merged and ranked list of SearchResult objects
@@ -189,11 +189,11 @@ class ResultMerger:
         
         Args:
             catalog_results: Results from catalog search
-            image_results: Results from FAISS image index
+            image_results: Results from the image index
             detection_confidence: Confidence from YOLO/OCR detection
             max_results: Maximum number of results to return
             diversity_threshold: Minimum score difference to include
-            text_results: Results from FAISS text index
+            text_results: Results from the text index
             
         Returns:
             Diversified list of SearchResult objects

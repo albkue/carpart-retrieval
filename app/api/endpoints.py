@@ -14,11 +14,12 @@ from pipeline.embedding import CLIPEmbedding
 from pipeline.ocr_extractor import OCRExtractor
 from pipeline.part_number import normalize_part_number
 from pipeline.preprocessor import validate_image, validate_image_full
+from pipeline.query_crop import crop_for_embedding
 from pipeline.text_embedding import TextEmbedding
 from pipeline.yolo_detector import YOLOPartDetector
 from search.catalog_client import CatalogClient
-from search.faiss_index import FAISSIndex
 from search.merger import ResultMerger
+from search.qdrant_index import QdrantIndex
 
 from .schemas import (
     ImageSearchQuery,
@@ -129,8 +130,8 @@ class Components:
     _ocr = None
     _embedder = None
     _text_embedder = None  # NEW: BGE-M3
-    _faiss_index = None
-    _text_faiss_index = None  # NEW: Text Index
+    _image_index = None
+    _text_index = None
     _catalog_client = None
     _merger = None
     _brand_matcher = None
@@ -192,28 +193,28 @@ class Components:
         return self._text_embedder
     
     @property
-    def faiss_index(self):
-        if self._faiss_index is None:
-            self._faiss_index = FAISSIndex(
+    def image_index(self):
+        if self._image_index is None:
+            self._image_index = QdrantIndex(
                 dimension=settings.EMBEDDING_DIMENSION,
-                index_path=f"{settings.FAISS_INDEX_PATH}/image",
-                index_type="hnsw",
+                collection=settings.QDRANT_IMAGE_COLLECTION,
+                url=settings.QDRANT_URL,
                 metric="l2"
             )
-            self._faiss_index.load_index()
-        return self._faiss_index
+            self._image_index.load_index()
+        return self._image_index
 
     @property
-    def text_faiss_index(self):
-        if self._text_faiss_index is None:
-            self._text_faiss_index = FAISSIndex(
+    def text_index(self):
+        if self._text_index is None:
+            self._text_index = QdrantIndex(
                 dimension=settings.TEXT_EMBEDDING_DIMENSION,
-                index_path=f"{settings.FAISS_INDEX_PATH}/text",
-                index_type="hnsw",
+                collection=settings.QDRANT_TEXT_COLLECTION,
+                url=settings.QDRANT_URL,
                 metric="inner_product"
             )
-            self._text_faiss_index.load_index()
-        return self._text_faiss_index
+            self._text_index.load_index()
+        return self._text_index
     
     @property
     def catalog_client(self):
@@ -243,7 +244,7 @@ async def search_by_image(
     2. Runs YOLOv8 detection for part type
     3. Runs OCR for brand/text extraction
     4. Generates CLIP embedding for similarity search
-    5. Searches FAISS index and catalog DB
+    5. Searches the vector index and catalog DB
     6. Merges and ranks results
     
     Returns:
@@ -359,44 +360,12 @@ async def search_by_image(
     
     # 5. Generate embedding for vector search
     try:
-        processed_pil = Image.fromarray(processed)
-        w, h = processed_pil.size
-        
-        if detection_result and detection_result.bbox:
-            # OPTIMIZED: Square Crop with Padding (Anti-Distortion)
-            logger.debug(f"Applying square crop to detection bbox: {detection_result.bbox}")
-            x1, y1, x2, y2 = detection_result.bbox
-            bw, bh = x2 - x1, y2 - y1
-            
-            # 1. Add 15% padding
-            pad_w = int(bw * 0.15)
-            pad_h = int(bh * 0.15)
-            
-            # 2. Find center and side length for square
-            cx, cy = (x1 + x2) / 2, (y1 + y2) / 2
-            side = max(bw + 2*pad_w, bh + 2*pad_h)
-            
-            # 3. Calculate square coordinates
-            nx1 = max(0, cx - side/2)
-            ny1 = max(0, cy - side/2)
-            nx2 = min(w, cx + side/2)
-            ny2 = min(h, cy + side/2)
-            
-            # 4. Crop and ensure it is a perfect square (handles image edges)
-            image_for_clip = processed_pil.crop((nx1, ny1, nx2, ny2))
-            from PIL import ImageOps
-            image_for_clip = ImageOps.pad(image_for_clip, (int(side), int(side)), color=(0,0,0))
-            logger.debug(f"Square padded crop created: {image_for_clip.size}")
-            
-        else:
-            # OPTIMIZED: 70% Center Crop Fallback (Noise Reduction)
-            logger.debug("No detection, applying 70% center crop for CLIP")
-            left = (w - w * 0.7) / 2
-            top = (h - h * 0.7) / 2
-            right = (w + w * 0.7) / 2
-            bottom = (h + h * 0.7) / 2
-            image_for_clip = processed_pil.crop((left, top, right, bottom))
-        
+        # Square 15%-padded box crop, or the 70% centre crop when nothing was
+        # detected. Shared with the experiment harness (pipeline/query_crop.py).
+        bbox = detection_result.bbox if detection_result else None
+        image_for_clip = crop_for_embedding(Image.fromarray(processed), bbox)
+        logger.debug(f"Query region for CLIP: {'box' if bbox else 'centre_70'} {image_for_clip.size}")
+
         # CLIP expects 224x224, embedder handles resize internally
         embedding = await loop.run_in_executor(
             None,
@@ -407,10 +376,10 @@ async def search_by_image(
         logger.error(f"Error generating embedding: {e}")
         raise HTTPException(500, "Embedding generation failed")
 
-    # 6. Search FAISS image index
-    image_results = components.faiss_index.search(embedding, k=top_k * 2)
+    # 6. Search image index
+    image_results = components.image_index.search(embedding, k=top_k * 2)
 
-    # 6b. Search FAISS text index using OCR text (only if both OCR and text search enabled)
+    # 6b. Search text index using OCR text (only if both OCR and text search enabled)
     text_results = []
     if settings.ENABLE_TEXT_SEARCH and ocr_text:
         try:
@@ -419,10 +388,10 @@ async def search_by_image(
                 components.text_embedder.encode_text,
                 ocr_text
             )
-            text_results = components.text_faiss_index.search(text_embedding, k=top_k * 2)
-            logger.info(f"Text FAISS search found {len(text_results)} results")
+            text_results = components.text_index.search(text_embedding, k=top_k * 2)
+            logger.info(f"Text search found {len(text_results)} results")
         except Exception as e:
-            logger.warning(f"Text FAISS search failed: {e}")
+            logger.warning(f"Text search failed: {e}")
 
     # --- Dynamic weight calculation (diagram spec) ---
     yolo_conf = detection_result.confidence if detection_result else 0.0
@@ -525,12 +494,13 @@ async def search_by_image(
 @router.post("/index-product", response_model=IndexProductResponse)
 async def index_product(
     product_id: int = Query(..., description="Product ID to index"),
-    image_url: str = Query(..., description="URL of product image")
+    image_url: str = Query(..., description="URL of product image"),
+    category: str | None = Query(None, description="Taxonomy category, stored as filterable payload")
 ):
-    """Add a product image to the FAISS index.
+    """Add a product image to the vector index.
     
     This endpoint downloads the product image, generates an embedding,
-    and adds it to the FAISS index for future searches.
+    and adds it to the index for future searches.
     
     Returns:
         IndexProductResponse with indexing status
@@ -561,13 +531,13 @@ async def index_product(
         logger.error(f"Error generating embedding: {e}")
         raise HTTPException(500, "Embedding generation failed")
     
-    # Add to FAISS index
+    # Add to index
     try:
-        components.faiss_index.add_embeddings(
+        components.image_index.add_embeddings(
             embedding.reshape(1, -1),
-            [product_id]
+            [product_id],
+            [{"category": category}] if category else None
         )
-        components.faiss_index.save_index()
     except Exception as e:
         logger.error(f"Error adding to index: {e}")
         raise HTTPException(500, "Failed to add to index")
@@ -583,12 +553,12 @@ async def rebuild_index(
     background_tasks: BackgroundTasks,
     batch_size: int = Query(100, ge=10, le=500, description="Products per batch")
 ):
-    """Rebuild the FAISS index from all product images.
+    """Rebuild the vector index from all product images.
     
     This is a background task that:
     1. Fetches all products with images from the main API
     2. Generates embeddings for each image
-    3. Creates a new FAISS index
+    3. Creates a new index
     
     Returns:
         RebuildIndexResponse with status
@@ -598,7 +568,7 @@ async def rebuild_index(
         
         try:
             # Clear existing index
-            components.faiss_index.clear()
+            components.image_index.clear()
             
             # Fetch products in batches
             skip = 0
@@ -628,9 +598,11 @@ async def rebuild_index(
                                 continue
                             
                             embedding = components.embedder.encode_image(image)
-                            components.faiss_index.add_embeddings(
+                            category = product.get("category_name")
+                            components.image_index.add_embeddings(
                                 embedding.reshape(1, -1),
-                                [product["product_id"]]
+                                [product["product_id"]],
+                                [{"category": category}] if category else None
                             )
                             total_indexed += 1
                             
@@ -640,8 +612,6 @@ async def rebuild_index(
                 
                 skip += batch_size
             
-            # Save the new index
-            components.faiss_index.save_index()
             logger.info(f"Index rebuild complete. Indexed {total_indexed} products.")
             
         except Exception as e:
@@ -656,14 +626,28 @@ async def rebuild_index(
     )
 
 
+@router.delete("/index-product/{product_id}")
+async def remove_indexed_product(product_id: int):
+    """Remove every vector of a product from the image and text indexes.
+
+    A real delete: the product stops matching immediately.
+    """
+    removed = components.image_index.remove_product(product_id)
+    if settings.ENABLE_TEXT_SEARCH:
+        removed = components.text_index.remove_product(product_id) or removed
+    if not removed:
+        raise HTTPException(404, f"Product {product_id} is not indexed")
+    return {"status": "removed", "product_id": product_id}
+
+
 @router.get("/index/stats")
 async def get_index_stats():
-    """Get statistics about the FAISS index.
+    """Get statistics about the vector index.
     
     Returns:
         Dictionary with index statistics
     """
-    return components.faiss_index.get_stats()
+    return components.image_index.get_stats()
 
 
 @router.get("/health/catalog")

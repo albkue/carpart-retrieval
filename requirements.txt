@@ -11,6 +11,9 @@
 # --- embeddings / detection / retrieval -------------------------------------
 ultralytics==8.3.*          # YOLO
 open-clip-torch==2.29.*     # CLIP backbones, incl. domain-adapted checkpoints
+transformers>=4.44.2,<5     # 5.x changed get_image_features' return type and breaks the
+                             # service's CLIPEmbedding, which the harness imports (ADR 001).
+                             # Floor is FlagEmbedding 1.3's; the service pins 4.40.0.
 FlagEmbedding==1.3.*        # BGE-M3 text embeddings
 qdrant-client==1.12.*       # vector store runs as a container, not in-process.
                              # Research runs pass exact=True so metrics measure the

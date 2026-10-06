@@ -33,9 +33,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy application code
 COPY . .
 
-# Create directories for data
-RUN mkdir -p /app/data/faiss_index
-
 # Expose port
 EXPOSE 8001
 

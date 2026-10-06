@@ -1,0 +1,33 @@
+{
+  "name": "baseline_mvb",
+  "config_hash": "2e42b973cb35",
+  "git_sha": "1f2bd9f356f3459ff8e0ddea430ed705402b71be",
+  "created": "2026-09-27T03:57:24+00:00",
+  "toy": true,
+  "eval_split": "valid",
+  "n_queries": 50,
+  "n_catalog_images": 138,
+  "n_catalog_parts": 50,
+  "metrics": {
+    "recall@1": {
+      "value": 0.6,
+      "ci_low": 0.46,
+      "ci_high": 0.74
+    },
+    "recall@5": {
+      "value": 0.8,
+      "ci_low": 0.66,
+      "ci_high": 0.9
+    },
+    "recall@10": {
+      "value": 0.86,
+      "ci_low": 0.76,
+      "ci_high": 0.96
+    },
+    "mAP": {
+      "value": 0.6875364823218725,
+      "ci_low": 0.5808151376854643,
+      "ci_high": 0.7996603556795594
+    }
+  }
+}

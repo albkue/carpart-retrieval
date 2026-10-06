@@ -19,7 +19,7 @@ services:
       - EMBEDDING_DIMENSION=512
       - TEXT_MODEL=BAAI/bge-base-en-v1.5
       - TEXT_EMBEDDING_DIMENSION=768
-      - FAISS_INDEX_PATH=/app/data/faiss_index
+      - QDRANT_URL=http://qdrant:6333
       - USE_GPU=false
       - ENABLE_OCR=false
       - ENABLE_TEXT_SEARCH=false
@@ -35,6 +35,8 @@ services:
       - hf_cache:/root/.cache/huggingface
     extra_hosts:
       - "host.docker.internal:host-gateway"
+    depends_on:
+      - qdrant
     # Uncomment for GPU support
     # deploy:
     #   resources:
@@ -44,5 +46,15 @@ services:
     #           count: 1
     #           capabilities: [gpu]
 
+  # Vector store (THESIS_TRACKER §3.6). The research harness uses the same
+  # container: `docker compose up -d qdrant`.
+  qdrant:
+    image: qdrant/qdrant:v1.12.6
+    ports:
+      - "6333:6333"
+    volumes:
+      - qdrant_data:/qdrant/storage
+
 volumes:
   hf_cache:
+  qdrant_data:

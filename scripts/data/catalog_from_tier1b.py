@@ -28,6 +28,12 @@ from pathlib import Path
 
 IMG_EXT = {".jpg", ".jpeg", ".png", ".webp"}
 
+# Honda motorcycle model codes seen in the Supply Spare Parts sets. Scope is car
+# garages, so these must not be used as distractors (tasks: W3 carry-over).
+# ponytail: fixed code list; extend it if another motorcycle family turns up.
+MOTORCYCLE_RE = re.compile(r"-(K03|KWB|K62|GFP|GF6)-")
+MOTORCYCLE_NOTE = " | motorcycle part number (Honda pattern), out of scope for car garages: exclude from distractors"
+
 
 def slugify(part_number: str) -> str:
     return re.sub(r"[^a-zA-Z0-9]+", "-", part_number.strip()).strip("-").upper()
@@ -75,7 +81,8 @@ def main():
                 "source_site": args.source_site,
                 "collected_by": args.collected_by,
                 "notes": f"auto-imported from {project_dir.name}, {len(images)} image(s), "
-                         f"is_distractor candidate -- verify part number before indexing",
+                         f"is_distractor candidate -- verify part number before indexing"
+                         + (MOTORCYCLE_NOTE if MOTORCYCLE_RE.search(part_number_raw) else ""),
             })
 
     args.out.parent.mkdir(parents=True, exist_ok=True)

@@ -20,8 +20,10 @@ class Settings(BaseSettings):
     YOLO_CONFIDENCE_THRESHOLD: float = 0.5
     OCR_CONFIDENCE_THRESHOLD: float = 0.6
 
-    # FAISS
-    FAISS_INDEX_PATH: str = "./data/faiss_index"
+    # Vector store (Qdrant container, THESIS_TRACKER §3.6)
+    QDRANT_URL: str = "http://localhost:6333"
+    QDRANT_IMAGE_COLLECTION: str = "products_image"
+    QDRANT_TEXT_COLLECTION: str = "products_text"
     EMBEDDING_DIMENSION: int = 768
 
     # Text embedding (BGE-M3)
