@@ -36,7 +36,7 @@ def _base_config():
 @pytest.mark.parametrize("path, value", [
     (("index", "exact"), False),
     (("data", "eval_split"), "test"),
-    (("query", "region"), "crop_10"),
+    (("query", "region"), "crop_99"),
     (("query", "use_ocr"), True),
     (("query", "preprocess"), None),
 ])
@@ -45,6 +45,42 @@ def test_config_guards(path, value):
     cfg[path[0]][path[1]] = value
     with pytest.raises(SystemExit):
         rx.check_config(cfg)
+
+
+def test_crop_region_needs_a_detector():
+    cfg = _base_config()
+    cfg["query"]["region"] = "crop_15"
+    rx.check_config(cfg)
+    del cfg["query"]["detector"]
+    with pytest.raises(SystemExit, match="detector"):
+        rx.check_config(cfg)
+
+
+def test_query_region_uses_the_service_crop(monkeypatch):
+    from PIL import Image
+
+    class FakeDetector:
+        def __init__(self, bbox):
+            self.bbox = bbox
+
+        def detect(self, image):
+            assert image.shape == (200, 400, 3)  # numpy RGB, as the service passes it
+            return type("R", (), {"bbox": self.bbox})() if self.bbox else None
+
+    cfg = _base_config()
+    im = Image.new("RGB", (400, 200))
+    assert rx.query_region(im, "full_image", cfg) == (im, None)
+    assert rx.query_region(im, "centre_70", cfg)[0].size == (280, 140)
+
+    monkeypatch.setattr(rx, "_detector", lambda model, conf: FakeDetector([150, 75, 250, 125]))
+    crop, detected = rx.query_region(im, "crop_15", cfg)
+    assert (crop.size, detected) == ((130, 130), True)
+    assert rx.query_region(im, "crop_00", cfg)[0].size == (100, 100)
+
+    # No box: falls back to centre_70, flagged so A1 can report the miss rate.
+    monkeypatch.setattr(rx, "_detector", lambda model, conf: FakeDetector(None))
+    crop, detected = rx.query_region(im, "crop_15", cfg)
+    assert (crop.size, detected) == ((280, 140), False)
 
 
 def test_config_hash_tracks_split_content(tmp_path, monkeypatch):
@@ -65,7 +101,7 @@ def test_full_run_writes_immutable_results(tmp_path, monkeypatch):
     (tmp_path / "split.json").write_text(json.dumps(split))
     monkeypatch.setattr(rx, "REPO", tmp_path)
 
-    def fake_embed(paths, cfg, preprocess=False):
+    def fake_embed(paths, cfg, preprocess=False, region="full_image", detected=None):
         # One direction per part plus small per-image noise: every query's
         # nearest part is its own.
         rng = np.random.default_rng(0)
@@ -117,3 +153,25 @@ def test_preprocess_applies_the_service_preprocessor(tmp_path, monkeypatch):
     rx.embed_images(["q.jpg"], cfg, preprocess=True)
     # Raw image passes through; preprocessed one is the service's 640x640 letterbox.
     assert seen == [(300, 200), (640, 640)]
+
+
+def test_crop_run_records_detection(tmp_path, monkeypatch):
+    split = {"catalog": [{"image": f"{p}.jpg", "part_id": p} for p in ("a", "b")],
+             "queries": {"valid": [{"image": f"{p}_q.jpg", "part_id": p} for p in ("a", "b")]}}
+    (tmp_path / "split.json").write_text(json.dumps(split))
+    monkeypatch.setattr(rx, "REPO", tmp_path)
+
+    def fake_embed(paths, cfg, preprocess=False, region="full_image", detected=None):
+        if detected is not None:
+            detected.extend([True, False][: len(paths)])
+        vecs = np.eye(cfg["embed"]["dim"])[[0 if p.startswith("a") else 1 for p in paths]]
+        return vecs.astype(float)
+
+    monkeypatch.setattr(rx, "embed_images", fake_embed)
+    cfg = rx.load_config(CONFIG, "split.json")
+    cfg["query"]["region"] = "crop_15"
+    out = rx.run(cfg, tmp_path / "results", ":memory:")
+
+    metrics = json.loads((out / "metrics.json").read_text())
+    assert (metrics["region"], metrics["detection_rate"]) == ("crop_15", 0.5)
+    assert "detected" in (out / "per_query.csv").read_text().splitlines()[0]

@@ -35,7 +35,11 @@ index:
     ef_search: 64
 
 query:
-  region: full_image             # A1 sweeps: full_image | crop_00 | crop_10 | crop_15 | crop_20
+  region: full_image             # A1 sweeps: full_image | centre_70 | crop_00 | crop_10 | crop_15 | crop_20
+                                 # crop_NN = YOLO box + NN% padding, centre_70 if no box (service rule)
+  detector:                      # used by crop_* only; same weights and threshold as the service
+    model: hf://albkue/car-parts-yolov8/best.pt
+    confidence: 0.5
   preprocess: false              # service AdaptivePreprocessor on queries (catalogue stays raw,
                                  # as the service indexes it). The deployed path is true; the
                                  # preprocessing ablation compares the two.

@@ -14,11 +14,12 @@ from pipeline.embedding import CLIPEmbedding
 from pipeline.ocr_extractor import OCRExtractor
 from pipeline.part_number import normalize_part_number
 from pipeline.preprocessor import validate_image, validate_image_full
+from pipeline.query_crop import crop_for_embedding
 from pipeline.text_embedding import TextEmbedding
 from pipeline.yolo_detector import YOLOPartDetector
 from search.catalog_client import CatalogClient
-from search.qdrant_index import QdrantIndex
 from search.merger import ResultMerger
+from search.qdrant_index import QdrantIndex
 
 from .schemas import (
     ImageSearchQuery,
@@ -359,44 +360,12 @@ async def search_by_image(
     
     # 5. Generate embedding for vector search
     try:
-        processed_pil = Image.fromarray(processed)
-        w, h = processed_pil.size
-        
-        if detection_result and detection_result.bbox:
-            # OPTIMIZED: Square Crop with Padding (Anti-Distortion)
-            logger.debug(f"Applying square crop to detection bbox: {detection_result.bbox}")
-            x1, y1, x2, y2 = detection_result.bbox
-            bw, bh = x2 - x1, y2 - y1
-            
-            # 1. Add 15% padding
-            pad_w = int(bw * 0.15)
-            pad_h = int(bh * 0.15)
-            
-            # 2. Find center and side length for square
-            cx, cy = (x1 + x2) / 2, (y1 + y2) / 2
-            side = max(bw + 2*pad_w, bh + 2*pad_h)
-            
-            # 3. Calculate square coordinates
-            nx1 = max(0, cx - side/2)
-            ny1 = max(0, cy - side/2)
-            nx2 = min(w, cx + side/2)
-            ny2 = min(h, cy + side/2)
-            
-            # 4. Crop and ensure it is a perfect square (handles image edges)
-            image_for_clip = processed_pil.crop((nx1, ny1, nx2, ny2))
-            from PIL import ImageOps
-            image_for_clip = ImageOps.pad(image_for_clip, (int(side), int(side)), color=(0,0,0))
-            logger.debug(f"Square padded crop created: {image_for_clip.size}")
-            
-        else:
-            # OPTIMIZED: 70% Center Crop Fallback (Noise Reduction)
-            logger.debug("No detection, applying 70% center crop for CLIP")
-            left = (w - w * 0.7) / 2
-            top = (h - h * 0.7) / 2
-            right = (w + w * 0.7) / 2
-            bottom = (h + h * 0.7) / 2
-            image_for_clip = processed_pil.crop((left, top, right, bottom))
-        
+        # Square 15%-padded box crop, or the 70% centre crop when nothing was
+        # detected. Shared with the experiment harness (pipeline/query_crop.py).
+        bbox = detection_result.bbox if detection_result else None
+        image_for_clip = crop_for_embedding(Image.fromarray(processed), bbox)
+        logger.debug(f"Query region for CLIP: {'box' if bbox else 'centre_70'} {image_for_clip.size}")
+
         # CLIP expects 224x224, embedder handles resize internally
         embedding = await loop.run_in_executor(
             None,

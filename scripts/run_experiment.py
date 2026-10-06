@@ -52,6 +52,11 @@ from search.qdrant_index import QdrantIndex
 
 REPO = Path(__file__).resolve().parent.parent
 
+# A1 query regions. crop_NN = YOLO box with NN% padding, centre_70 when YOLO
+# finds nothing (the service's rule); crop_15 is the deployed path.
+CROP_PADDING = {"crop_00": 0.0, "crop_10": 0.10, "crop_15": 0.15, "crop_20": 0.20}
+REGIONS = ("full_image", "centre_70", *CROP_PADDING)
+
 logger = logging.getLogger("run_experiment")
 
 
@@ -95,8 +100,10 @@ def check_config(cfg: dict):
     if cfg["eval"]["pool_images_to_part"] != "max":
         raise SystemExit("Only pool_images_to_part: max is implemented")
     query = cfg["query"]
-    if query["region"] != "full_image":
-        raise SystemExit(f"query.region {query['region']} arrives with the W4 crop variants")
+    if query["region"] not in REGIONS:
+        raise SystemExit(f"query.region must be one of {REGIONS}, got {query['region']}")
+    if query["region"] in CROP_PADDING and not query.get("detector", {}).get("model"):
+        raise SystemExit(f"query.region {query['region']} needs query.detector.model")
     if not isinstance(query.get("preprocess"), bool):
         raise SystemExit("query.preprocess must be set to true or false")
     for flag in ("use_ocr", "use_metadata", "use_fusion"):
@@ -131,12 +138,39 @@ def _embedder(model: str):
     return CLIPEmbedding(model, use_gpu=torch.cuda.is_available())
 
 
-def embed_images(paths: list[str], cfg: dict, preprocess: bool = False) -> np.ndarray:
+@functools.lru_cache(maxsize=1)
+def _detector(model: str, confidence: float):
+    import torch
+
+    from pipeline.yolo_detector import YOLOPartDetector
+    return YOLOPartDetector(model, confidence, torch.cuda.is_available())
+
+
+def query_region(image, region: str, cfg: dict):
+    """Apply an A1 region with the service's crop code. Returns (image, detected).
+
+    ``detected`` is None for regions that don't run YOLO.
+    """
+    from pipeline.query_crop import centre_crop, crop_for_embedding
+
+    if region == "full_image":
+        return image, None
+    if region == "centre_70":
+        return centre_crop(image), None
+    det_cfg = cfg["query"]["detector"]
+    result = _detector(det_cfg["model"], det_cfg["confidence"]).detect(np.array(image))
+    bbox = result.bbox if result else None
+    return crop_for_embedding(image, bbox, CROP_PADDING[region]), bbox is not None
+
+
+def embed_images(paths: list[str], cfg: dict, preprocess: bool = False,
+                 region: str = "full_image", detected: list | None = None) -> np.ndarray:
     """Embed with the service's own CLIPEmbedding (ADR 001): evaluated == deployed.
 
-    ``preprocess`` runs the service's AdaptivePreprocessor first, as
-    /search/image does for queries. Catalogue images are indexed raw by the
-    service, so the caller passes it for queries only.
+    ``preprocess`` runs the service's AdaptivePreprocessor first, then
+    ``region`` crops, in the order /search/image does for queries. Catalogue
+    images are indexed raw and whole by the service, so the caller passes both
+    for queries only. Per-image YOLO outcomes are appended to ``detected``.
     """
     from PIL import Image
 
@@ -150,6 +184,11 @@ def embed_images(paths: list[str], cfg: dict, preprocess: bool = False) -> np.nd
         images = [Image.open(REPO / p).convert("RGB") for p in paths[start:start + batch]]
         if preprocess:
             images = [Image.fromarray(preprocessor.preprocess(im)) for im in images]
+        if region != "full_image":
+            cropped = [query_region(im, region, cfg) for im in images]
+            images = [im for im, _ in cropped]
+            if detected is not None:
+                detected.extend(d for _, d in cropped)
         out.append(embedder.encode_images(images))
         logger.info(f"embedded {min(start + batch, len(paths))}/{len(paths)}")
     return np.concatenate(out)
@@ -235,7 +274,10 @@ def run(cfg: dict, results_root: Path, qdrant_url: str) -> Path:
     logger.info(f"{len(catalog)} catalogue images, {len(queries)} queries ({cfg['data']['eval_split']})")
 
     cat_emb = embed_images([e["image"] for e in catalog], cfg)
-    query_emb = embed_images([q["image"] for q in queries], cfg, preprocess=cfg["query"]["preprocess"])
+    region = cfg["query"]["region"]
+    detected = []
+    query_emb = embed_images([q["image"] for q in queries], cfg, preprocess=cfg["query"]["preprocess"],
+                             region=region, detected=detected)
     for name, emb in (("catalogue", cat_emb), ("query", query_emb)):
         if emb.shape[1] != cfg["embed"]["dim"]:
             raise SystemExit(f"{name} embeddings are {emb.shape[1]}d, config says {cfg['embed']['dim']}")
@@ -265,10 +307,14 @@ def run(cfg: dict, results_root: Path, qdrant_url: str) -> Path:
     # mAP is exact rather than truncated.
     for start in range(0, len(queries), 64):
         batch = index.search_batch(query_emb[start:start + 64], k=len(catalog), exact=True)
-        for q, hits in zip(queries[start:start + 64], batch):
+        for i, (q, hits) in enumerate(zip(queries[start:start + 64], batch), start):
             ranked = rank_parts(hits)
-            rows.append({"image": q["image"], "part_id": q["part_id"],
-                         "top1": ranked[0] if ranked else None, **score_query(ranked, q["part_id"], ks)})
+            row = {"image": q["image"], "part_id": q["part_id"],
+                   "top1": ranked[0] if ranked else None, **score_query(ranked, q["part_id"], ks)}
+            if region in CROP_PADDING:
+                # False = YOLO found nothing and the query fell back to centre_70.
+                row["detected"] = detected[i]
+            rows.append(row)
     index.client.delete_collection(index.collection)
 
     rng = np.random.default_rng(seed)
@@ -290,6 +336,8 @@ def run(cfg: dict, results_root: Path, qdrant_url: str) -> Path:
         "n_queries": len(queries),
         "n_catalog_images": len(catalog),
         "n_catalog_parts": len({e["part_id"] for e in catalog}),
+        "region": region,
+        "detection_rate": float(np.mean(detected)) if region in CROP_PADDING else None,
         "metrics": metrics,
     }, indent=2) + "\n", encoding="utf-8")
     with open(out / "per_query.csv", "w", newline="", encoding="utf-8") as f:
