@@ -1,11 +1,12 @@
 # --- Data, indexes, results: DVC-tracked or regenerated, never in git ---
-data/**
-!data/**/.gitkeep
-!data/**/*.dvc          # DVC pointers MUST be committed (W5)
-!data/**/.gitignore
+# DVC-tracked folders; the .dvc pointers beside them are committed
+data/raw/
+data/interim/
+data/processed/
 indexes/**
 !indexes/.gitkeep
-results/**/artifacts/   # metrics.json and the resolved config DO get committed
+# metrics.json and the resolved config DO get committed
+results/**/artifacts/
 audit_report.json
 
 # --- Private: never leaves this machine (README rule 4) ---
