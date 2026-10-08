@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Propose equivalence groups from catalogue folder names (DATASET_SPEC 4.3).
 
 Evidence used: codes named in the same folder name. Nothing else (no oem_number
