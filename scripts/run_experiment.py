@@ -28,6 +28,7 @@ Usage:
     docker compose up -d qdrant
     python scripts/run_experiment.py --config configs/baseline_mvb.yaml
     python scripts/run_experiment.py --config configs/baseline_mvb.yaml --split data/processed/splits_toy.json
+    python scripts/run_experiment.py --config configs/baseline_mvb.yaml --split data/processed/splits_toy.json --region crop_15
 """
 import argparse
 import csv
@@ -355,10 +356,13 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--config", required=True, type=Path)
     parser.add_argument("--split", help="override data.split_manifest (becomes part of the hash)")
+    parser.add_argument("--region", choices=REGIONS, help="override query.region (becomes part of the hash)")
     parser.add_argument("--results", type=Path, default=REPO / "results")
     args = parser.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
     cfg = load_config(args.config, args.split)
+    if args.region:
+        cfg["query"]["region"] = args.region
     run(cfg, args.results, os.environ.get("QDRANT_URL", "http://localhost:6333"))
 
 
