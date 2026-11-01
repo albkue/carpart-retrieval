@@ -42,7 +42,7 @@ import platform
 import random
 import subprocess
 import sys
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 import numpy as np
@@ -331,7 +331,7 @@ def run(cfg: dict, results_root: Path, qdrant_url: str) -> Path:
         "name": cfg["name"],
         "config_hash": run_hash,
         "git_sha": sha,
-        "created": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "created": datetime.now(UTC).isoformat(timespec="seconds"),
         "toy": toy,
         "eval_split": cfg["data"]["eval_split"],
         "n_queries": len(queries),

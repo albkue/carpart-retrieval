@@ -284,8 +284,8 @@ def cmd_build(a) -> None:
     out_dir = Path(a.out) if a.out else ROOT
     out_dir.mkdir(parents=True, exist_ok=True)
     try:
-        from PIL import Image
         import imagehash
+        from PIL import Image
     except ImportError:
         sys.exit("pip install pillow imagehash")
 

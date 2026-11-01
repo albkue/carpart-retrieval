@@ -5,7 +5,14 @@ from pathlib import Path
 import torch  # noqa: F401  (Windows: torch's DLLs must load before pandas, which make_type_split imports)
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts" / "data"))
-from make_type_v2_split import HITL_MAP, HELDOUT, SYNTH_MAP, cap_side, check_leakage, split_photos  # noqa: E402
+from make_type_v2_split import (
+    HELDOUT,
+    HITL_MAP,
+    SYNTH_MAP,
+    cap_side,
+    check_leakage,
+    split_photos,
+)
 
 
 def _r(i, src, label="door", group=""):

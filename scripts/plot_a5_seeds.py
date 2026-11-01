@@ -8,6 +8,7 @@ import argparse
 from pathlib import Path
 
 import matplotlib
+
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -75,7 +76,7 @@ def main():
     fig.savefig(a.out / "a5_distortion_tradeoff.png", dpi=160)
 
     for arm in ARMS:
-        m, s = data[arm]
+        m, _ = data[arm]
         print(arm)
         print(m[["seen_recall@1", "heldout_recall@1", "seen_mAP", "heldout_mAP", "distortion_seen",
                  "abst_false_abstention_seen", "abst_false_abstention_heldout", "abst_correct_rejection_far",

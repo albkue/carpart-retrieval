@@ -31,8 +31,13 @@ import pandas as pd
 from PIL import Image
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from make_ccby_split import thumb  # noqa: E402
-from make_type_split import COMMONS_ALIAS, COMMONS_DROP, SOURCES, near_groups  # noqa: E402
+from make_ccby_split import thumb
+from make_type_split import (
+    COMMONS_ALIAS,
+    COMMONS_DROP,
+    SOURCES,
+    near_groups,
+)
 
 E = Path(r"E:\car_search_data")
 FD = E / "car_part_retrieval_data" / "final_dataset"
@@ -68,7 +73,7 @@ def split_photos(groups: list, rng: random.Random, eval_frac: float) -> set:
 def check_leakage(train, gallery, queries, heldout):
     """-> list of (name, ok) leakage checks over the split rows."""
     paths = [{r["image"] for r in x} for x in (train, gallery, queries)]
-    photo = lambda rows: {r["group"] for r in rows if r.get("group")}  # noqa: E731
+    photo = lambda rows: {r["group"] for r in rows if r.get("group")}
     return [("no image in two of train/gallery/queries", not (paths[0] & paths[1] or paths[0] & paths[2] or paths[1] & paths[2])),
             ("no HITL photo in train and eval", not (photo(train) & (photo(gallery) | photo(queries)))),
             ("held-out types absent from train", not ({r["part_id"] for r in train} & set(heldout))),
