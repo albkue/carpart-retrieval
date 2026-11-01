@@ -77,10 +77,10 @@ def test_query_region_uses_the_service_crop(monkeypatch):
     assert (crop.size, detected) == ((130, 130), True)
     assert rx.query_region(im, "crop_00", cfg)[0].size == (100, 100)
 
-    # No box: falls back to centre_70, flagged so A1 can report the miss rate.
+    # No box: falls back to the whole image (A1, 2026-11-01), flagged so A1 can report the miss rate.
     monkeypatch.setattr(rx, "_detector", lambda model, conf: FakeDetector(None))
     crop, detected = rx.query_region(im, "crop_15", cfg)
-    assert (crop.size, detected) == ((280, 140), False)
+    assert (crop.size, detected) == ((400, 200), False)
 
 
 def test_config_hash_tracks_split_content(tmp_path, monkeypatch):

@@ -53,7 +53,7 @@ from search.qdrant_index import QdrantIndex
 
 REPO = Path(__file__).resolve().parent.parent
 
-# A1 query regions. crop_NN = YOLO box with NN% padding, centre_70 when YOLO
+# A1 query regions. crop_NN = YOLO box with NN% padding, the whole image when YOLO
 # finds nothing (the service's rule); crop_15 is the deployed path.
 CROP_PADDING = {"crop_00": 0.0, "crop_10": 0.10, "crop_15": 0.15, "crop_20": 0.20}
 REGIONS = ("full_image", "centre_70", *CROP_PADDING)
@@ -313,7 +313,7 @@ def run(cfg: dict, results_root: Path, qdrant_url: str) -> Path:
             row = {"image": q["image"], "part_id": q["part_id"],
                    "top1": ranked[0] if ranked else None, **score_query(ranked, q["part_id"], ks)}
             if region in CROP_PADDING:
-                # False = YOLO found nothing and the query fell back to centre_70.
+                # False = YOLO found nothing and the query fell back to the whole image (centre_70 before 2026-11-01).
                 row["detected"] = detected[i]
             rows.append(row)
     index.client.delete_collection(index.collection)

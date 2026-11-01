@@ -6,7 +6,7 @@ the thesis evaluates is the region the service embeds (ADR 001, THESIS_TRACKER
 """
 from PIL import Image, ImageOps
 
-CENTRE_FRACTION = 0.7  # the service's no-detection fallback (centre_70)
+CENTRE_FRACTION = 0.7  # the old no-detection fallback (centre_70); kept for the A1 `centre_70` region only
 SERVICE_PADDING = 0.15  # the service's box padding (crop_15)
 
 
@@ -35,8 +35,12 @@ def box_crop(image: Image.Image, bbox, padding: float = SERVICE_PADDING) -> Imag
 
 
 def crop_for_embedding(image: Image.Image, bbox=None, padding: float = SERVICE_PADDING) -> Image.Image:
-    """The service's rule: box crop if YOLO found a part, else centre_70."""
-    return box_crop(image, bbox, padding) if bbox else centre_crop(image)
+    """The service's rule: box crop if YOLO found a part, else the whole image.
+
+    The fallback was centre_70 until 2026-11-01; the A1 sweep on type_v2 (Recall@1 0.796 full_image against 0.604
+    centre_70) moved it to full_image. No re-index: the catalogue is indexed whole and raw.
+    """
+    return box_crop(image, bbox, padding) if bbox else image
 
 
 def _demo():
@@ -47,7 +51,7 @@ def _demo():
     assert box_crop(im, (150, 75, 250, 125), padding=0.0).size == (100, 100)
     # Box at the edge: clipped crop is letterboxed back to the full square
     assert box_crop(im, (0, 0, 100, 50)).size == (130, 130)
-    assert crop_for_embedding(im).size == (280, 140)
+    assert crop_for_embedding(im) is im  # no box: whole image
     print("query_crop self-check OK")
 
 

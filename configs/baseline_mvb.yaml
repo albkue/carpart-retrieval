@@ -36,7 +36,7 @@ index:
 
 query:
   region: full_image             # A1 sweeps: full_image | centre_70 | crop_00 | crop_10 | crop_15 | crop_20
-                                 # crop_NN = YOLO box + NN% padding, centre_70 if no box (service rule)
+                                 # crop_NN = YOLO box + NN% padding, whole image if no box (service rule since 2026-11-01)
   detector:                      # used by crop_* only; same weights and threshold as the service
     model: hf://albkue/car-parts-yolov8/best.pt
     confidence: 0.5
