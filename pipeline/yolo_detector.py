@@ -91,7 +91,13 @@ class YOLOPartDetector:
         """Lazy-load the model."""
         if self._model is None:
             logger.info(f"Loading YOLO model from {self.model_path}...")
-            self._model = YOLO(self.model_path)
+            path = self.model_path
+            if path.startswith("hf://"):
+                from huggingface_hub import hf_hub_download
+
+                user, repo, *file = path[len("hf://"):].split("/")
+                path = hf_hub_download(f"{user}/{repo}", "/".join(file))
+            self._model = YOLO(path)
         return self._model
     
     def detect(self, image: np.ndarray) -> DetectionResult | None:

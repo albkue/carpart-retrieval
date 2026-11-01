@@ -28,6 +28,7 @@ Usage:
     docker compose up -d qdrant
     python scripts/run_experiment.py --config configs/baseline_mvb.yaml
     python scripts/run_experiment.py --config configs/baseline_mvb.yaml --split data/processed/splits_toy.json
+    python scripts/run_experiment.py --config configs/baseline_mvb.yaml --split data/processed/splits_toy.json --region crop_15
 """
 import argparse
 import csv
@@ -41,7 +42,7 @@ import platform
 import random
 import subprocess
 import sys
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 import numpy as np
@@ -52,7 +53,7 @@ from search.qdrant_index import QdrantIndex
 
 REPO = Path(__file__).resolve().parent.parent
 
-# A1 query regions. crop_NN = YOLO box with NN% padding, centre_70 when YOLO
+# A1 query regions. crop_NN = YOLO box with NN% padding, the whole image when YOLO
 # finds nothing (the service's rule); crop_15 is the deployed path.
 CROP_PADDING = {"crop_00": 0.0, "crop_10": 0.10, "crop_15": 0.15, "crop_20": 0.20}
 REGIONS = ("full_image", "centre_70", *CROP_PADDING)
@@ -312,7 +313,7 @@ def run(cfg: dict, results_root: Path, qdrant_url: str) -> Path:
             row = {"image": q["image"], "part_id": q["part_id"],
                    "top1": ranked[0] if ranked else None, **score_query(ranked, q["part_id"], ks)}
             if region in CROP_PADDING:
-                # False = YOLO found nothing and the query fell back to centre_70.
+                # False = YOLO found nothing and the query fell back to the whole image (centre_70 before 2026-11-01).
                 row["detected"] = detected[i]
             rows.append(row)
     index.client.delete_collection(index.collection)
@@ -330,7 +331,7 @@ def run(cfg: dict, results_root: Path, qdrant_url: str) -> Path:
         "name": cfg["name"],
         "config_hash": run_hash,
         "git_sha": sha,
-        "created": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "created": datetime.now(UTC).isoformat(timespec="seconds"),
         "toy": toy,
         "eval_split": cfg["data"]["eval_split"],
         "n_queries": len(queries),
@@ -355,10 +356,13 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--config", required=True, type=Path)
     parser.add_argument("--split", help="override data.split_manifest (becomes part of the hash)")
+    parser.add_argument("--region", choices=REGIONS, help="override query.region (becomes part of the hash)")
     parser.add_argument("--results", type=Path, default=REPO / "results")
     args = parser.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
     cfg = load_config(args.config, args.split)
+    if args.region:
+        cfg["query"]["region"] = args.region
     run(cfg, args.results, os.environ.get("QDRANT_URL", "http://localhost:6333"))
 
 

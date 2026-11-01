@@ -360,11 +360,11 @@ async def search_by_image(
     
     # 5. Generate embedding for vector search
     try:
-        # Square 15%-padded box crop, or the 70% centre crop when nothing was
-        # detected. Shared with the experiment harness (pipeline/query_crop.py).
+        # Square 15%-padded box crop, or the whole image when nothing was
+        # detected (A1, 2026-11-01). Shared with the experiment harness (pipeline/query_crop.py).
         bbox = detection_result.bbox if detection_result else None
         image_for_clip = crop_for_embedding(Image.fromarray(processed), bbox)
-        logger.debug(f"Query region for CLIP: {'box' if bbox else 'centre_70'} {image_for_clip.size}")
+        logger.debug(f"Query region for CLIP: {'box' if bbox else 'full_image'} {image_for_clip.size}")
 
         # CLIP expects 224x224, embedder handles resize internally
         embedding = await loop.run_in_executor(
