@@ -1,0 +1,35 @@
+{
+  "name": "a1_type_v2",
+  "config_hash": "5b65402aa45f",
+  "git_sha": "144d495f1eed006732a42e762fc43a6204c742ee-dirty",
+  "created": "2026-11-01T01:05:26+00:00",
+  "toy": false,
+  "eval_split": "valid",
+  "n_queries": 1022,
+  "n_catalog_images": 2049,
+  "n_catalog_parts": 60,
+  "region": "crop_20",
+  "detection_rate": 0.6516634050880626,
+  "metrics": {
+    "recall@1": {
+      "value": 0.7289628180039139,
+      "ci_low": 0.7015655577299413,
+      "ci_high": 0.7573385518590998
+    },
+    "recall@5": {
+      "value": 0.9119373776908023,
+      "ci_low": 0.8943248532289628,
+      "ci_high": 0.9285714285714286
+    },
+    "recall@10": {
+      "value": 0.9500978473581213,
+      "ci_low": 0.9363992172211351,
+      "ci_high": 0.9628424657534246
+    },
+    "mAP": {
+      "value": 0.8113756028765036,
+      "ci_low": 0.7920183729567373,
+      "ci_high": 0.8318792305393411
+    }
+  }
+}

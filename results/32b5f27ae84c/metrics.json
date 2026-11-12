@@ -1,0 +1,35 @@
+{
+  "name": "a1_type_v2_preprocess_clipview",
+  "config_hash": "32b5f27ae84c",
+  "git_sha": "8e9e3f5f8c5298e018af913747810a743e89e16f-dirty",
+  "created": "2026-11-10T03:07:46+00:00",
+  "toy": false,
+  "eval_split": "valid",
+  "n_queries": 1022,
+  "n_catalog_images": 2049,
+  "n_catalog_parts": 60,
+  "region": "full_image",
+  "detection_rate": null,
+  "metrics": {
+    "recall@1": {
+      "value": 0.7896281800391389,
+      "ci_low": 0.764187866927593,
+      "ci_high": 0.815068493150685
+    },
+    "recall@5": {
+      "value": 0.9510763209393346,
+      "ci_low": 0.9373776908023483,
+      "ci_high": 0.9628180039138943
+    },
+    "recall@10": {
+      "value": 0.974559686888454,
+      "ci_low": 0.9647749510763209,
+      "ci_high": 0.9843444227005871
+    },
+    "mAP": {
+      "value": 0.8591880990976444,
+      "ci_low": 0.841993985689761,
+      "ci_high": 0.8764056332321617
+    }
+  }
+}

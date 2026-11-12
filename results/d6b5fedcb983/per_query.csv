@@ -1,0 +1,1023 @@
+image,part_id,top1,rank,ap,recall@1,recall@5,recall@10,detected
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/AIR COMPRESSOR/044.jpg,air compressor,air compressor,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/AIR COMPRESSOR/071.jpg,air compressor,air compressor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/AIR COMPRESSOR/045.jpg,air compressor,air compressor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/AIR COMPRESSOR/023.jpg,air compressor,air compressor,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/AIR COMPRESSOR/033.jpg,air compressor,air compressor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/AIR COMPRESSOR/173.jpg,air compressor,air compressor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/AIR COMPRESSOR/136.jpg,air compressor,air compressor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/AIR COMPRESSOR/133.jpg,air compressor,air compressor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/AIR COMPRESSOR/185.jpg,air compressor,air compressor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/AIR COMPRESSOR/129.jpg,air compressor,air compressor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/AIR COMPRESSOR/018.jpg,air compressor,air compressor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/test/AIR COMPRESSOR/3.jpg,air compressor,air compressor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/AIR COMPRESSOR/087.jpg,air compressor,air compressor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/AIR COMPRESSOR/021.jpg,air compressor,air compressor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/AIR COMPRESSOR/180.jpg,air compressor,transmission,3,0.3333333333333333,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/AIR COMPRESSOR/152.jpg,air compressor,air compressor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/AIR COMPRESSOR/097.jpg,air compressor,air compressor,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/AIR COMPRESSOR/145.jpg,air compressor,air compressor,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/AIR COMPRESSOR/140.jpg,air compressor,air compressor,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/dataset_clean/images/alternator/alternator_0003.jpg,alternator,air filter,4,0.25,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/ALTERNATOR/033.jpg,alternator,alternator,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/dataset_clean/images/alternator/alternator_0006.jpg,alternator,alternator,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/ALTERNATOR/073.jpg,alternator,alternator,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/ALTERNATOR/190.jpg,alternator,hood,15,0.06666666666666667,0.0,0.0,0.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/ALTERNATOR/095.jpg,alternator,air compressor,2,0.5,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/ALTERNATOR/138.jpg,alternator,alternator,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/ALTERNATOR/023.jpg,alternator,alternator,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/ALTERNATOR/067.jpg,alternator,alternator,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/ALTERNATOR/164.jpg,alternator,alternator,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/ALTERNATOR/116.jpg,alternator,alternator,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/ALTERNATOR/107.jpg,alternator,alternator,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/ALTERNATOR/119.jpg,alternator,alternator,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/test/ALTERNATOR/5.jpg,alternator,alternator,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/ALTERNATOR/177.jpg,alternator,alternator,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/ALTERNATOR/175.jpg,alternator,alternator,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/ALTERNATOR/029.jpg,alternator,starter motor,2,0.5,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/ALTERNATOR/041.jpg,alternator,alternator,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/ALTERNATOR/105.jpg,alternator,alternator,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/ALTERNATOR/184.jpg,alternator,alternator,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/dataset_clean/images/battery/battery_r2_0008.jpg,battery,battery,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BATTERY/136.jpg,battery,battery,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/test/BATTERY/5.jpg,battery,battery,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BATTERY/033.jpg,battery,battery,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/dataset_clean/images/battery/battery_0008.jpg,battery,battery,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BATTERY/176.jpg,battery,battery,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/dataset_clean/images/battery/battery_r2_0009.jpg,battery,battery,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BATTERY/166.jpg,battery,battery,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/dataset_clean/images/battery/battery_r2_0011.jpg,battery,spark plug,6,0.16666666666666666,0.0,0.0,1.0,False
+E:/car_search_data/dataset_clean/images/battery/battery_r2_0026.jpg,battery,battery,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BATTERY/147.jpg,battery,battery,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BATTERY/024.jpg,battery,battery,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BATTERY/162.jpg,battery,battery,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/dataset_clean/images/battery/battery_r2_0016.jpg,battery,air filter,20,0.05,0.0,0.0,0.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BATTERY/099.jpg,battery,battery,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BATTERY/046.jpg,battery,battery,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BATTERY/004.jpg,battery,battery,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BATTERY/142.jpg,battery,battery,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BATTERY/052.jpg,battery,battery,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/dataset_clean/images/battery/battery_0024.jpg,battery,battery,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BRAKE CALIPER/028.jpg,brake caliper,brake caliper,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BRAKE CALIPER/135.jpg,brake caliper,distributor,2,0.5,0.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BRAKE CALIPER/141.jpg,brake caliper,brake caliper,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BRAKE CALIPER/144.jpg,brake caliper,brake caliper,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BRAKE CALIPER/017.jpg,brake caliper,gas cap,3,0.3333333333333333,0.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BRAKE CALIPER/093.jpg,brake caliper,brake caliper,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BRAKE CALIPER/043.jpg,brake caliper,hood,29,0.034482758620689655,0.0,0.0,0.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BRAKE CALIPER/150.jpg,brake caliper,brake caliper,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BRAKE CALIPER/118.jpg,brake caliper,lower control arm,2,0.5,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BRAKE CALIPER/036.jpg,brake caliper,brake caliper,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BRAKE CALIPER/066.jpg,brake caliper,grille,22,0.045454545454545456,0.0,0.0,0.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BRAKE CALIPER/137.jpg,brake caliper,air compressor,18,0.05555555555555555,0.0,0.0,0.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BRAKE CALIPER/041.jpg,brake caliper,brake caliper,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BRAKE CALIPER/021.jpg,brake caliper,water pump,5,0.2,0.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BRAKE CALIPER/090.jpg,brake caliper,brake caliper,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BRAKE CALIPER/087.jpg,brake caliper,brake caliper,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BRAKE CALIPER/009.jpg,brake caliper,brake caliper,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BRAKE CALIPER/076.jpg,brake caliper,brake caliper,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BRAKE ROTOR/016.jpg,brake disc,brake disc,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BRAKE ROTOR/080.jpg,brake disc,brake disc,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BRAKE ROTOR/102.jpg,brake disc,brake disc,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BRAKE ROTOR/032.jpg,brake disc,brake disc,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BRAKE ROTOR/132.jpg,brake disc,brake disc,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BRAKE ROTOR/147.jpg,brake disc,brake disc,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BRAKE ROTOR/162.jpg,brake disc,brake disc,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BRAKE ROTOR/063.jpg,brake disc,clutch plate,2,0.5,0.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BRAKE ROTOR/060.jpg,brake disc,brake disc,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BRAKE ROTOR/008.jpg,brake disc,brake disc,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BRAKE ROTOR/119.jpg,brake disc,brake disc,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BRAKE ROTOR/085.jpg,brake disc,brake disc,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BRAKE ROTOR/001.jpg,brake disc,pressure plate,3,0.3333333333333333,0.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/test/BRAKE ROTOR/3.jpg,brake disc,brake disc,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BRAKE ROTOR/007.jpg,brake disc,brake disc,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BRAKE ROTOR/067.jpg,brake disc,brake disc,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BRAKE ROTOR/148.jpg,brake disc,brake disc,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BRAKE ROTOR/099.jpg,brake disc,brake disc,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BRAKE PAD/049.jpg,brake pad,brake pad,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BRAKE PAD/082.jpg,brake pad,brake pad,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BRAKE PAD/063.jpg,brake pad,brake pad,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BRAKE PAD/152.jpg,brake pad,wheel,3,0.3333333333333333,0.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BRAKE PAD/094.jpg,brake pad,brake pad,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BRAKE PAD/127.jpg,brake pad,brake pad,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BRAKE PAD/066.jpg,brake pad,brake pad,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/dataset_clean/images/brake_pad/brake_pad_0024.jpg,brake pad,air filter,26,0.038461538461538464,0.0,0.0,0.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BRAKE PAD/028.jpg,brake pad,brake pad,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BRAKE PAD/018.jpg,brake pad,brake pad,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BRAKE PAD/125.jpg,brake pad,brake pad,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BRAKE PAD/107.jpg,brake pad,brake pad,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BRAKE PAD/164.jpg,brake pad,brake pad,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BRAKE PAD/024.jpg,brake pad,brake pad,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BRAKE PAD/056.jpg,brake pad,brake pad,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BRAKE PAD/001.jpg,brake pad,brake pad,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BRAKE PAD/120.jpg,brake pad,brake pad,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BRAKE PAD/104.jpg,brake pad,side mirror,9,0.1111111111111111,0.0,0.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BRAKE PAD/172.jpg,brake pad,brake pad,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/BRAKE PAD/168.jpg,brake pad,brake pad,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/bumper/hitl_Car_damages_1641_1164153608.jpg,bumper,fender,6,0.16666666666666666,0.0,0.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/bumper/hitl_Car_damages_1441_1164151388.jpg,bumper,fender,2,0.5,0.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/bumper/hitl_Car_damages_1584_1164152669.jpg,bumper,grille,11,0.09090909090909091,0.0,0.0,0.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/bumper/hitl_Car_damages_1469_1164151660.jpg,bumper,trunk,4,0.25,0.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/bumper/hitl_Car_damages_1510_1164152150.jpg,bumper,bumper,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/bumper/hitl_Car_damages_1079_1164161561.jpg,bumper,bumper,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/bumper/hitl_Car_damages_1582_1164152313.jpg,bumper,wheel,7,0.14285714285714285,0.0,0.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/bumper/hitl_Car_damages_684_1164165428.jpg,bumper,hood,4,0.25,0.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/bumper/hitl_Car_damages_1501_1164152031.jpg,bumper,bumper,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/bumper/hitl_Car_damages_1744_1164155329.jpg,bumper,wheel,4,0.25,0.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/bumper/hitl_Car_damages_1433_1164151249.jpg,bumper,door,2,0.5,0.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/bumper/hitl_Car_damages_853_1164163199.jpg,bumper,hood,3,0.3333333333333333,0.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/bumper/hitl_Car_damages_166_1164156975.jpg,bumper,fender,6,0.16666666666666666,0.0,0.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/bumper/hitl_Car_damages_1341_1164150284.jpg,bumper,bumper,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/bumper/hitl_Car_damages_1347_1164150368.jpg,bumper,headlight,6,0.16666666666666666,0.0,0.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/bumper/hitl_Car_damages_1298_1164149967.jpg,bumper,bumper,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/bumper/hitl_Car_damages_1544_1164152615.jpg,bumper,fender,4,0.25,0.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/bumper/hitl_Car_damages_220_1164157854.jpg,bumper,fender,3,0.3333333333333333,0.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/bumper/hitl_Car_damages_864_1164162685.jpg,bumper,fender,2,0.5,0.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/bumper/hitl_Car_damages_1285_1164149770.jpg,bumper,door,2,0.5,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CARBERATOR/113.jpg,carburetor,carburetor,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CARBERATOR/123.jpg,carburetor,carburetor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CARBERATOR/181.jpg,carburetor,carburetor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CARBERATOR/009.jpg,carburetor,carburetor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CARBERATOR/081.jpg,carburetor,carburetor,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CARBERATOR/065.jpg,carburetor,carburetor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CARBERATOR/093.jpg,carburetor,carburetor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CARBERATOR/018.jpg,carburetor,water pump,2,0.5,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CARBERATOR/184.jpg,carburetor,carburetor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CARBERATOR/094.jpg,carburetor,carburetor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CARBERATOR/156.jpg,carburetor,carburetor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/test/CARBERATOR/5.jpg,carburetor,carburetor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CARBERATOR/143.jpg,carburetor,carburetor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CARBERATOR/037.jpg,carburetor,carburetor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CARBERATOR/176.jpg,carburetor,carburetor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CARBERATOR/133.jpg,carburetor,carburetor,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CARBERATOR/079.jpg,carburetor,carburetor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CARBERATOR/122.jpg,carburetor,carburetor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CARBERATOR/059.jpg,carburetor,carburetor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CARBERATOR/109.jpg,carburetor,oxygen sensor,4,0.25,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CLUTCH PLATE/180.jpg,clutch plate,clutch plate,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CLUTCH PLATE/167.jpg,clutch plate,clutch plate,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CLUTCH PLATE/121.jpg,clutch plate,clutch plate,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/dataset_clean/images/clutch_disc/clutch_disc_0007.jpg,clutch plate,fuel injector,42,0.023809523809523808,0.0,0.0,0.0,True
+E:/car_search_data/dataset_clean/images/clutch_disc/clutch_disc_0006.jpg,clutch plate,headlight,2,0.5,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CLUTCH PLATE/003.jpg,clutch plate,clutch plate,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CLUTCH PLATE/024.jpg,clutch plate,clutch plate,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CLUTCH PLATE/128.jpg,clutch plate,clutch plate,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CLUTCH PLATE/014.jpg,clutch plate,clutch plate,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CLUTCH PLATE/025.jpg,clutch plate,pressure plate,2,0.5,0.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CLUTCH PLATE/096.jpg,clutch plate,clutch plate,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CLUTCH PLATE/094.jpg,clutch plate,clutch plate,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CLUTCH PLATE/098.jpg,clutch plate,clutch plate,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/test/CLUTCH PLATE/5.jpg,clutch plate,clutch plate,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CLUTCH PLATE/061.jpg,clutch plate,clutch plate,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/valid/CLUTCH PLATE/4.jpg,clutch plate,clutch plate,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CLUTCH PLATE/168.jpg,clutch plate,clutch plate,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CLUTCH PLATE/157.jpg,clutch plate,clutch plate,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CLUTCH PLATE/059.jpg,clutch plate,clutch plate,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CLUTCH PLATE/164.jpg,clutch plate,clutch plate,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/COIL SPRING/040.jpg,coil spring,coil spring,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/COIL SPRING/071.jpg,coil spring,coil spring,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/COIL SPRING/057.jpg,coil spring,coil spring,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/COIL SPRING/114.jpg,coil spring,coil spring,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/COIL SPRING/124.jpg,coil spring,coil spring,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/COIL SPRING/086.jpg,coil spring,coil spring,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/COIL SPRING/029.jpg,coil spring,coil spring,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/COIL SPRING/070.jpg,coil spring,coil spring,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/COIL SPRING/095.jpg,coil spring,coil spring,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/valid/COIL SPRING/5.jpg,coil spring,coil spring,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/COIL SPRING/099.jpg,coil spring,coil spring,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/COIL SPRING/144.jpg,coil spring,coil spring,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/COIL SPRING/117.jpg,coil spring,coil spring,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/COIL SPRING/100.jpg,coil spring,coil spring,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/test/COIL SPRING/2.jpg,coil spring,coil spring,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/COIL SPRING/126.jpg,coil spring,coil spring,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/test/CRANKSHAFT/1.jpg,crankshaft,crankshaft,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CRANKSHAFT/042.jpg,crankshaft,crankshaft,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CRANKSHAFT/114.jpg,crankshaft,camshaft,2,0.5,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CRANKSHAFT/107.jpg,crankshaft,crankshaft,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CRANKSHAFT/175.jpg,crankshaft,camshaft,2,0.5,0.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CRANKSHAFT/121.jpg,crankshaft,crankshaft,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CRANKSHAFT/160.jpg,crankshaft,camshaft,2,0.5,0.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CRANKSHAFT/139.jpg,crankshaft,camshaft,2,0.5,0.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CRANKSHAFT/083.jpg,crankshaft,camshaft,2,0.5,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CRANKSHAFT/099.jpg,crankshaft,camshaft,2,0.5,0.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CRANKSHAFT/057.jpg,crankshaft,crankshaft,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CRANKSHAFT/100.jpg,crankshaft,crankshaft,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CRANKSHAFT/130.jpg,crankshaft,crankshaft,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CRANKSHAFT/095.jpg,crankshaft,camshaft,2,0.5,0.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CRANKSHAFT/090.jpg,crankshaft,camshaft,2,0.5,0.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CRANKSHAFT/178.jpg,crankshaft,camshaft,2,0.5,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CRANKSHAFT/129.jpg,crankshaft,crankshaft,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CRANKSHAFT/040.jpg,crankshaft,crankshaft,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CYLINDER HEAD/080.jpg,cylinder head,engine block,2,0.5,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CYLINDER HEAD/053.jpg,cylinder head,cylinder head,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CYLINDER HEAD/013.jpg,cylinder head,cylinder head,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CYLINDER HEAD/064.jpg,cylinder head,lower control arm,31,0.03225806451612903,0.0,0.0,0.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CYLINDER HEAD/129.jpg,cylinder head,cylinder head,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CYLINDER HEAD/054.jpg,cylinder head,engine block,2,0.5,0.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CYLINDER HEAD/060.jpg,cylinder head,cylinder head,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/test/CYLINDER HEAD/1.jpg,cylinder head,engine block,2,0.5,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/test/CYLINDER HEAD/3.jpg,cylinder head,oil pan,3,0.3333333333333333,0.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CYLINDER HEAD/092.jpg,cylinder head,engine block,2,0.5,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CYLINDER HEAD/028.jpg,cylinder head,cylinder head,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/test/CYLINDER HEAD/2.jpg,cylinder head,cylinder head,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CYLINDER HEAD/145.jpg,cylinder head,engine block,2,0.5,0.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CYLINDER HEAD/171.jpg,cylinder head,cylinder head,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CYLINDER HEAD/002.jpg,cylinder head,cylinder head,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CYLINDER HEAD/113.jpg,cylinder head,engine block,2,0.5,0.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CYLINDER HEAD/155.jpg,cylinder head,cylinder head,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CYLINDER HEAD/119.jpg,cylinder head,engine block,3,0.3333333333333333,0.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/CYLINDER HEAD/016.jpg,cylinder head,cylinder head,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/DISTRIBUTOR/147.jpg,distributor,fuel injector,3,0.3333333333333333,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/DISTRIBUTOR/074.jpg,distributor,distributor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/DISTRIBUTOR/135.jpg,distributor,battery,45,0.022222222222222223,0.0,0.0,0.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/DISTRIBUTOR/069.jpg,distributor,distributor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/DISTRIBUTOR/030.jpg,distributor,side mirror,55,0.01818181818181818,0.0,0.0,0.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/DISTRIBUTOR/095.jpg,distributor,alternator,27,0.037037037037037035,0.0,0.0,0.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/valid/DISTRIBUTOR/4.jpg,distributor,distributor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/DISTRIBUTOR/066.jpg,distributor,distributor,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/DISTRIBUTOR/035.jpg,distributor,distributor,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/DISTRIBUTOR/079.jpg,distributor,fuel injector,2,0.5,0.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/DISTRIBUTOR/131.jpg,distributor,starter motor,3,0.3333333333333333,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/DISTRIBUTOR/034.jpg,distributor,distributor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/DISTRIBUTOR/001.jpg,distributor,side mirror,36,0.027777777777777776,0.0,0.0,0.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/DISTRIBUTOR/126.jpg,distributor,vacuum brake booster,4,0.25,0.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/DISTRIBUTOR/108.jpg,distributor,ignition coil,3,0.3333333333333333,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/DISTRIBUTOR/008.jpg,distributor,overflow tank,19,0.05263157894736842,0.0,0.0,0.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/door/hitl_Car_damages_684_1164165423.jpg,door,hood,3,0.3333333333333333,0.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/door/hitl_Car_damages_1332_1164150153.jpg,door,door,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/door/hitl_Car_damages_101_1164156022.jpg,door,door,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/door/hitl_Car_damages_1284_1164150060.jpg,door,hood,2,0.5,0.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/door/hitl_Car_damages_1492_1164152222.jpg,door,fender,2,0.5,0.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/door/hitl_Car_damages_168_1164157230.jpg,door,door,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/door/hitl_Car_damages_1699_1164154275.jpg,door,door,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/door/hitl_Car_damages_1649_1164153736.jpg,door,door,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/door/hitl_Car_damages_639_1164164715.jpg,door,door,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/door/hitl_Car_damages_1601_1164152893.jpg,door,door,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/door/hitl_Car_damages_1291_1164150090.jpg,door,door,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/door/hitl_Car_damages_1050_1164161033.jpg,door,door,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/door/hitl_Car_damages_233_1164157855.jpg,door,fender,2,0.5,0.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/door/hitl_Car_damages_298_1164158409.jpg,door,door,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/door/hitl_Car_damages_639_1164164716.jpg,door,fender,2,0.5,0.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/door/hitl_Car_damages_127_1164156352.jpg,door,wheel,2,0.5,0.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/door/hitl_Car_damages_180_1164157333.jpg,door,door,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/door/hitl_Car_damages_237_1164157751.jpg,door,door,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/door/hitl_Car_damages_1169_1164159672.jpg,door,door,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/door/hitl_Car_damages_1473_1164151189.jpg,door,door,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/ENGINE BLOCK/015.jpg,engine block,engine block,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/ENGINE BLOCK/056.jpg,engine block,engine block,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/test/ENGINE BLOCK/2.jpg,engine block,engine block,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/ENGINE BLOCK/133.jpg,engine block,piston,6,0.16666666666666666,0.0,0.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/ENGINE BLOCK/053.jpg,engine block,engine block,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/ENGINE BLOCK/151.jpg,engine block,engine block,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/test/ENGINE BLOCK/4.jpg,engine block,engine block,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/ENGINE BLOCK/062.jpg,engine block,engine block,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/ENGINE BLOCK/107.jpg,engine block,engine block,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/ENGINE BLOCK/049.jpg,engine block,engine block,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/ENGINE BLOCK/059.jpg,engine block,engine block,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/ENGINE BLOCK/018.jpg,engine block,cylinder head,2,0.5,0.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/ENGINE BLOCK/016.jpg,engine block,engine block,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/ENGINE BLOCK/177.jpg,engine block,transmission,2,0.5,0.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/ENGINE BLOCK/108.jpg,engine block,engine block,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/ENGINE BLOCK/176.jpg,engine block,engine block,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/ENGINE BLOCK/031.jpg,engine block,engine block,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/ENGINE BLOCK/121.jpg,engine block,engine block,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/valid/ENGINE BLOCK/3.jpg,engine block,engine block,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/ENGINE VALVE/035.jpg,engine valve,engine valve,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/ENGINE VALVE/140.jpg,engine valve,engine valve,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/ENGINE VALVE/076.jpg,engine valve,engine valve,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/ENGINE VALVE/111.jpg,engine valve,engine valve,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/ENGINE VALVE/144.jpg,engine valve,engine valve,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/ENGINE VALVE/109.jpg,engine valve,engine valve,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/ENGINE VALVE/044.jpg,engine valve,engine valve,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/ENGINE VALVE/033.jpg,engine valve,engine valve,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/ENGINE VALVE/127.jpg,engine valve,valve lifter,2,0.5,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/ENGINE VALVE/026.jpg,engine valve,engine valve,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/ENGINE VALVE/081.jpg,engine valve,engine valve,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/ENGINE VALVE/069.jpg,engine valve,engine valve,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/ENGINE VALVE/118.jpg,engine valve,engine valve,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/ENGINE VALVE/092.jpg,engine valve,engine valve,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/ENGINE VALVE/112.jpg,engine valve,engine valve,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/ENGINE VALVE/114.jpg,engine valve,engine valve,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/ENGINE VALVE/103.jpg,engine valve,engine valve,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/MUFFLER/148.jpg,exhaust muffler,headlight,35,0.02857142857142857,0.0,0.0,0.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/MUFFLER/121.jpg,exhaust muffler,piston,2,0.5,0.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/MUFFLER/042.jpg,exhaust muffler,exhaust muffler,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/MUFFLER/075.jpg,exhaust muffler,exhaust muffler,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/MUFFLER/018.jpg,exhaust muffler,exhaust muffler,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/MUFFLER/058.jpg,exhaust muffler,radiator hose,2,0.5,0.0,1.0,1.0,True
+E:/car_search_data/dataset_clean/images/exhaust_muffler/exhaust_muffler_r2_0002.jpg,exhaust muffler,radiator hose,2,0.5,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/MUFFLER/108.jpg,exhaust muffler,exhaust muffler,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/valid/MUFFLER/1.jpg,exhaust muffler,exhaust muffler,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/MUFFLER/104.jpg,exhaust muffler,grille,32,0.03125,0.0,0.0,0.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/MUFFLER/070.jpg,exhaust muffler,lower control arm,2,0.5,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/MUFFLER/074.jpg,exhaust muffler,exhaust muffler,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/MUFFLER/003.jpg,exhaust muffler,ignition coil,2,0.5,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/MUFFLER/048.jpg,exhaust muffler,exhaust muffler,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/MUFFLER/045.jpg,exhaust muffler,exhaust muffler,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/dataset_clean/images/exhaust_muffler/exhaust_muffler_r2_0003.jpg,exhaust muffler,headlight,42,0.023809523809523808,0.0,0.0,0.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/MUFFLER/051.jpg,exhaust muffler,oil filter,2,0.5,0.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/MUFFLER/140.jpg,exhaust muffler,hood,25,0.04,0.0,0.0,0.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/fender/hitl_Car_damages_1274_1164149920.jpg,fender,wheel,2,0.5,0.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/fender/hitl_Car_damages_1043_1164160923.jpg,fender,grille,6,0.16666666666666666,0.0,0.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/fender/hitl_Car_damages_1699_1164154296.jpg,fender,fender,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/fender/hitl_Car_damages_101_1164156029.jpg,fender,fender,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/fender/hitl_Car_damages_175_1164157117.jpg,fender,side mirror,6,0.16666666666666666,0.0,0.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/fender/hitl_Car_damages_1666_1164154543.jpg,fender,fender,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/fender/hitl_Car_damages_24_1164155730.jpg,fender,door,3,0.3333333333333333,0.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/fender/hitl_Car_damages_718_1164164463.jpg,fender,wheel,2,0.5,0.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/fender/hitl_Car_damages_1544_1164152626.jpg,fender,door,2,0.5,0.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/fender/hitl_Car_damages_876_1164162871.jpg,fender,door,4,0.25,0.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/fender/hitl_Car_damages_280_1164158287.jpg,fender,wheel,2,0.5,0.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/fender/hitl_Car_damages_215_1164157402.jpg,fender,headlight,7,0.14285714285714285,0.0,0.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/fender/hitl_Car_damages_1722_1164155073.jpg,fender,fender,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/fender/hitl_Car_damages_175_1164157238.jpg,fender,hood,6,0.16666666666666666,0.0,0.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/fender/hitl_Car_damages_1050_1164161026.jpg,fender,headlight,5,0.2,0.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/fender/hitl_Car_damages_163_1164156910.jpg,fender,windshield,8,0.125,0.0,0.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/fender/hitl_Car_damages_1155_1164159557.jpg,fender,fender,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/fender/hitl_Car_damages_854_1164163151.jpg,fender,hood,2,0.5,0.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/fender/hitl_Car_damages_894_1164162443.jpg,fender,hood,2,0.5,0.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/fender/hitl_Car_damages_1732_1164155127.jpg,fender,hood,2,0.5,0.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/FUSE BOX/076.jpg,fuse box,fuse box,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/valid/FUSE BOX/1.jpg,fuse box,fuse box,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/FUSE BOX/105.jpg,fuse box,fuse box,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/FUSE BOX/054.jpg,fuse box,fuse box,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/FUSE BOX/060.jpg,fuse box,fuse box,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/FUSE BOX/093.jpg,fuse box,fuse box,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/FUSE BOX/078.jpg,fuse box,fuse box,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/test/FUSE BOX/2.jpg,fuse box,fuse box,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/FUSE BOX/039.jpg,fuse box,fuse box,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/FUSE BOX/066.jpg,fuse box,fuse box,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/FUSE BOX/127.jpg,fuse box,fuse box,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/FUSE BOX/013.jpg,fuse box,fuse box,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/FUSE BOX/148.jpg,fuse box,fuse box,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/FUSE BOX/003.jpg,fuse box,fuse box,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/FUSE BOX/028.jpg,fuse box,fuse box,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/FUSE BOX/051.jpg,fuse box,fuse box,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/FUSE BOX/154.jpg,fuse box,fuse box,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/valid/GAS CAP/2.jpg,gas cap,gas cap,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/GAS CAP/082.jpg,gas cap,vacuum brake booster,4,0.25,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/GAS CAP/174.jpg,gas cap,ignition coil,3,0.3333333333333333,0.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/GAS CAP/123.jpg,gas cap,fuel injector,3,0.3333333333333333,0.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/GAS CAP/104.jpg,gas cap,ignition coil,2,0.5,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/GAS CAP/079.jpg,gas cap,gas cap,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/test/GAS CAP/4.jpg,gas cap,gas cap,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/GAS CAP/088.jpg,gas cap,valve lifter,4,0.25,0.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/GAS CAP/071.jpg,gas cap,shift knob,4,0.25,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/GAS CAP/180.jpg,gas cap,gas cap,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/GAS CAP/110.jpg,gas cap,gas cap,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/GAS CAP/116.jpg,gas cap,oil pressure sensor,5,0.2,0.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/GAS CAP/024.jpg,gas cap,trunk,19,0.05263157894736842,0.0,0.0,0.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/GAS CAP/148.jpg,gas cap,gas cap,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/GAS CAP/119.jpg,gas cap,ignition coil,3,0.3333333333333333,0.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/GAS CAP/161.jpg,gas cap,gas cap,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/GAS CAP/055.jpg,gas cap,shift knob,2,0.5,0.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/GAS CAP/179.jpg,gas cap,shift knob,2,0.5,0.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/GAS CAP/099.jpg,gas cap,gas cap,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/grille/hitl_Car_damages_639_1164164719.jpg,grille,grille,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/grille/hitl_Car_damages_854_1164163145.jpg,grille,headlight,4,0.25,0.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/grille/hitl_Car_damages_1149_1164159453.jpg,grille,grille,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/grille/hitl_Car_damages_162_1164156891.jpg,grille,trunk,9,0.1111111111111111,0.0,0.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/grille/hitl_Car_damages_1732_1164155125.jpg,grille,grille,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/grille/hitl_Car_damages_1079_1164161562.jpg,grille,grille,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/grille/hitl_Car_damages_1601_1164152890.jpg,grille,grille,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/grille/hitl_Car_damages_1498_1164151972.jpg,grille,grille,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/grille/hitl_Car_damages_27_1164155860.jpg,grille,grille,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/grille/hitl_Car_damages_1426_1164150973.jpg,grille,grille,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/grille/hitl_Car_damages_706_1164164176.jpg,grille,wheel,3,0.3333333333333333,0.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/grille/hitl_Car_damages_1107_1164160179.jpg,grille,headlight,3,0.3333333333333333,0.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/grille/hitl_Car_damages_684_1164165429.jpg,grille,grille,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/grille/hitl_Car_damages_855_1164163167.jpg,grille,grille,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/grille/hitl_Car_damages_700_1164163859.jpg,grille,grille,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/grille/hitl_Car_damages_175_1164157124.jpg,grille,wheel,3,0.3333333333333333,0.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/grille/hitl_Car_damages_663_1164165049.jpg,grille,grille,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/grille/hitl_Car_damages_1061_1164161303.jpg,grille,grille,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/grille/hitl_Car_damages_1369_1164150855.jpg,grille,grille,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/grille/hitl_Car_damages_908_1164163061.jpg,grille,grille,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/headlight/hitl_Car_damages_1737_1164155199.jpg,headlight,headlight,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/headlight/hitl_Car_damages_1603_1164153015.jpg,headlight,taillight,2,0.5,0.0,1.0,1.0,False
+E:/car_search_data/dataset_clean/images/headlight/headlight_0025.jpg,headlight,headlight,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/dataset_clean/images/headlight/headlight_r2_0008.jpg,headlight,taillight,2,0.5,0.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/headlight/hitl_Car_damages_1149_1164159441.jpg,headlight,bumper,11,0.09090909090909091,0.0,0.0,0.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/HEADLIGHTS/010.jpg,headlight,taillight,2,0.5,0.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/headlight/hitl_Car_damages_1350_1164150404.jpg,headlight,trunk,3,0.3333333333333333,0.0,1.0,1.0,False
+E:/car_search_data/dataset_clean/images/headlight/headlight_0019.jpg,headlight,headlight,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/headlight/hitl_Car_damages_1496_1164151948.jpg,headlight,fender,7,0.14285714285714285,0.0,0.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/headlight/hitl_Car_damages_957_1164161981.jpg,headlight,headlight,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/headlight/hitl_Car_damages_967_1164162138.jpg,headlight,headlight,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/dataset_clean/images/headlight/headlight_r2_0054.jpg,headlight,headlight,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/HEADLIGHTS/073.jpg,headlight,headlight,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/headlight/hitl_Car_damages_1493_1164152174.jpg,headlight,side mirror,9,0.1111111111111111,0.0,0.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/headlight/hitl_Car_damages_175_1164157121.jpg,headlight,headlight,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/headlight/hitl_Car_damages_162_1164156896.jpg,headlight,headlight,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/HEADLIGHTS/159.jpg,headlight,taillight,5,0.2,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/HEADLIGHTS/127.jpg,headlight,headlight,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/dataset_clean/images/headlight/headlight_r2_0016.jpg,headlight,headlight,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/HEADLIGHTS/059.jpg,headlight,headlight,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/hood/hitl_Car_damages_1291_1164149987.jpg,hood,fender,2,0.5,0.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/hood/hitl_Car_damages_1175_1262179165.jpg,hood,hood,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/hood/hitl_Car_damages_1076_1164161503.jpg,hood,fender,2,0.5,0.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/hood/hitl_Car_damages_1079_1164161568.jpg,hood,fender,2,0.5,0.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/hood/hitl_Car_damages_1631_1164153478.jpg,hood,trunk,2,0.5,0.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/hood/hitl_Car_damages_697_1164163845.jpg,hood,hood,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/hood/hitl_Car_damages_1500_1164152134.jpg,hood,hood,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/hood/hitl_Car_damages_1680_1164154015.jpg,hood,hood,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/hood/hitl_Car_damages_1661_1164154515.jpg,hood,fender,2,0.5,0.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/hood/hitl_Car_damages_1373_1164150577.jpg,hood,hood,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/hood/hitl_Car_damages_776_1267547035.jpg,hood,hood,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/hood/hitl_Car_damages_11_1164155906.jpg,hood,windshield,3,0.3333333333333333,0.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/hood/hitl_Car_damages_858_1164163216.jpg,hood,fender,2,0.5,0.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/hood/hitl_Car_damages_1050_1164161027.jpg,hood,hood,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/hood/hitl_Car_damages_162_1164156892.jpg,hood,fender,5,0.2,0.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/hood/hitl_Car_damages_1732_1164155131.jpg,hood,hood,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/hood/hitl_Car_damages_277_1164158567.jpg,hood,grille,2,0.5,0.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/hood/hitl_Car_damages_1065_1164161361.jpg,hood,windshield,2,0.5,0.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/hood/hitl_Car_damages_1605_1164153050.jpg,hood,hood,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/hood/hitl_Car_damages_1544_1164152619.jpg,hood,hood,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/IDLER ARM/097.jpg,idler arm,ignition coil,4,0.25,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/IDLER ARM/002.jpg,idler arm,idler arm,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/IDLER ARM/126.jpg,idler arm,fuel injector,3,0.3333333333333333,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/IDLER ARM/088.jpg,idler arm,lower control arm,3,0.3333333333333333,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/IDLER ARM/162.jpg,idler arm,idler arm,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/IDLER ARM/048.jpg,idler arm,idler arm,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/IDLER ARM/031.jpg,idler arm,idler arm,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/IDLER ARM/007.jpg,idler arm,camshaft,18,0.05555555555555555,0.0,0.0,0.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/IDLER ARM/044.jpg,idler arm,idler arm,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/IDLER ARM/117.jpg,idler arm,idler arm,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/IDLER ARM/041.jpg,idler arm,idler arm,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/IDLER ARM/191.jpg,idler arm,ignition coil,2,0.5,0.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/IDLER ARM/161.jpg,idler arm,idler arm,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/IDLER ARM/150.jpg,idler arm,idler arm,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/IDLER ARM/142.jpg,idler arm,idler arm,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/test/IDLER ARM/5.jpg,idler arm,idler arm,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/IDLER ARM/003.jpg,idler arm,ignition coil,2,0.5,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/IDLER ARM/034.jpg,idler arm,trunk,19,0.05263157894736842,0.0,0.0,0.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/IDLER ARM/173.jpg,idler arm,idler arm,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/IDLER ARM/123.jpg,idler arm,lower control arm,2,0.5,0.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/IGNITION COIL/152.jpg,ignition coil,fuel injector,2,0.5,0.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/IGNITION COIL/101.jpg,ignition coil,ignition coil,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/IGNITION COIL/131.jpg,ignition coil,oil pressure sensor,3,0.3333333333333333,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/IGNITION COIL/138.jpg,ignition coil,fuel injector,3,0.3333333333333333,0.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/IGNITION COIL/126.jpg,ignition coil,ignition coil,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/IGNITION COIL/081.jpg,ignition coil,fuel injector,2,0.5,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/IGNITION COIL/051.jpg,ignition coil,ignition coil,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/IGNITION COIL/056.jpg,ignition coil,fuel injector,6,0.16666666666666666,0.0,0.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/IGNITION COIL/096.jpg,ignition coil,oxygen sensor,3,0.3333333333333333,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/IGNITION COIL/147.jpg,ignition coil,water pump,6,0.16666666666666666,0.0,0.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/IGNITION COIL/010.jpg,ignition coil,ignition coil,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/IGNITION COIL/140.jpg,ignition coil,distributor,4,0.25,0.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/IGNITION COIL/044.jpg,ignition coil,fuel injector,4,0.25,0.0,1.0,1.0,True
+E:/car_search_data/dataset_clean/images/ignition_coil/ignition_coil_0014.jpg,ignition coil,radiator,7,0.14285714285714285,0.0,0.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/IGNITION COIL/067.jpg,ignition coil,fuse box,4,0.25,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/IGNITION COIL/113.jpg,ignition coil,ignition coil,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/IGNITION COIL/182.jpg,ignition coil,oil pressure sensor,6,0.16666666666666666,0.0,0.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/IGNITION COIL/027.jpg,ignition coil,ignition coil,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/test/IGNITION COIL/3.jpg,ignition coil,starter motor,7,0.14285714285714285,0.0,0.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/IGNITION COIL/192.jpg,ignition coil,air filter,33,0.030303030303030304,0.0,0.0,0.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/INSTRUMENT CLUSTER/032.jpg,instrument cluster,instrument cluster,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/INSTRUMENT CLUSTER/026.jpg,instrument cluster,instrument cluster,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/INSTRUMENT CLUSTER/075.jpg,instrument cluster,instrument cluster,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/INSTRUMENT CLUSTER/040.jpg,instrument cluster,radiator,2,0.5,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/INSTRUMENT CLUSTER/050.jpg,instrument cluster,instrument cluster,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/INSTRUMENT CLUSTER/177.jpg,instrument cluster,instrument cluster,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/INSTRUMENT CLUSTER/109.jpg,instrument cluster,instrument cluster,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/INSTRUMENT CLUSTER/120.jpg,instrument cluster,instrument cluster,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/INSTRUMENT CLUSTER/070.jpg,instrument cluster,instrument cluster,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/INSTRUMENT CLUSTER/142.jpg,instrument cluster,instrument cluster,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/INSTRUMENT CLUSTER/165.jpg,instrument cluster,instrument cluster,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/INSTRUMENT CLUSTER/145.jpg,instrument cluster,instrument cluster,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/INSTRUMENT CLUSTER/157.jpg,instrument cluster,instrument cluster,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/INSTRUMENT CLUSTER/052.jpg,instrument cluster,instrument cluster,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/INSTRUMENT CLUSTER/088.jpg,instrument cluster,instrument cluster,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/test/INSTRUMENT CLUSTER/5.jpg,instrument cluster,instrument cluster,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/INSTRUMENT CLUSTER/161.jpg,instrument cluster,instrument cluster,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/INSTRUMENT CLUSTER/042.jpg,instrument cluster,instrument cluster,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/valid/INSTRUMENT CLUSTER/4.jpg,instrument cluster,instrument cluster,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/LEAF SPRING/043.jpg,leaf spring,spoiler,3,0.3333333333333333,0.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/LEAF SPRING/008.jpg,leaf spring,idler arm,6,0.16666666666666666,0.0,0.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/LEAF SPRING/024.jpg,leaf spring,oil pan,4,0.25,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/LEAF SPRING/106.jpg,leaf spring,leaf spring,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/LEAF SPRING/086.jpg,leaf spring,leaf spring,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/LEAF SPRING/002.jpg,leaf spring,valve lifter,3,0.3333333333333333,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/valid/LEAF SPRING/3.jpg,leaf spring,lower control arm,19,0.05263157894736842,0.0,0.0,0.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/LEAF SPRING/096.jpg,leaf spring,wheel,17,0.058823529411764705,0.0,0.0,0.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/LEAF SPRING/104.jpg,leaf spring,leaf spring,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/LEAF SPRING/030.jpg,leaf spring,leaf spring,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/LEAF SPRING/059.jpg,leaf spring,leaf spring,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/LEAF SPRING/023.jpg,leaf spring,camshaft,18,0.05555555555555555,0.0,0.0,0.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/LOWER CONTROL ARM/163.jpg,lower control arm,lower control arm,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/LOWER CONTROL ARM/062.jpg,lower control arm,lower control arm,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/LOWER CONTROL ARM/115.jpg,lower control arm,lower control arm,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/LOWER CONTROL ARM/068.jpg,lower control arm,lower control arm,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/LOWER CONTROL ARM/161.jpg,lower control arm,lower control arm,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/LOWER CONTROL ARM/079.jpg,lower control arm,lower control arm,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/LOWER CONTROL ARM/028.jpg,lower control arm,lower control arm,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/LOWER CONTROL ARM/052.jpg,lower control arm,lower control arm,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/LOWER CONTROL ARM/095.jpg,lower control arm,lower control arm,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/LOWER CONTROL ARM/022.jpg,lower control arm,lower control arm,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/LOWER CONTROL ARM/138.jpg,lower control arm,lower control arm,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/LOWER CONTROL ARM/158.jpg,lower control arm,lower control arm,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/LOWER CONTROL ARM/133.jpg,lower control arm,starter motor,3,0.3333333333333333,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/LOWER CONTROL ARM/037.jpg,lower control arm,lower control arm,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/LOWER CONTROL ARM/166.jpg,lower control arm,grille,3,0.3333333333333333,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/LOWER CONTROL ARM/080.jpg,lower control arm,lower control arm,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/LOWER CONTROL ARM/031.jpg,lower control arm,lower control arm,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/LOWER CONTROL ARM/164.jpg,lower control arm,lower control arm,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OIL FILTER/099.jpg,oil filter,oil pressure sensor,3,0.3333333333333333,0.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OIL FILTER/128.jpg,oil filter,oil filter,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/dataset_clean/images/oil_filter/oil_filter_0025.jpg,oil filter,air filter,2,0.5,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OIL FILTER/044.jpg,oil filter,oil filter,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OIL FILTER/096.jpg,oil filter,oil pressure sensor,2,0.5,0.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OIL FILTER/161.jpg,oil filter,oil pressure sensor,12,0.08333333333333333,0.0,0.0,0.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OIL FILTER/018.jpg,oil filter,oil filter,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OIL FILTER/081.jpg,oil filter,grille,8,0.125,0.0,0.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OIL FILTER/050.jpg,oil filter,oil filter,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OIL FILTER/074.jpg,oil filter,oil filter,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OIL FILTER/064.jpg,oil filter,oil filter,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OIL FILTER/122.jpg,oil filter,valve lifter,12,0.08333333333333333,0.0,0.0,0.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OIL FILTER/114.jpg,oil filter,oil filter,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OIL FILTER/075.jpg,oil filter,fuel injector,21,0.047619047619047616,0.0,0.0,0.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OIL FILTER/038.jpg,oil filter,trunk,14,0.07142857142857142,0.0,0.0,0.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OIL FILTER/086.jpg,oil filter,oil filter,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OIL FILTER/070.jpg,oil filter,oil pressure sensor,8,0.125,0.0,0.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OIL FILTER/095.jpg,oil filter,oil filter,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OIL FILTER/132.jpg,oil filter,oil filter,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/dataset_clean/images/oil_filter/oil_filter_0021.jpg,oil filter,air filter,22,0.045454545454545456,0.0,0.0,0.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OIL PAN/014.jpg,oil pan,oil pan,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OIL PAN/065.jpg,oil pan,oil pan,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OIL PAN/171.jpg,oil pan,gas cap,2,0.5,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OIL PAN/146.jpg,oil pan,oil pan,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OIL PAN/143.jpg,oil pan,oil pan,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OIL PAN/107.jpg,oil pan,oil pan,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/valid/OIL PAN/1.jpg,oil pan,oil pan,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OIL PAN/054.jpg,oil pan,oil pan,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OIL PAN/099.jpg,oil pan,oil pan,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OIL PAN/097.jpg,oil pan,grille,8,0.125,0.0,0.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OIL PAN/090.jpg,oil pan,lower control arm,10,0.1,0.0,0.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OIL PAN/109.jpg,oil pan,oil pan,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OIL PAN/135.jpg,oil pan,oil pan,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OIL PAN/048.jpg,oil pan,oil pan,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OIL PAN/022.jpg,oil pan,oil pan,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OIL PAN/023.jpg,oil pan,oil pan,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OIL PAN/123.jpg,oil pan,oil pan,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OIL PAN/077.jpg,oil pan,camshaft,6,0.16666666666666666,0.0,0.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OIL PAN/056.jpg,oil pan,oil pan,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OIL PRESSURE SENSOR/044.jpg,oil pressure sensor,oil pressure sensor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OIL PRESSURE SENSOR/115.jpg,oil pressure sensor,oil pressure sensor,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OIL PRESSURE SENSOR/072.jpg,oil pressure sensor,oil pressure sensor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OIL PRESSURE SENSOR/136.jpg,oil pressure sensor,oil pressure sensor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OIL PRESSURE SENSOR/117.jpg,oil pressure sensor,oil pressure sensor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OIL PRESSURE SENSOR/074.jpg,oil pressure sensor,oxygen sensor,2,0.5,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OIL PRESSURE SENSOR/113.jpg,oil pressure sensor,fuel injector,2,0.5,0.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OIL PRESSURE SENSOR/062.jpg,oil pressure sensor,oxygen sensor,3,0.3333333333333333,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OIL PRESSURE SENSOR/047.jpg,oil pressure sensor,oxygen sensor,2,0.5,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OIL PRESSURE SENSOR/091.jpg,oil pressure sensor,oil pressure sensor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OIL PRESSURE SENSOR/020.jpg,oil pressure sensor,oil pressure sensor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OIL PRESSURE SENSOR/005.jpg,oil pressure sensor,oil pressure sensor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OIL PRESSURE SENSOR/019.jpg,oil pressure sensor,oil pressure sensor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OIL PRESSURE SENSOR/102.jpg,oil pressure sensor,oil pressure sensor,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OIL PRESSURE SENSOR/048.jpg,oil pressure sensor,oil pressure sensor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OIL PRESSURE SENSOR/140.jpg,oil pressure sensor,oil pressure sensor,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OIL PRESSURE SENSOR/009.jpg,oil pressure sensor,oil pressure sensor,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OIL PRESSURE SENSOR/003.jpg,oil pressure sensor,oil pressure sensor,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OIL PRESSURE SENSOR/013.jpg,oil pressure sensor,oil pressure sensor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OVERFLOW TANK/162.jpg,overflow tank,overflow tank,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OVERFLOW TANK/115.jpg,overflow tank,overflow tank,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OVERFLOW TANK/173.jpg,overflow tank,battery,8,0.125,0.0,0.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OVERFLOW TANK/156.jpg,overflow tank,overflow tank,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/valid/OVERFLOW TANK/3.jpg,overflow tank,overflow tank,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OVERFLOW TANK/154.jpg,overflow tank,vacuum brake booster,12,0.08333333333333333,0.0,0.0,0.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OVERFLOW TANK/028.jpg,overflow tank,ignition coil,3,0.3333333333333333,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OVERFLOW TANK/139.jpg,overflow tank,overflow tank,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OVERFLOW TANK/130.jpg,overflow tank,overflow tank,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OVERFLOW TANK/108.jpg,overflow tank,overflow tank,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OVERFLOW TANK/062.jpg,overflow tank,overflow tank,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OVERFLOW TANK/179.jpg,overflow tank,side mirror,23,0.043478260869565216,0.0,0.0,0.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OVERFLOW TANK/091.jpg,overflow tank,overflow tank,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OVERFLOW TANK/064.jpg,overflow tank,overflow tank,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OVERFLOW TANK/181.jpg,overflow tank,brake pad,6,0.16666666666666666,0.0,0.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OVERFLOW TANK/144.jpg,overflow tank,overflow tank,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/test/OVERFLOW TANK/2.jpg,overflow tank,overflow tank,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OVERFLOW TANK/128.jpg,overflow tank,exhaust muffler,6,0.16666666666666666,0.0,0.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OVERFLOW TANK/027.jpg,overflow tank,overflow tank,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OVERFLOW TANK/048.jpg,overflow tank,overflow tank,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OXYGEN SENSOR/052.jpg,oxygen sensor,oxygen sensor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OXYGEN SENSOR/092.jpg,oxygen sensor,oxygen sensor,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OXYGEN SENSOR/005.jpg,oxygen sensor,oxygen sensor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OXYGEN SENSOR/160.jpg,oxygen sensor,oxygen sensor,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OXYGEN SENSOR/058.jpg,oxygen sensor,oxygen sensor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OXYGEN SENSOR/022.jpg,oxygen sensor,oxygen sensor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OXYGEN SENSOR/177.jpg,oxygen sensor,oxygen sensor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OXYGEN SENSOR/171.jpg,oxygen sensor,oil pressure sensor,2,0.5,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OXYGEN SENSOR/125.jpg,oxygen sensor,oxygen sensor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OXYGEN SENSOR/014.jpg,oxygen sensor,oxygen sensor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OXYGEN SENSOR/054.jpg,oxygen sensor,oxygen sensor,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OXYGEN SENSOR/046.jpg,oxygen sensor,oxygen sensor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OXYGEN SENSOR/122.jpg,oxygen sensor,oxygen sensor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OXYGEN SENSOR/104.jpg,oxygen sensor,fuel injector,2,0.5,0.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OXYGEN SENSOR/095.jpg,oxygen sensor,oxygen sensor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OXYGEN SENSOR/114.jpg,oxygen sensor,oxygen sensor,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OXYGEN SENSOR/034.jpg,oxygen sensor,oxygen sensor,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OXYGEN SENSOR/165.jpg,oxygen sensor,oxygen sensor,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/OXYGEN SENSOR/024.jpg,oxygen sensor,oxygen sensor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/PISTON/024.jpg,piston,valve lifter,16,0.0625,0.0,0.0,0.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/PISTON/008.jpg,piston,piston,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/valid/PISTON/1.jpg,piston,piston,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/PISTON/089.jpg,piston,piston,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/PISTON/041.jpg,piston,piston,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/PISTON/034.jpg,piston,piston,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/PISTON/020.jpg,piston,piston,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/PISTON/019.jpg,piston,thermostat,2,0.5,0.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/PISTON/045.jpg,piston,piston,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/PISTON/065.jpg,piston,piston,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/PISTON/094.jpg,piston,oil pressure sensor,16,0.0625,0.0,0.0,0.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/PISTON/080.jpg,piston,piston,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/PRESSURE PLATE/133.jpg,pressure plate,pressure plate,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/PRESSURE PLATE/082.jpg,pressure plate,pressure plate,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/PRESSURE PLATE/074.jpg,pressure plate,pressure plate,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/PRESSURE PLATE/015.jpg,pressure plate,pressure plate,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/PRESSURE PLATE/005.jpg,pressure plate,pressure plate,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/PRESSURE PLATE/019.jpg,pressure plate,pressure plate,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/valid/PRESSURE PLATE/1.jpg,pressure plate,pressure plate,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/PRESSURE PLATE/030.jpg,pressure plate,pressure plate,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/PRESSURE PLATE/119.jpg,pressure plate,pressure plate,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/PRESSURE PLATE/171.jpg,pressure plate,pressure plate,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/PRESSURE PLATE/079.jpg,pressure plate,pressure plate,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/PRESSURE PLATE/106.jpg,pressure plate,pressure plate,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/test/PRESSURE PLATE/2.jpg,pressure plate,pressure plate,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/test/PRESSURE PLATE/4.jpg,pressure plate,pressure plate,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/PRESSURE PLATE/010.jpg,pressure plate,pressure plate,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/PRESSURE PLATE/049.jpg,pressure plate,pressure plate,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/PRESSURE PLATE/125.jpg,pressure plate,pressure plate,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/PRESSURE PLATE/141.jpg,pressure plate,pressure plate,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/PRESSURE PLATE/004.jpg,pressure plate,pressure plate,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIATOR/062.jpg,radiator,radiator,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIATOR/072.jpg,radiator,radiator,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/dataset_clean/images/radiator/radiator_0013.jpg,radiator,radiator,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIATOR/049.jpg,radiator,radiator,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/dataset_clean/images/radiator/radiator_0039.jpg,radiator,grille,3,0.3333333333333333,0.0,1.0,1.0,True
+E:/car_search_data/dataset_clean/images/radiator/radiator_r2_0027.jpg,radiator,hood,11,0.09090909090909091,0.0,0.0,0.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIATOR/143.jpg,radiator,radiator,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/dataset_clean/images/radiator/radiator_0009.jpg,radiator,side mirror,19,0.05263157894736842,0.0,0.0,0.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIATOR/159.jpg,radiator,radiator,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIATOR/165.jpg,radiator,radiator,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIATOR/089.jpg,radiator,radiator,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIATOR/091.jpg,radiator,radiator,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIATOR/080.jpg,radiator,radiator,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/dataset_clean/images/radiator/radiator_r2_0055.jpg,radiator,radiator,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIATOR/039.jpg,radiator,radiator,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/dataset_clean/images/radiator/radiator_r2_0039.jpg,radiator,headlight,2,0.5,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIATOR/018.jpg,radiator,radiator,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/dataset_clean/images/radiator/radiator_0035.jpg,radiator,radiator,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIATOR/085.jpg,radiator,radiator,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIATOR/074.jpg,radiator,radiator,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIATOR FAN/131.jpg,radiator fan,radiator fan,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIATOR FAN/140.jpg,radiator fan,radiator fan,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIATOR FAN/003.jpg,radiator fan,radiator fan,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIATOR FAN/114.jpg,radiator fan,radiator fan,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIATOR FAN/155.jpg,radiator fan,radiator fan,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIATOR FAN/017.jpg,radiator fan,radiator fan,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIATOR FAN/135.jpg,radiator fan,radiator fan,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIATOR FAN/086.jpg,radiator fan,radiator fan,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIATOR FAN/061.jpg,radiator fan,radiator fan,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIATOR FAN/027.jpg,radiator fan,radiator fan,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIATOR FAN/157.jpg,radiator fan,radiator fan,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIATOR FAN/021.jpg,radiator fan,radiator fan,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIATOR FAN/123.jpg,radiator fan,radiator fan,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIATOR FAN/151.jpg,radiator fan,radiator fan,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIATOR FAN/144.jpg,radiator fan,radiator fan,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/valid/RADIATOR FAN/3.jpg,radiator fan,radiator fan,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIATOR FAN/054.jpg,radiator fan,radiator fan,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIATOR HOSE/027.jpg,radiator hose,radiator hose,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIATOR HOSE/061.jpg,radiator hose,trunk,12,0.08333333333333333,0.0,0.0,0.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIATOR HOSE/090.jpg,radiator hose,radiator hose,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIATOR HOSE/052.jpg,radiator hose,radiator hose,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIATOR HOSE/171.jpg,radiator hose,trunk,13,0.07692307692307693,0.0,0.0,0.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIATOR HOSE/056.jpg,radiator hose,headlight,5,0.2,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIATOR HOSE/105.jpg,radiator hose,radiator hose,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIATOR HOSE/048.jpg,radiator hose,radiator hose,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIATOR HOSE/082.jpg,radiator hose,radiator hose,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/valid/RADIATOR HOSE/4.jpg,radiator hose,door,9,0.1111111111111111,0.0,0.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIATOR HOSE/043.jpg,radiator hose,radiator hose,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIATOR HOSE/001.jpg,radiator hose,radiator hose,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIATOR HOSE/163.jpg,radiator hose,radiator hose,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIATOR HOSE/028.jpg,radiator hose,radiator hose,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIATOR HOSE/170.jpg,radiator hose,radiator hose,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIATOR HOSE/060.jpg,radiator hose,radiator hose,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIATOR HOSE/121.jpg,radiator hose,radiator hose,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIATOR HOSE/114.jpg,radiator hose,radiator hose,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIO/054.jpg,radio,radio,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIO/079.jpg,radio,radio,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIO/094.jpg,radio,radio,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIO/005.jpg,radio,radio,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/valid/RADIO/3.jpg,radio,radio,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIO/012.jpg,radio,radio,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIO/088.jpg,radio,radio,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIO/136.jpg,radio,radio,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIO/162.jpg,radio,radio,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIO/187.jpg,radio,radio,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIO/150.jpg,radio,instrument cluster,2,0.5,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIO/097.jpg,radio,radio,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIO/077.jpg,radio,radio,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIO/102.jpg,radio,radio,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIO/091.jpg,radio,radio,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIO/045.jpg,radio,radio,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIO/035.jpg,radio,radio,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/test/RADIO/1.jpg,radio,radio,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RADIO/165.jpg,radio,radio,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/test/RADIO/5.jpg,radio,radio,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RIM/044.jpg,rim,rim,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RIM/139.jpg,rim,rim,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RIM/007.jpg,rim,rim,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RIM/114.jpg,rim,rim,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RIM/166.jpg,rim,rim,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RIM/073.jpg,rim,rim,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RIM/020.jpg,rim,rim,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RIM/083.jpg,rim,rim,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RIM/120.jpg,rim,rim,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RIM/032.jpg,rim,rim,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RIM/031.jpg,rim,rim,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RIM/078.jpg,rim,rim,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RIM/131.jpg,rim,rim,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RIM/033.jpg,rim,rim,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RIM/058.jpg,rim,rim,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RIM/006.jpg,rim,rim,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RIM/167.jpg,rim,rim,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RIM/047.jpg,rim,rim,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/RIM/142.jpg,rim,brake disc,2,0.5,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/SHIFT KNOB/064.jpg,shift knob,taillight,5,0.2,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/SHIFT KNOB/186.jpg,shift knob,shift knob,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/SHIFT KNOB/011.jpg,shift knob,shift knob,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/SHIFT KNOB/163.jpg,shift knob,shift knob,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/SHIFT KNOB/165.jpg,shift knob,side mirror,3,0.3333333333333333,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/SHIFT KNOB/060.jpg,shift knob,shift knob,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/SHIFT KNOB/110.jpg,shift knob,side mirror,7,0.14285714285714285,0.0,0.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/SHIFT KNOB/153.jpg,shift knob,grille,13,0.07692307692307693,0.0,0.0,0.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/SHIFT KNOB/051.jpg,shift knob,shift knob,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/SHIFT KNOB/116.jpg,shift knob,shift knob,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/SHIFT KNOB/112.jpg,shift knob,trunk,14,0.07142857142857142,0.0,0.0,0.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/SHIFT KNOB/081.jpg,shift knob,shift knob,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/SHIFT KNOB/131.jpg,shift knob,shift knob,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/SHIFT KNOB/023.jpg,shift knob,shift knob,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/SHIFT KNOB/036.jpg,shift knob,shift knob,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/SHIFT KNOB/092.jpg,shift knob,trunk,23,0.043478260869565216,0.0,0.0,0.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/SHIFT KNOB/149.jpg,shift knob,taillight,17,0.058823529411764705,0.0,0.0,0.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/test/SHIFT KNOB/5.jpg,shift knob,shift knob,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/SHIFT KNOB/047.jpg,shift knob,shift knob,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/SHIFT KNOB/025.jpg,shift knob,trunk,4,0.25,0.0,1.0,1.0,False
+E:/car_search_data/dataset_clean/images/shock_absorber/shock_absorber_0016.jpg,shock absorber,camshaft,9,0.1111111111111111,0.0,0.0,1.0,False
+E:/car_search_data/dataset_clean/images/shock_absorber/shock_absorber_r2_0008.jpg,shock absorber,fender,52,0.019230769230769232,0.0,0.0,0.0,True
+E:/car_search_data/dataset_clean/images/shock_absorber/shock_absorber_r2_0016.jpg,shock absorber,starter motor,22,0.045454545454545456,0.0,0.0,0.0,False
+E:/car_search_data/dataset_clean/images/shock_absorber/shock_absorber_r2_0020.jpg,shock absorber,piston,21,0.047619047619047616,0.0,0.0,0.0,False
+E:/car_search_data/dataset_clean/images/shock_absorber/shock_absorber_r2_0019.jpg,shock absorber,brake disc,9,0.1111111111111111,0.0,0.0,1.0,False
+E:/car_search_data/dataset_clean/images/shock_absorber/shock_absorber_r2_0023.jpg,shock absorber,taillight,55,0.01818181818181818,0.0,0.0,0.0,True
+E:/car_search_data/dataset_clean/images/spark_plug/spark_plug_0042.jpg,spark plug,valve lifter,16,0.0625,0.0,0.0,0.0,True
+E:/car_search_data/dataset_clean/images/spark_plug/spark_plug_0004.jpg,spark plug,spark plug,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/valid/SPARK PLUG/2.jpg,spark plug,spark plug,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/SPARK PLUG/122.jpg,spark plug,oxygen sensor,3,0.3333333333333333,0.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/SPARK PLUG/004.jpg,spark plug,spark plug,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/SPARK PLUG/071.jpg,spark plug,spark plug,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/dataset_clean/images/spark_plug/spark_plug_0010.jpg,spark plug,spark plug,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/dataset_clean/images/spark_plug/spark_plug_0015.jpg,spark plug,air filter,7,0.14285714285714285,0.0,0.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/SPARK PLUG/039.jpg,spark plug,spark plug,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/SPARK PLUG/015.jpg,spark plug,spark plug,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/SPARK PLUG/101.jpg,spark plug,spark plug,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/dataset_clean/images/spark_plug/spark_plug_r2_0015.jpg,spark plug,grille,15,0.06666666666666667,0.0,0.0,0.0,False
+E:/car_search_data/dataset_clean/images/spark_plug/spark_plug_0043.jpg,spark plug,thermostat,17,0.058823529411764705,0.0,0.0,0.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/SPARK PLUG/063.jpg,spark plug,spark plug,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/SPARK PLUG/088.jpg,spark plug,spark plug,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/SPARK PLUG/036.jpg,spark plug,spark plug,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/SPARK PLUG/104.jpg,spark plug,spark plug,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/SPARK PLUG/128.jpg,spark plug,spark plug,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/dataset_clean/images/spark_plug/spark_plug_0032.jpg,spark plug,oxygen sensor,3,0.3333333333333333,0.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/SPARK PLUG/057.jpg,spark plug,spark plug,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/SPOILER/094.jpg,spoiler,spoiler,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/SPOILER/026.jpg,spoiler,spoiler,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/SPOILER/134.jpg,spoiler,headlight,8,0.125,0.0,0.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/SPOILER/061.jpg,spoiler,side mirror,10,0.1,0.0,0.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/SPOILER/147.jpg,spoiler,spoiler,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/SPOILER/159.jpg,spoiler,hood,6,0.16666666666666666,0.0,0.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/SPOILER/160.jpg,spoiler,spoiler,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/SPOILER/005.jpg,spoiler,spoiler,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/test/SPOILER/4.jpg,spoiler,spoiler,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/SPOILER/018.jpg,spoiler,spoiler,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/SPOILER/178.jpg,spoiler,spoiler,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/SPOILER/083.jpg,spoiler,spoiler,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/SPOILER/097.jpg,spoiler,lower control arm,2,0.5,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/SPOILER/168.jpg,spoiler,hood,5,0.2,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/SPOILER/182.jpg,spoiler,side mirror,8,0.125,0.0,0.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/SPOILER/138.jpg,spoiler,spoiler,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/SPOILER/090.jpg,spoiler,side mirror,12,0.08333333333333333,0.0,0.0,0.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/SPOILER/021.jpg,spoiler,spoiler,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/SPOILER/141.jpg,spoiler,spoiler,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/STARTER/080.jpg,starter motor,starter motor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/STARTER/190.jpg,starter motor,starter motor,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/dataset_clean/images/starter_motor/starter_motor_0019.jpg,starter motor,starter motor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/STARTER/045.jpg,starter motor,starter motor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/STARTER/079.jpg,starter motor,starter motor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/STARTER/086.jpg,starter motor,starter motor,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/dataset_clean/images/starter_motor/starter_motor_r2_0006.jpg,starter motor,oil filter,21,0.047619047619047616,0.0,0.0,0.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/STARTER/013.jpg,starter motor,starter motor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/STARTER/093.jpg,starter motor,starter motor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/STARTER/064.jpg,starter motor,starter motor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/STARTER/189.jpg,starter motor,starter motor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/STARTER/104.jpg,starter motor,starter motor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/STARTER/143.jpg,starter motor,starter motor,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/STARTER/154.jpg,starter motor,starter motor,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/dataset_clean/images/starter_motor/starter_motor_0035.jpg,starter motor,starter motor,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/STARTER/047.jpg,starter motor,air compressor,2,0.5,0.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/STARTER/165.jpg,starter motor,starter motor,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/STARTER/067.jpg,starter motor,starter motor,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/dataset_clean/images/starter_motor/starter_motor_r2_0012.jpg,starter motor,vacuum brake booster,2,0.5,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/STARTER/075.jpg,starter motor,starter motor,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/tail_light/hitl_Car_damages_1465_1262854786.jpg,taillight,trunk,2,0.5,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/TAILLIGHTS/141.jpg,taillight,taillight,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/tail_light/hitl_Car_damages_1670_1263582965.jpg,taillight,windshield,4,0.25,0.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/tail_light/hitl_Car_damages_1650_1164153001.jpg,taillight,headlight,5,0.2,0.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/TAILLIGHTS/091.jpg,taillight,taillight,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/TAILLIGHTS/010.jpg,taillight,taillight,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/tail_light/hitl_Car_damages_1284_1164149700.jpg,taillight,taillight,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/tail_light/hitl_Car_damages_1626_1164153380.jpg,taillight,taillight,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/tail_light/hitl_Car_damages_1081_1164160280.jpg,taillight,taillight,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/TAILLIGHTS/052.jpg,taillight,taillight,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/TAILLIGHTS/111.jpg,taillight,taillight,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/tail_light/hitl_Car_damages_762_1265251421.jpg,taillight,taillight,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/tail_light/hitl_Car_damages_1075_1164161499.jpg,taillight,taillight,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/tail_light/hitl_Car_damages_298_1164158523.jpg,taillight,taillight,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/tail_light/hitl_Car_damages_1631_1263355749.jpg,taillight,taillight,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/TAILLIGHTS/056.jpg,taillight,side mirror,2,0.5,0.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/TAILLIGHTS/007.jpg,taillight,taillight,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/TAILLIGHTS/085.jpg,taillight,taillight,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/tail_light/hitl_Car_damages_226_1164157680.jpg,taillight,taillight,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/TAILLIGHTS/040.jpg,taillight,headlight,2,0.5,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/THERMOSTAT/020.jpg,thermostat,thermostat,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/THERMOSTAT/103.jpg,thermostat,thermostat,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/THERMOSTAT/161.jpg,thermostat,thermostat,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/test/THERMOSTAT/3.jpg,thermostat,thermostat,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/THERMOSTAT/030.jpg,thermostat,oil pressure sensor,2,0.5,0.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/THERMOSTAT/002.jpg,thermostat,thermostat,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/THERMOSTAT/031.jpg,thermostat,oxygen sensor,2,0.5,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/THERMOSTAT/133.jpg,thermostat,thermostat,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/THERMOSTAT/019.jpg,thermostat,thermostat,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/THERMOSTAT/015.jpg,thermostat,thermostat,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/THERMOSTAT/094.jpg,thermostat,spark plug,2,0.5,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/THERMOSTAT/064.jpg,thermostat,thermostat,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/THERMOSTAT/078.jpg,thermostat,thermostat,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/THERMOSTAT/106.jpg,thermostat,thermostat,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/THERMOSTAT/029.jpg,thermostat,thermostat,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/THERMOSTAT/025.jpg,thermostat,thermostat,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/THERMOSTAT/126.jpg,thermostat,thermostat,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/THERMOSTAT/144.jpg,thermostat,thermostat,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/THERMOSTAT/036.jpg,thermostat,thermostat,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/TORQUE CONVERTER/157.jpg,torque converter,torque converter,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/TORQUE CONVERTER/181.jpg,torque converter,torque converter,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/TORQUE CONVERTER/080.jpg,torque converter,torque converter,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/TORQUE CONVERTER/116.jpg,torque converter,torque converter,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/TORQUE CONVERTER/028.jpg,torque converter,torque converter,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/TORQUE CONVERTER/153.jpg,torque converter,torque converter,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/TORQUE CONVERTER/147.jpg,torque converter,torque converter,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/TORQUE CONVERTER/026.jpg,torque converter,torque converter,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/TORQUE CONVERTER/113.jpg,torque converter,torque converter,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/TORQUE CONVERTER/093.jpg,torque converter,torque converter,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/TORQUE CONVERTER/061.jpg,torque converter,alternator,3,0.3333333333333333,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/TORQUE CONVERTER/017.jpg,torque converter,oil pressure sensor,2,0.5,0.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/TORQUE CONVERTER/184.jpg,torque converter,oil filter,2,0.5,0.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/TORQUE CONVERTER/097.jpg,torque converter,torque converter,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/TORQUE CONVERTER/035.jpg,torque converter,torque converter,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/TORQUE CONVERTER/025.jpg,torque converter,torque converter,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/TORQUE CONVERTER/170.jpg,torque converter,torque converter,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/TORQUE CONVERTER/056.jpg,torque converter,torque converter,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/TORQUE CONVERTER/001.jpg,torque converter,pressure plate,11,0.09090909090909091,0.0,0.0,0.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/trunk/hitl_Car_damages_1626_1164153381.jpg,trunk,windshield,4,0.25,0.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/trunk/hitl_Car_damages_1433_1164151313.jpg,trunk,trunk,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/trunk/hitl_Car_damages_1473_1262874082.jpg,trunk,taillight,2,0.5,0.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/trunk/hitl_Car_damages_337_1264623957.jpg,trunk,grille,7,0.14285714285714285,0.0,0.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/trunk/hitl_Car_damages_731_1164164168.jpg,trunk,fender,4,0.25,0.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/trunk/hitl_Car_damages_1724_1164154684.jpg,trunk,trunk,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/trunk/hitl_Car_damages_1631_1164153466.jpg,trunk,trunk,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/trunk/hitl_Car_damages_735_1164164241.jpg,trunk,hood,5,0.2,0.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/trunk/hitl_Car_damages_1724_1164154679.jpg,trunk,taillight,2,0.5,0.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/trunk/hitl_Car_damages_1683_1164154098.jpg,trunk,trunk,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/trunk/hitl_Car_damages_1714_1164155018.jpg,trunk,windshield,6,0.16666666666666666,0.0,0.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/trunk/hitl_Car_damages_1273_1164149758.jpg,trunk,hood,5,0.2,0.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/trunk/hitl_Car_damages_1631_1263355774.jpg,trunk,trunk,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/trunk/hitl_Car_damages_179_1164157338.jpg,trunk,bumper,2,0.5,0.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/trunk/hitl_Car_damages_878_1164162577.jpg,trunk,trunk,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/trunk/hitl_Car_damages_1365_1262710556.jpg,trunk,windshield,5,0.2,0.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/trunk/hitl_Car_damages_337_1164158790.jpg,trunk,door,3,0.3333333333333333,0.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/trunk/hitl_Car_damages_280_1164158270.jpg,trunk,taillight,2,0.5,0.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/trunk/hitl_Car_damages_1284_1164149731.jpg,trunk,door,4,0.25,0.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/trunk/hitl_Car_damages_724_1164164563.jpg,trunk,hood,2,0.5,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/VACUUM BRAKE BOOSTER/068.jpg,vacuum brake booster,vacuum brake booster,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/test/VACUUM BRAKE BOOSTER/4.jpg,vacuum brake booster,vacuum brake booster,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/VACUUM BRAKE BOOSTER/150.jpg,vacuum brake booster,vacuum brake booster,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/VACUUM BRAKE BOOSTER/035.jpg,vacuum brake booster,distributor,2,0.5,0.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/VACUUM BRAKE BOOSTER/108.jpg,vacuum brake booster,vacuum brake booster,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/VACUUM BRAKE BOOSTER/024.jpg,vacuum brake booster,vacuum brake booster,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/VACUUM BRAKE BOOSTER/050.jpg,vacuum brake booster,vacuum brake booster,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/VACUUM BRAKE BOOSTER/137.jpg,vacuum brake booster,vacuum brake booster,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/VACUUM BRAKE BOOSTER/121.jpg,vacuum brake booster,vacuum brake booster,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/VACUUM BRAKE BOOSTER/047.jpg,vacuum brake booster,vacuum brake booster,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/VACUUM BRAKE BOOSTER/089.jpg,vacuum brake booster,vacuum brake booster,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/test/VACUUM BRAKE BOOSTER/5.jpg,vacuum brake booster,oxygen sensor,5,0.2,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/VACUUM BRAKE BOOSTER/048.jpg,vacuum brake booster,vacuum brake booster,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/VACUUM BRAKE BOOSTER/042.jpg,vacuum brake booster,vacuum brake booster,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/VACUUM BRAKE BOOSTER/096.jpg,vacuum brake booster,oxygen sensor,2,0.5,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/VACUUM BRAKE BOOSTER/141.jpg,vacuum brake booster,vacuum brake booster,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/VACUUM BRAKE BOOSTER/091.jpg,vacuum brake booster,ignition coil,2,0.5,0.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/VACUUM BRAKE BOOSTER/087.jpg,vacuum brake booster,vacuum brake booster,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/VACUUM BRAKE BOOSTER/030.jpg,vacuum brake booster,vacuum brake booster,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/VALVE LIFTER/013.jpg,valve lifter,valve lifter,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/VALVE LIFTER/171.jpg,valve lifter,valve lifter,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/VALVE LIFTER/015.jpg,valve lifter,valve lifter,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/VALVE LIFTER/126.jpg,valve lifter,valve lifter,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/VALVE LIFTER/011.jpg,valve lifter,valve lifter,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/VALVE LIFTER/003.jpg,valve lifter,valve lifter,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/VALVE LIFTER/133.jpg,valve lifter,valve lifter,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/VALVE LIFTER/102.jpg,valve lifter,valve lifter,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/VALVE LIFTER/044.jpg,valve lifter,valve lifter,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/VALVE LIFTER/144.jpg,valve lifter,valve lifter,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/VALVE LIFTER/137.jpg,valve lifter,valve lifter,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/VALVE LIFTER/138.jpg,valve lifter,valve lifter,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/VALVE LIFTER/081.jpg,valve lifter,valve lifter,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/VALVE LIFTER/076.jpg,valve lifter,valve lifter,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/VALVE LIFTER/169.jpg,valve lifter,valve lifter,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/VALVE LIFTER/145.jpg,valve lifter,valve lifter,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/VALVE LIFTER/166.jpg,valve lifter,valve lifter,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/VALVE LIFTER/005.jpg,valve lifter,valve lifter,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/WATER PUMP/074.jpg,water pump,pressure plate,2,0.5,0.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/WATER PUMP/014.jpg,water pump,brake caliper,11,0.09090909090909091,0.0,0.0,0.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/WATER PUMP/081.jpg,water pump,water pump,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/WATER PUMP/032.jpg,water pump,water pump,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/WATER PUMP/165.jpg,water pump,water pump,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/WATER PUMP/123.jpg,water pump,water pump,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/WATER PUMP/052.jpg,water pump,water pump,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/WATER PUMP/084.jpg,water pump,starter motor,2,0.5,0.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/WATER PUMP/040.jpg,water pump,water pump,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/WATER PUMP/174.jpg,water pump,air compressor,2,0.5,0.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/WATER PUMP/133.jpg,water pump,cylinder head,5,0.2,0.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/WATER PUMP/119.jpg,water pump,water pump,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/WATER PUMP/170.jpg,water pump,water pump,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/WATER PUMP/098.jpg,water pump,water pump,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/WATER PUMP/135.jpg,water pump,water pump,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/WATER PUMP/057.jpg,water pump,water pump,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/WATER PUMP/063.jpg,water pump,water pump,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/WATER PUMP/160.jpg,water pump,starter motor,2,0.5,0.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/wheel/hitl_Car_damages_697_1164163848.jpg,wheel,wheel,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/wheel/hitl_Car_damages_1544_1164152625.jpg,wheel,fender,3,0.3333333333333333,0.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/wheel/hitl_Car_damages_1740_1164155253.jpg,wheel,wheel,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/wheel/hitl_Car_damages_1589_1164152823.jpg,wheel,wheel,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/wheel/hitl_Car_damages_1601_1164152888.jpg,wheel,wheel,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/wheel/hitl_Car_damages_1274_1164149682.jpg,wheel,wheel,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/wheel/hitl_Car_damages_1054_1164161139.jpg,wheel,wheel,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/wheel/hitl_Car_damages_1626_1164153376.jpg,wheel,wheel,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/wheel/hitl_Car_damages_889_1164162389.jpg,wheel,wheel,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/wheel/hitl_Car_damages_1649_1164153723.jpg,wheel,wheel,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/wheel/hitl_Car_damages_1501_1164152029.jpg,wheel,wheel,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/wheel/hitl_Car_damages_854_1164163157.jpg,wheel,wheel,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/wheel/hitl_Car_damages_902_1164162520.jpg,wheel,wheel,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/wheel/hitl_Car_damages_325_1164158784.jpg,wheel,wheel,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/wheel/hitl_Car_damages_21_1164155814.jpg,wheel,wheel,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/wheel/hitl_Car_damages_1678_1164153969.jpg,wheel,wheel,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/wheel/hitl_Car_damages_145_1164156669.jpg,wheel,wheel,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/wheel/hitl_Car_damages_1510_1164152204.jpg,wheel,wheel,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/wheel/hitl_Car_damages_233_1164157805.jpg,wheel,fender,2,0.5,0.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/wheel/hitl_Car_damages_1296_1164150107.jpg,wheel,wheel,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/test/WINDOW REGULATOR/5.jpg,window regulator,window regulator,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/WINDOW REGULATOR/009.jpg,window regulator,window regulator,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/WINDOW REGULATOR/150.jpg,window regulator,window regulator,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/WINDOW REGULATOR/140.jpg,window regulator,window regulator,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/WINDOW REGULATOR/038.jpg,window regulator,window regulator,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/WINDOW REGULATOR/023.jpg,window regulator,window regulator,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/WINDOW REGULATOR/039.jpg,window regulator,window regulator,1,1.0,1.0,1.0,1.0,False
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/WINDOW REGULATOR/106.jpg,window regulator,window regulator,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/WINDOW REGULATOR/019.jpg,window regulator,window regulator,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/WINDOW REGULATOR/002.jpg,window regulator,window regulator,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/WINDOW REGULATOR/133.jpg,window regulator,window regulator,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/WINDOW REGULATOR/010.jpg,window regulator,window regulator,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/WINDOW REGULATOR/151.jpg,window regulator,window regulator,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/WINDOW REGULATOR/066.jpg,window regulator,window regulator,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/WINDOW REGULATOR/087.jpg,window regulator,window regulator,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/WINDOW REGULATOR/121.jpg,window regulator,window regulator,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/WINDOW REGULATOR/025.jpg,window regulator,window regulator,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/WINDOW REGULATOR/040.jpg,window regulator,window regulator,1,1.0,1.0,1.0,1.0,True
+C:/Users/HP Omen 16/.vscode/car_search/data/raw/roboflow/car parts 50/train/WINDOW REGULATOR/175.jpg,window regulator,windshield,21,0.047619047619047616,0.0,0.0,0.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/windshield/hitl_Car_damages_1443_1164151524.jpg,windshield,windshield,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/windshield/hitl_Car_damages_1655_1164154411.jpg,windshield,windshield,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/windshield/hitl_Car_damages_337_1164158708.jpg,windshield,windshield,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/windshield/hitl_Car_damages_1113_1164160761.jpg,windshield,windshield,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/windshield/hitl_Car_damages_1499_1164152425.jpg,windshield,windshield,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/windshield/hitl_Car_damages_708_1164164289.jpg,windshield,windshield,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/windshield/hitl_Car_damages_1341_1164150286.jpg,windshield,grille,9,0.1111111111111111,0.0,0.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/windshield/hitl_Car_damages_1274_1164149761.jpg,windshield,hood,2,0.5,0.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/windshield/hitl_Car_damages_858_1164163211.jpg,windshield,windshield,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/windshield/hitl_Car_damages_1056_1164161293.jpg,windshield,windshield,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/windshield/hitl_Car_damages_286_1164158236.jpg,windshield,windshield,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/windshield/hitl_Car_damages_1744_1164155327.jpg,windshield,windshield,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/windshield/hitl_Car_damages_1700_1164154309.jpg,windshield,windshield,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/windshield/hitl_Car_damages_280_1164158285.jpg,windshield,windshield,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/windshield/hitl_Car_damages_763_1265270218.jpg,windshield,windshield,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/windshield/hitl_Car_damages_725_1164164591.jpg,windshield,windshield,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/windshield/hitl_Car_damages_1626_1164153382.jpg,windshield,windshield,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/windshield/hitl_Car_damages_1090_1164160450.jpg,windshield,windshield,1,1.0,1.0,1.0,1.0,False
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/windshield/hitl_Car_damages_699_1164163787.jpg,windshield,windshield,1,1.0,1.0,1.0,1.0,True
+E:/car_search_data/car_part_retrieval_data/final_dataset/images/hitl/windshield/hitl_Car_damages_688_1164163968.jpg,windshield,windshield,1,1.0,1.0,1.0,1.0,True
