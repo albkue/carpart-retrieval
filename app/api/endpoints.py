@@ -362,8 +362,10 @@ async def search_by_image(
     try:
         # Square 15%-padded box crop, or the whole image when nothing was
         # detected (A1, 2026-11-01). Shared with the experiment harness (pipeline/query_crop.py).
+        # CLIP sees the unfiltered view; YOLO and OCR keep the filtered one (A1 check, 2026-11-10).
         bbox = detection_result.bbox if detection_result else None
-        image_for_clip = crop_for_embedding(Image.fromarray(processed), bbox)
+        clip_view = components.adaptive_preprocessor.embedding_view(image)
+        image_for_clip = crop_for_embedding(Image.fromarray(clip_view), bbox)
         logger.debug(f"Query region for CLIP: {'box' if bbox else 'full_image'} {image_for_clip.size}")
 
         # CLIP expects 224x224, embedder handles resize internally

@@ -211,8 +211,20 @@ class AdaptivePreprocessor:
             logger.debug(f"Could not enhance contrast: {e}")
             return image
     
+    def embedding_view(self, image: Image.Image) -> np.ndarray:
+        """Same geometry as preprocess() (orient, 640x640), without the filters.
+
+        CLIP gets this view: on type_v2 the filters cost 0.105 Recall@1
+        (0.796 -> 0.692) while the resize alone cost nothing measurable
+        (A1 preprocessing check, 2026-11-10). Same geometry keeps YOLO boxes,
+        found on the filtered image, valid on this one.
+        """
+        if image.mode != 'RGB':
+            image = image.convert('RGB')
+        return np.array(self._resize_with_padding(self._auto_orient(image)))
+
     def _resize_with_padding(self, image: Image.Image) -> Image.Image:
-        """Resize image maintaining aspect ratio with padding."""
+        """Resize to target_size by centre-cropping the long side (ImageOps.fit; no padding despite the name)."""
         try:
             return ImageOps.fit(image, self.target_size, method=Image.Resampling.LANCZOS)
         except Exception as e:

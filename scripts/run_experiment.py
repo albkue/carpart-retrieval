@@ -147,10 +147,12 @@ def _detector(model: str, confidence: float):
     return YOLOPartDetector(model, confidence, torch.cuda.is_available())
 
 
-def query_region(image, region: str, cfg: dict):
+def query_region(image, region: str, cfg: dict, detect_image=None):
     """Apply an A1 region with the service's crop code. Returns (image, detected).
 
-    ``detected`` is None for regions that don't run YOLO.
+    ``detected`` is None for regions that don't run YOLO. YOLO runs on
+    ``detect_image`` when given (the service's filtered view, same geometry),
+    and the crop is taken from ``image``.
     """
     from pipeline.query_crop import centre_crop, crop_for_embedding
 
@@ -159,7 +161,7 @@ def query_region(image, region: str, cfg: dict):
     if region == "centre_70":
         return centre_crop(image), None
     det_cfg = cfg["query"]["detector"]
-    result = _detector(det_cfg["model"], det_cfg["confidence"]).detect(np.array(image))
+    result = _detector(det_cfg["model"], det_cfg["confidence"]).detect(np.array(image if detect_image is None else detect_image))
     bbox = result.bbox if result else None
     return crop_for_embedding(image, bbox, CROP_PADDING[region]), bbox is not None
 
@@ -168,8 +170,9 @@ def embed_images(paths: list[str], cfg: dict, preprocess: bool = False,
                  region: str = "full_image", detected: list | None = None) -> np.ndarray:
     """Embed with the service's own CLIPEmbedding (ADR 001): evaluated == deployed.
 
-    ``preprocess`` runs the service's AdaptivePreprocessor first, then
-    ``region`` crops, in the order /search/image does for queries. Catalogue
+    ``preprocess`` mirrors /search/image: YOLO sees the AdaptivePreprocessor's
+    filtered image, CLIP sees its unfiltered ``embedding_view`` (same geometry),
+    then ``region`` crops. Catalogue
     images are indexed raw and whole by the service, so the caller passes both
     for queries only. Per-image YOLO outcomes are appended to ``detected``.
     """
@@ -183,10 +186,13 @@ def embed_images(paths: list[str], cfg: dict, preprocess: bool = False,
     out = []
     for start in range(0, len(paths), batch):
         images = [Image.open(REPO / p).convert("RGB") for p in paths[start:start + batch]]
+        filtered = [None] * len(images)
         if preprocess:
-            images = [Image.fromarray(preprocessor.preprocess(im)) for im in images]
+            if region != "full_image":
+                filtered = [Image.fromarray(preprocessor.preprocess(im)) for im in images]
+            images = [Image.fromarray(preprocessor.embedding_view(im)) for im in images]
         if region != "full_image":
-            cropped = [query_region(im, region, cfg) for im in images]
+            cropped = [query_region(im, region, cfg, f) for im, f in zip(images, filtered)]
             images = [im for im, _ in cropped]
             if detected is not None:
                 detected.extend(d for _, d in cropped)

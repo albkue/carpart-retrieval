@@ -151,8 +151,44 @@ def test_preprocess_applies_the_service_preprocessor(tmp_path, monkeypatch):
     cfg = _base_config()
     rx.embed_images(["q.jpg"], cfg)
     rx.embed_images(["q.jpg"], cfg, preprocess=True)
-    # Raw image passes through; preprocessed one is the service's 640x640 letterbox.
+    # Raw image passes through; preprocessed one is the service's 640x640 view.
     assert seen == [(300, 200), (640, 640)]
+
+
+def test_preprocess_gives_clip_the_unfiltered_view_and_yolo_the_filtered_one(tmp_path, monkeypatch):
+    from PIL import Image, ImageOps
+
+    from pipeline.adaptive_preprocessor import AdaptivePreprocessor
+
+    # Dark gradient: the filters brighten and sharpen it, so filtered != unfiltered.
+    arr = np.tile(np.linspace(0, 40, 300, dtype=np.uint8), (200, 1))
+    raw = Image.fromarray(np.stack([arr] * 3, axis=-1))
+    raw.save(tmp_path / "q.png")
+    monkeypatch.setattr(rx, "REPO", tmp_path)
+    pre = AdaptivePreprocessor()
+    unfiltered = np.array(ImageOps.fit(Image.open(tmp_path / "q.png").convert("RGB"), (640, 640),
+                                       method=Image.Resampling.LANCZOS))
+    filtered = pre.preprocess(Image.open(tmp_path / "q.png").convert("RGB"))
+    assert not np.array_equal(unfiltered, filtered)
+
+    clip_inputs, yolo_inputs = [], []
+
+    class FakeEmbedder:
+        def encode_images(self, images):
+            clip_inputs.extend(np.array(im) for im in images)
+            return np.zeros((len(images), 768))
+
+    class FakeDetector:
+        def detect(self, image):
+            yolo_inputs.append(image)
+
+    monkeypatch.setattr(rx, "_embedder", lambda model: FakeEmbedder())
+    monkeypatch.setattr(rx, "_detector", lambda model, conf: FakeDetector())
+    cfg = _base_config()
+    cfg["query"]["detector"] = {"model": "fake", "confidence": 0.5}
+    rx.embed_images(["q.png"], cfg, preprocess=True, region="crop_15", detected=[])
+    assert np.array_equal(clip_inputs[0], unfiltered)
+    assert np.array_equal(yolo_inputs[0], filtered)
 
 
 def test_crop_run_records_detection(tmp_path, monkeypatch):
