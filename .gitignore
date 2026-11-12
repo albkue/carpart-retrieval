@@ -7,6 +7,8 @@ indexes/**
 !indexes/.gitkeep
 # metrics.json and the resolved config DO get committed
 results/**/artifacts/
+# fine-tune checkpoints (1.2 GB each); on this machine a junction to E:\car_search_data\checkpoints
+checkpoints
 audit_report.json
 
 # --- Private: never leaves this machine (README rule 4) ---
@@ -51,3 +53,5 @@ htmlcov/
 # Excluded only because the remote is public. Delete this line once the
 # repository is private — the docs belong in the repo with the code.
 docs/
+
+.firecrawl/
