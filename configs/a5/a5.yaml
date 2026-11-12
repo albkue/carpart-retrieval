@@ -1,0 +1,50 @@
+# A5: robust fine-tuning of CLIP for car spare-part TYPE retrieval under domain shift.
+# Type labels only (no part numbers). Five arms: A frozen, B FT, C LP-FT, D WiSE(A,B), E WiSE(A,C).
+# Read by scripts/train_embedding.py --config (section "train"); CLI flags override these values.
+# Pre-registered strategy: vault 01-Thesis/Research/Fine-tune Strategy (LP-FT and WiSE-FT).
+
+data:
+  train_split: E:/car_search_data/eda/type_v1/splits_type_v1_train.json        # 7,228 images, 47 seen types
+  eval_split: E:/car_search_data/eda/type_v1/splits_type_v1_eval.json          # gallery 1,660; queries 859 seen + 100 held-out
+  tune_train_split: E:/car_search_data/eda/type_v1/tune/splits_type_v1_tune_train.json   # carved from train, for HP search only
+  tune_eval_split: E:/car_search_data/eda/type_v1/tune/splits_type_v1_tune_eval.json
+  far_unknowns: E:/car_search_data/dataset_combined/metadata/combined_images.csv  # motorcycle tier1b, one image per part; eval only
+  heldout_types: [air filter, camshaft, fuel injector, side mirror, transmission]
+  excluded: [ebay, tecdoc, rockauto, amazon, automobile-parts, kaggle40-as-extra, motorcycle-tier1b-for-training]
+
+model:
+  backbone: openai/clip-vit-large-patch14   # 768-d image embeddings
+  head: linear 768x768, identity init, no bias; then L2 normalisation
+
+train:
+  # tuning-train split (6,503 images): the 725 tuning images stay unseen, so alpha and the abstention threshold
+  # can be chosen on them (2026-10-25 fix; the first run trained on all 7,228 and leaked them)
+  split: E:/car_search_data/eda/type_v1/tune/splits_type_v1_tune_train.json
+  epochs: 10                 # B: 10 FT epochs; C (lpft): 5 projection-only + 5 FT
+  epoch_unit: images         # one epoch = ceil(6,503 / 32) = 204 steps
+  parts_per_batch: 8         # P types per batch
+  images_per_part: 4         # K images per type -> batch 32
+  temperature: 0.05          # search {0.03, 0.05, 0.07} on the tuning split
+  lr_ft: 3.0e-5              # B; search {1e-5, 3e-5, 1e-4} on the tuning split
+  lr_proj: 1.0e-3            # C stage 1; search {1e-3, 1e-2}
+  lr_lpft_ft: 3.0e-6         # C stage 2 = lr_ft / 10 (2026-10-25 fix: the first run used 3e-5)
+  warmup: 500
+  clip_grad: 1.0
+  seed: 42
+  # fixed in code: AdamW, weight decay 0.1, cosine schedule after warm-up, bf16 autocast, gradient checkpointing,
+  # RandomResizedCrop(224, scale 0.5-1.0, ratio 0.9-1.1), NO horizontal flip
+
+search:  # tuning split only; never the test queries
+  temperature: [0.03, 0.05, 0.07]
+  lr_ft: [1.0e-5, 3.0e-5, 1.0e-4]
+  lr_proj: [1.0e-3, 1.0e-2]
+  short_budget_epochs: 2     # proposed: rank settings on 2-epoch runs, then train the winners for 10
+
+wise_ft:
+  alphas: [0.0, 0.25, 0.5, 0.75, 1.0]
+  primary_alpha: 0.5         # pre-registered
+  select_on: tuning-query Recall@1, then mAP
+
+abstention:
+  threshold: 5th percentile of max gallery similarity on tuning queries (5% false abstention)
+  report: [false_abstention_seen, false_abstention_heldout, correct_rejection_far, auroc_known_vs_far]
