@@ -89,7 +89,7 @@ def build_inventory():
                     w, h = im.size
                     ph = int(str(imagehash.phash(to_rgb(im))), 16)
                     loadable = True
-            except Exception:
+            except Exception:  # noqa: S110 -- unreadable image stays loadable=False and is reported
                 pass
             g = (meta or {}).get
             rows.append({"image_id": iid, "path": p.as_posix(), "folder": folder, "batch": batch, "class_folder": p.parent.name.replace("_", " "),
@@ -159,8 +159,8 @@ def main():
     for r in inv:
         r["status"], r["reason"] = classify(r, id_counts) if r["batch"] != "processed_derived" else ("derived", "processed_copy_of_round1")
         r["title_flag"] = title_flag(r) if r["batch"] != "processed_derived" else ""
-    ok = [dict(id=r["image_id"], sha=r["sha"], ph=r["ph"], w=r["width"], h=r["height"], size=r["size"],
-               meta_n=sum(bool(r[k]) for k in ("source_url", "title", "licence", "author", "clip")), row=r)
+    ok = [{"id": r["image_id"], "sha": r["sha"], "ph": r["ph"], "w": r["width"], "h": r["height"], "size": r["size"],
+               "meta_n": sum(bool(r[k]) for k in ("source_url", "title", "licence", "author", "clip")), "row": r}
           for r in inv if r["status"] == "ok"]
     kept, dups = dedupe(ok)
     dup_ids = {d[0]["id"] for d in dups}
@@ -213,7 +213,6 @@ def main():
     per = []
     for c in classes:
         d = dfr[dfr.class_folder == c]
-        valid = d[d.status.isin(["ok"]) | (d.status.isin(["needs_review", "excluded"]) & d.reason.isin(["no_metadata_row", "licence_missing", "licence_not_cc0_pd_ccby", "class_label_conflict", "duplicate_image_id"]))]
         n_clean = int((cdf["class"] == c).sum()) if len(cdf) else 0
         per.append({"class": c, "raw": len(d), "valid": int(d.status.eq("ok").sum()), "clean": n_clean, "duplicates": int(d.is_dup.sum()),
                     "rejected": int(d.status.isin(["rejected", "excluded", "needs_review"]).sum()), "missing_meta": int((~d.has_meta).sum()),
@@ -233,8 +232,10 @@ def main():
         fig(nm, lambda col=col: (plt.hist(cl[col], 40), plt.title(f"{col} (px), clean set")))
     fig("aspect_ratio_histogram.png", lambda: (plt.hist(cl.width / cl.height, 40), plt.title("Aspect ratio (w/h)")))
     fig("file_size_distribution.png", lambda: (plt.hist(sizes, 40), plt.title("File size (KB)")))
-    fig("format_distribution.png", lambda: (lambda v: (plt.bar(v.index, v.values), plt.title("Original format, clean set")))(cl.format.value_counts()))
-    fig("license_distribution.png", lambda: (lambda v: (plt.barh(v.index, v.values), plt.title("Licence, clean set")))(cl.licence.value_counts()))
+    v = cl.format.value_counts()
+    fig("format_distribution.png", lambda v=v: (plt.bar(v.index, v.values), plt.title("Original format, clean set")))
+    v = cl.licence.value_counts()
+    fig("license_distribution.png", lambda v=v: (plt.barh(v.index, v.values), plt.title("Licence, clean set")))
     scrape_rej = Counter()
     for f in ("metadata/rejected_images.csv", "metadata/rejected_round2.csv"):
         for r in csv.DictReader((ROOT / f).open(encoding="utf-8")):

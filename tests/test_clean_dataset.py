@@ -8,7 +8,7 @@ from clean_dataset import classify, dedupe
 
 
 def row(i, sha, ph, w=500, h=500, size=100, meta_n=3):
-    return dict(id=i, sha=sha, ph=ph, w=w, h=h, size=size, meta_n=meta_n)
+    return {"id": i, "sha": sha, "ph": ph, "w": w, "h": h, "size": size, "meta_n": meta_n}
 
 
 def test_dedupe_keeps_best_quality_exact_and_near():
@@ -26,7 +26,7 @@ def test_confirm_blocks_phash_collisions_of_different_content():
 
 
 def test_classify_order_of_checks():
-    base = dict(format="jpeg", loadable=True, short_side=500, has_meta=True, licence="CC BY 2.0", class_meta="oil filter", class_folder="oil filter", image_id="x")
+    base = {"format": "jpeg", "loadable": True, "short_side": 500, "has_meta": True, "licence": "CC BY 2.0", "class_meta": "oil filter", "class_folder": "oil filter", "image_id": "x"}
     ids = {"x": 1}
     assert classify(base, ids) == ("ok", "")
     assert classify({**base, "licence": "CC BY-SA 4.0"}, ids)[0] == "excluded"

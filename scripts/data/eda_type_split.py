@@ -126,8 +126,8 @@ def main():
     trc = per_type[~per_type.held_out]["train"]
     md(OUT / "eda_report.md", "Type split v1: EDA", [
         ("Size and balance", "Images per role and per type.",
-         f"- {len(df)} images: train {int((df.role == 'train').sum())}, gallery {int((df.role == 'gallery').sum())}, queries seen {int((df.role == 'query_seen').sum())}, queries held-out {int((df.role == 'query_heldout').sum())}\n"
-         f"- {df.type.nunique()} types ({len(heldout)} held out: {sorted(heldout)})\n- train images per seen type: min {trc.min()} ({trc.idxmin()}), median {int(trc.median())}, max {trc.max()} ({trc.idxmax()}); max/min ratio {trc.max() / trc.min():.1f}",
+         (f"- {len(df)} images: train {int((df.role == 'train').sum())}, gallery {int((df.role == 'gallery').sum())}, queries seen {int((df.role == 'query_seen').sum())}, queries held-out {int((df.role == 'query_heldout').sum())}\n"
+         f"- {df.type.nunique()} types ({len(heldout)} held out: {sorted(heldout)})\n- train images per seen type: min {trc.min()} ({trc.idxmin()}), median {int(trc.median())}, max {trc.max()} ({trc.idxmax()}); max/min ratio {trc.max() / trc.min():.1f}"),
          "Imbalance is moderate; the P x K sampler draws types uniformly, so no reweighting is needed."),
         ("Sources", "Images by source and role.", table(by_src.reset_index()),
          "Commons is a small minority and only in some types: report per-source results if a type behaves oddly."),

@@ -50,7 +50,7 @@ def main():
                 p = Path(r["file"])
                 try:
                     im = Image.open(p).convert("RGB")
-                except Exception:
+                except Exception:  # noqa: S112 -- unreadable file is skipped, like a missing one
                     continue
                 pr = model(**tok, pixel_values=proc(images=im, return_tensors="pt").to(dev)["pixel_values"]).logits_per_image.softmax(-1)[0]
                 out.append({"file": str(p), "query": q, "score": float(pr[:2].sum()), "title": r["title"]})

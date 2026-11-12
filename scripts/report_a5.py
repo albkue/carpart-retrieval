@@ -38,7 +38,7 @@ def main():
     for folder, ft_name, wise_name in (("B_D", "B FT", "D WiSE(A,B)"), ("C_E", "C LP-FT", "E WiSE(A,C)")):
         t = pd.read_csv(R / folder / "alpha_table.csv").sort_values("alpha")
         sel = json.loads((R / folder / "selected_alpha.json").read_text(encoding="utf-8"))["selected_alpha"]
-        pick = lambda al: t.iloc[(t.alpha - al).abs().argmin()].to_dict()
+        pick = lambda al, t=t: t.iloc[(t.alpha - al).abs().argmin()].to_dict()
         rows += [{"arm": ft_name, **pick(1.0)}, {"arm": f"{wise_name} a=0.5 (primary)", **pick(0.5)},
                  {"arm": f"{wise_name} a={sel} (tuning-selected)", **pick(sel)}]
         for col in ("seen_recall@1", "heldout_recall@1", "seen_mAP", "heldout_mAP"):

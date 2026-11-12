@@ -43,11 +43,11 @@ def licence_ok(short: str, allow_sa: bool = False) -> bool:
     s = (short or "").lower().replace("_", " ").strip()
     if not s or "nc" in s.split() or "-nc" in s or " nc" in s or "-nd" in s or " nd" in s:
         return False
-    if s.startswith("cc0") or s.startswith("public domain") or s in {"pd", "pdm"}:
+    if s.startswith(("cc0", "public domain")) or s in {"pd", "pdm"}:
         return True
-    if s.startswith("cc by-sa") or s.startswith("cc-by-sa"):
+    if s.startswith(("cc by-sa", "cc-by-sa")):
         return allow_sa
-    return s.startswith("cc by ") or s.startswith("cc-by-") or s == "cc by"
+    return s.startswith(("cc by ", "cc-by-")) or s == "cc by"
 
 
 def strip_html(x: str) -> str:

@@ -243,8 +243,8 @@ def main():
         ("File checks", f"Magic bytes, decode, short side >= {MIN_SIDE} px (exception to the 320 px catalogue rule), uniform frames.",
          f"- excluded {dict(ex)}\n- sizes: {df.short_side.value_counts().to_dict()}", "Record the 224 px exception in the Dataset Spec."),
         ("Duplicates", "Exact SHA-256, then pHash <= 6 confirmed by a content thumbnail, inside each class; then the same across classes.",
-         f"- within-class duplicates removed {len(dups)} (exact {sum(d[2] == 'exact' for d in dups)}, near {sum(d[2] == 'near' for d in dups)}); "
-         f"{split_leaks} of them crossed Kaggle's own train/valid/test split\n- across-class near duplicates (label conflicts): {len(links)} pairs, {len(conflict)} images excluded",
+         (f"- within-class duplicates removed {len(dups)} (exact {sum(d[2] == 'exact' for d in dups)}, near {sum(d[2] == 'near' for d in dups)}); "
+         f"{split_leaks} of them crossed Kaggle's own train/valid/test split\n- across-class near duplicates (label conflicts): {len(links)} pairs, {len(conflict)} images excluded"),
          "Do not reuse Kaggle's split; re-split by group_id."),
         ("Overlap with combined set", "pHash <= 6 + content check against dataset_combined (Commons + tier1b).",
          f"- {len(overlap)} links, {len(overlap_ids)} Kaggle images", "Linked images must share a group_id when merged."),
@@ -256,9 +256,9 @@ def main():
     md(R / f"{name}_eda_report.md", f"{name} EDA report", [
         ("Class balance", "Clean images per class.", table(per_class), "Imbalance is mild (max/min about 2); no resampling needed for a first run."),
         ("Image properties", "Size, colour, background, brightness.",
-         f"- all images {df.short_side.min()}-{df.short_side.max()} px\n- grayscale-like {df.gray_like.mean() * 100:.1f}%\n"
+         (f"- all images {df.short_side.min()}-{df.short_side.max()} px\n- grayscale-like {df.gray_like.mean() * 100:.1f}%\n"
          f"- white-border share median {df.white_bg.median():.2f} (product photos on plain background: {(df.white_bg > 0.8).mean() * 100:.0f}%)\n"
-         f"- brightness median {df.brightness.median():.0f}",
+         f"- brightness median {df.brightness.median():.0f}"),
          "Web product photos: cleaner than shop photos. Expect a domain gap to real queries."),
         ("Role", "Spec compliance.", "- Type labels only, no part numbers: category-level training and distractors, never part-number ground truth.",
          "Never mix with part-number labels in one classifier head.")])

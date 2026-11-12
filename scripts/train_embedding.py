@@ -185,7 +185,7 @@ def main():
             total = min(total, args.max_steps)
         warm = max(1, min(args.warmup, total) if args.warmup is not None else min(500, total // 10))
         sched = torch.optim.lr_scheduler.LambdaLR(
-            opt, lambda s: (s + 1) / warm if s < warm else 0.5 * (1 + math.cos(math.pi * (s - warm) / max(1, total - warm))))
+            opt, lambda s, warm=warm, total=total: (s + 1) / warm if s < warm else 0.5 * (1 + math.cos(math.pi * (s - warm) / max(1, total - warm))))
         model.train()
         phase_step = 0
         for ep in range(epochs):

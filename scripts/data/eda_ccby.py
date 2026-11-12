@@ -174,18 +174,18 @@ def main():
     report = [
         "# EDA: CC BY spare-part set (provisional split v0)", "",
         f"- Images: {out['images']} in {out['parts']} parts; by split: {dict(out['by_split'])}",
-        f"- Images per part: median {out['images_per_part']['median']}, mean {out['images_per_part']['mean']}, "
-        f"max {out['images_per_part']['max']}; histogram {out['images_per_part']['hist']}",
-        f"- Short side px: median {out['short_side_px']['median']}, min {out['short_side_px']['min']}, "
-        f"under 320: {out['short_side_px']['under_320']}",
+        (f"- Images per part: median {out['images_per_part']['median']}, mean {out['images_per_part']['mean']}, "
+        f"max {out['images_per_part']['max']}; histogram {out['images_per_part']['hist']}"),
+        (f"- Short side px: median {out['short_side_px']['median']}, min {out['short_side_px']['min']}, "
+        f"under 320: {out['short_side_px']['under_320']}"),
         f"- Grayscale-like images: {out['grayscale_share']:.1%}; formats {out['formats']}; median file {out['median_kb']} KB",
         f"- Blurry-looking (low sharpness): {out['blurry_share_sharpness_lt_20']:.1%}",
         f"- Part-number patterns: {out['part_number_patterns']}",
         "", "## Leakage check (frozen CLIP, validation image to most similar train image)",
         f"- Median cosine {L['median']}, p90 {L['p90']}, max {L['max']}",
         f"- Share above 0.95: {L['share_over_0.95']:.1%}; above 0.90: {L['share_over_0.90']:.1%}",
-        f"- Inside validation: same-part best match median {out['valid_own_part_vs_other_part_max_cosine']['own_median']} "
-        f"vs other-part {out['valid_own_part_vs_other_part_max_cosine']['other_median']}",
+        (f"- Inside validation: same-part best match median {out['valid_own_part_vs_other_part_max_cosine']['own_median']} "
+        f"vs other-part {out['valid_own_part_vs_other_part_max_cosine']['other_median']}"),
         "", "High shares above 0.95 mean look-alike photos (augmented copies) sit in both train and validation.",
         "", "Plots: plots/overview.png. Sample parts: contact_sheet.jpg."]
     (a.out / "eda_report.md").write_text("\n".join(report) + "\n", encoding="utf-8")

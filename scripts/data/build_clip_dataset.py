@@ -91,7 +91,7 @@ def hamming_dups(hashes: list, max_dist=6):
         if i in dropped:
             continue
         x = arr[i + 1:] ^ arr[i]
-        d = np.array([bin(int(v)).count("1") for v in x]) if len(x) else np.array([])
+        d = np.array([int(v).bit_count() for v in x]) if len(x) else np.array([])
         for off in np.nonzero(d <= max_dist)[0]:
             j = i + 1 + int(off)
             if j not in dropped:
@@ -132,7 +132,7 @@ def main():
         ext = ".png" if m["download_url"].lower().endswith(".png") else ".jpg"
         p = SRC / "images" / (hashlib.sha1(m["page_url"].encode()).hexdigest()[:16] + ext)
         cls = ALIAS.get(m["query"], m["query"])
-        rej = lambda why: rejected.append([cls, m["page_url"], m["title"], p.as_posix(), why])
+        rej = lambda why, cls=cls, m=m, p=p: rejected.append([cls, m["page_url"], m["title"], p.as_posix(), why])
         if not p.exists():
             rej("download_missing")
             continue
@@ -156,7 +156,7 @@ def main():
         elif score[str(p)] < a.threshold:
             rej(f"off_topic_clip<{a.threshold}")
         else:
-            cands.append(dict(cls=cls, m=m, p=p, fmt=fmt, w=w, h=h, size=len(raw), rgb=rgb, score=score[str(p)]))
+            cands.append({"cls": cls, "m": m, "p": p, "fmt": fmt, "w": w, "h": h, "size": len(raw), "rgb": rgb, "score": score[str(p)]})
 
     drop, pairs = hamming_dups([imagehash.phash(c["rgb"]) for c in cands])
     dups = [[f"cand{j}", cands[j]["p"].name, cands[i]["p"].name, d] for i, j, d in pairs]
@@ -228,7 +228,7 @@ def main():
     R = a.out / "reports"
     (R / "scraping_summary.md").write_text(
         f"# Scraping summary\n\nSource: Wikimedia Commons official API only (CC0, public domain, CC BY; no NC/ND/SA). "
-        f"No marketplace, no login-gated or ban-listed site (vault Data Plan After eBay). Run: {datetime.now().isoformat(timespec='seconds')}\n\n"
+        f"No marketplace, no login-gated or ban-listed site (vault Data Plan After eBay). Run: {datetime.now().astimezone().isoformat(timespec='seconds')}\n\n"
         f"- Candidates in metadata: {len(metas)}\n- Accepted after validation, relevance and dedupe: {len(kept)}\n"
         f"- Rejected: {len(rejected)} ({dict(why)})\n- Near-duplicates removed (pHash Hamming <= 6): {len(dups)}\n"
         f"- Licences: {dict(licences)}\n- Failed sources: none blocked; HTTP 429 handled by retry\n- HEIC: not encountered (Commons serves JPEG/PNG)\n"

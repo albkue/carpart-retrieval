@@ -31,7 +31,7 @@ def run(name, mode, epochs, out_root, **kw):
         for k, v in kw.items():
             cmd += [f"--{k.replace('_', '-')}", str(v)]
         for attempt in (1, 2):  # a native crash (exit 0xC0000005) hit one run once, 2026-10-29; retry from scratch
-            if subprocess.run(cmd, cwd=REPO).returncode == 0:
+            if subprocess.run(cmd, cwd=REPO, check=False).returncode == 0:
                 break
         else:
             raise SystemExit(f"{name}: training failed twice")

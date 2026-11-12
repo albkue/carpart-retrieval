@@ -94,7 +94,7 @@ def main():
         for e in j.get("far_unknown", []):
             psplit[e["part_id"]] = "far_unknown"
 
-    inv, rows = [], []
+    inv, _rows = [], []
     for part_dir in sorted(p for p in OLD.iterdir() if p.is_dir()):
         kaggle, junk = part_dir.name.startswith("KAGGLE50"), part_dir.name in SKIP_JUNK
         for p in sorted(f for f in part_dir.iterdir() if f.is_file()):
@@ -121,8 +121,8 @@ def main():
             inv.append(rec)
             if reason is None:
                 import hashlib
-                rec["row"] = dict(id=f"{part_dir.name}__{p.stem}", sha=hashlib.sha256(raw).hexdigest(), ph=int(str(imagehash.phash(rgb)), 16),
-                                  w=rec["w"], h=rec["h"], size=len(raw), meta_n=3, part=part_dir.name, path=p, th=thumb(rgb))  # path only: decoded images are re-opened on write (RAM)
+                rec["row"] = {"id": f"{part_dir.name}__{p.stem}", "sha": hashlib.sha256(raw).hexdigest(), "ph": int(str(imagehash.phash(rgb)), 16),
+                                  "w": rec["w"], "h": rec["h"], "size": len(raw), "meta_n": 3, "part": part_dir.name, "path": p, "th": thumb(rgb)}  # path only: decoded images are re-opened on write (RAM)
     pd.DataFrame([{k: v for k, v in r.items() if k != "row"} for r in inv]).to_csv(OUT / "metadata/old_data_inventory.csv", index=False)
 
     # ---- old: dedupe inside each part only
@@ -146,7 +146,7 @@ def main():
                          "source": "|".join(sorted(src_of.get(k["part"], {"unknown"}))), "source_url": "https://universe.roboflow.com/supply-spare-parts",
                          "th": k["th"], "licence": "CC BY 4.0", "author": CREDIT, "width": k["w"], "height": k["h"], "short_side": min(k["w"], k["h"]),
                          "file_size_bytes": k["size"], "sha256": k["sha"], "phash": f"{k['ph']:016x}", "clip_relevance": "",
-                         "gray_like": (lambda g: (k.pop("rgb"), g)[1])(gray_like(k["rgb"])), "domain": "studio_hardware", "store_code_like": bool(STORE_LIKE.match(k["part"])),
+                         "gray_like": gray_like(k.pop("rgb")), "domain": "studio_hardware", "store_code_like": bool(STORE_LIKE.match(k["part"])),
                          "multi_code_folder": k["part"] in equiv, "existing_part_split": psplit.get(k["part"], "dropped_or_untracked")})
     # ---- new: already cleaned
     nc = pd.read_csv(NEW / "metadata/clean_images.csv", dtype=str).fillna("")
@@ -189,10 +189,12 @@ def main():
     def fig(name, f, size=(9, 4.5)):
         plt.figure(figsize=size); f(); plt.tight_layout(); plt.savefig(OUT / "reports/figures" / name, dpi=110); plt.close()
     fig("images_per_part.png", lambda: (plt.hist(pp.values, bins=range(1, int(pp.max()) + 2)), plt.title("Images per part (old, after dedupe)")))
-    fig("images_per_category.png", lambda: (lambda v: (plt.barh(v.index[::-1], v.values[::-1]), plt.title("Images per category (new)")))(cat.label.value_counts()))
+    v = cat.label.value_counts()
+    fig("images_per_category.png", lambda v=v: (plt.barh(v.index[::-1], v.values[::-1]), plt.title("Images per category (new)")))
     fig("short_side_by_track.png", lambda: (plt.hist([part.short_side, cat.short_side], 30, label=["part (old)", "category (new)"]), plt.legend(), plt.title("Short side (px)")))
     fig("grayscale_by_track.png", lambda: (plt.bar(["part (old)", "category (new)"], [part.gray_like.mean() * 100, cat.gray_like.mean() * 100]), plt.title("% grayscale-like images")))
-    fig("licence_by_track.png", lambda: (lambda v: (plt.barh(v.index, v.values), plt.title("Licence, combined")))(cdf.licence.value_counts()))
+    v = cdf.licence.value_counts()
+    fig("licence_by_track.png", lambda v=v: (plt.barh(v.index, v.values), plt.title("Licence, combined")))
     fig("exclusion_reasons_old.png", lambda: (plt.barh(list(ex), list(ex.values())), plt.title("Old data excluded files")))
     rng = random.Random(42)
     pick = rng.sample(sorted(part.image_id), 48)
@@ -210,9 +212,9 @@ def main():
     R = OUT / "reports"
     md(R / "combined_cleaning_report.md", "Combined cleaning report (old + new)", [
         ("Old data check", "Every file under data/raw/catalog_images: magic bytes, decode, 320 px, licence by source, junk and Kaggle50 exclusion, within-part dedupe.",
-         f"- files found {len(inv)}; excluded {dict(ex)}\n- part files cleaned {stats['old_part_files']} -> kept {len(part)} in {part.label.nunique()} parts; within-part duplicates removed {len(old_dups)}\n"
+         (f"- files found {len(inv)}; excluded {dict(ex)}\n- part files cleaned {stats['old_part_files']} -> kept {len(part)} in {part.label.nunique()} parts; within-part duplicates removed {len(old_dups)}\n"
          f"- parts with a single image after dedupe: {int((pp == 1).sum())}; 2+ images: {int((pp >= 2).sum())}\n- grayscale-like old images: {int(part.gray_like.sum())} of {len(part)} ({part.gray_like.mean() * 100:.0f}%); new: {int(cat.gray_like.sum())} of {len(cat)} ({cat.gray_like.mean() * 100:.0f}%)\n"
-         f"- folders that look like store codes: {sorted(set(part[part.store_code_like].label))}\n- multi-code (equivalence) folders: {int(part[part.multi_code_folder].label.nunique())}, none human-reviewed",
+         f"- folders that look like store codes: {sorted(set(part[part.store_code_like].label))}\n- multi-code (equivalence) folders: {int(part[part.multi_code_folder].label.nunique())}, none human-reviewed"),
          "Review STORE folders and the 35 equivalence groups by hand."),
         ("Merge", "Old part-level rows and new category-level rows in one manifest, label_type column keeps the two label spaces apart. Cross-label near-duplicates (pHash <= 6) linked into one group_id.",
          f"- combined clean images {len(cdf)} (part {len(part)}, category {len(cat)}); cross-label links {len(links)} (old-new {len(link_cross)})\n- licences: {cdf.licence.value_counts().to_dict()}",

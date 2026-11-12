@@ -58,7 +58,7 @@ def variants(name: str) -> list:
 def near_dup(ph: int, hashes: list, max_dist=6):
     """(label, distance) of the first stored hash within max_dist, else None."""
     for h, label in hashes:
-        d = bin(ph ^ h).count("1")
+        d = (ph ^ h).bit_count()
         if d <= max_dist:
             return label, d
     return None
@@ -152,7 +152,7 @@ def main():
                 for p in d.get("query", {}).get("pages", []):
                     ii = (p.get("imageinfo") or [{}])[0]
                     ext = ii.get("extmetadata", {})
-                    val = lambda k: (ext.get(k) or {}).get("value", "")
+                    val = lambda k, ext=ext: (ext.get(k) or {}).get("value", "")
                     url = f"https://commons.wikimedia.org/wiki/{p['title'].replace(' ', '_')}"
                     if url in done:
                         continue
@@ -220,8 +220,8 @@ def main():
 
     def report():
         acc, rej_, cnd = T["accepted"].rows, T["rejected"].rows, T["candidates"].rows
-        lines = [f"# Round 2 scrape progress\n\nUpdated {datetime.now().isoformat(timespec='seconds')}. Commons API only, CC0, public domain, CC BY. "
-                 f"Soft stop {a.soft} accepted, quota {a.quota}, hard stop {a.hard} candidates per class, CLIP >= {a.threshold}.\n",
+        lines = [(f"# Round 2 scrape progress\n\nUpdated {datetime.now().astimezone().isoformat(timespec='seconds')}. Commons API only, CC0, public domain, CC BY. "
+                 f"Soft stop {a.soft} accepted, quota {a.quota}, hard stop {a.hard} candidates per class, CLIP >= {a.threshold}.\n"),
                  "| class | candidates | accepted | rejected | near-dup |\n|---|---|---|---|---|"]
         for cls in NAMES:
             lines.append(f"| {cls} | {sum(r['class'] == cls for r in cnd)} | {sum(r['class'] == cls for r in acc)} | "
@@ -235,13 +235,13 @@ def main():
         (a.out / "reports/round2_scrape_progress.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
     for cls in sorted(a.classes, key=list(NAMES).index):
-        acc = lambda: sum(r["class"] == cls for r in T["accepted"].rows)
-        total = lambda: sum(r["class"] == cls for r in T["candidates"].rows)
+        acc = lambda cls=cls: sum(r["class"] == cls for r in T["accepted"].rows)
+        total = lambda cls=cls: sum(r["class"] == cls for r in T["candidates"].rows)
         if acc() >= a.soft:
             continue
         gen, state = candidates(cls), {"exhausted": False}
 
-        def pull(limit):
+        def pull(limit, total=total, gen=gen, state=state):
             items = []
             while total() < limit:
                 c = next(gen, None)
